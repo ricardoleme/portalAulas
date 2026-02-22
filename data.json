@@ -1,0 +1,46 @@
+[
+  {
+    "curso": "ADS",
+    "nomeCurso": "Análise e Desenvolvimento de Sistemas",
+    "ano": 2026,
+    "semestre": "1º Semestre",
+    "disciplinas": [
+      {
+        "nome": "Banco de Dados",
+        "url": "https://drive.google.com/drive/folders/1zzoV1WqLQMMZbXyGM-UDqycSyQV5kBOJ?usp=sharing",
+        "disponivel": true
+      },
+      {
+        "nome": "Linguagem de Programação",
+        "url": "https://drive.google.com/drive/folders/1rLJCVyFrkto7-sunowRmusYcQ3LHlPcz?usp=sharing",
+        "disponivel": false
+      }
+    ]
+  },
+  {
+    "curso": "GTI",
+    "nomeCurso": "Gestão da Tecnologia da Informação",
+    "ano": 2026,
+    "semestre": "4º Semestre",
+    "disciplinas": [
+      {
+        "nome": "Programação para a Internet",
+        "url": "",
+        "disponivel": false
+      }
+    ]
+  },
+  {
+    "curso": "GTI",
+    "nomeCurso": "Gestão da Tecnologia da Informação",
+    "ano": 2026,
+    "semestre": "5º Semestre",
+    "disciplinas": [
+      {
+        "nome": "Sistemas Integrados de Gestão e Aplicações",
+        "url": "",
+        "disponivel": false
+      }
+    ]
+  }
+]

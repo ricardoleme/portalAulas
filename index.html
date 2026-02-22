@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Aulas - Prof. Ms. Ricardo Leme</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css?v=2">
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- Header -->
+        <header class="glass-panel">
+            <div class="header-content">
+                <div class="title-area">
+                    <h1>Conteúdo das Aulas</h1>
+                    <h2>Prof. Ms. Ricardo Leme</h2>
+                    <h3>Faculdade de Tecnologia de Itu</h3>
+                </div>
+
+                <div class="contact-area glass-panel-inner">
+                    <a href="http://lattes.cnpq.br/8208603410270078" target="_blank" class="glass-btn">
+                        <i class="fas fa-graduation-cap"></i> Lattes
+                    </a>
+                    <a href="https://github.com/ricardoleme/" target="_blank" class="glass-btn">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/ricardo-leme/" target="_blank" class="glass-btn">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="mailto:ricardo.leme@cps.sp.gov.br" class="glass-btn">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                </div>
+            </div>
+            <div class="cyber-line"></div>
+        </header>
+
+        <!-- Main Layout -->
+        <div class="main-layout">
+            <!-- Sidebar Navigation -->
+            <aside class="sidebar glass-panel">
+                <div class="sidebar-header">
+                    <h3><i class="fas fa-folder-tree"></i> Turmas e Anos</h3>
+                </div>
+                <nav id="menu-container" class="menu-container">
+                    <!-- Dynamic menu will be injected here via JS -->
+                    <div class="loading-data">
+                        <i class="fas fa-circle-notch fa-spin"></i> Inicializando Sistema...
+                    </div>
+                </nav>
+            </aside>
+
+            <!-- Content Area (Iframe) -->
+            <main class="content-area glass-panel">
+                <div id="welcome-message" class="welcome-message">
+                    <div class="welcome-icon">
+                        <i class="fas fa-satellite-dish"></i>
+                    </div>
+                    <h2>Terminal Conectado</h2>
+                    <p>Selecione uma disciplina no menu lateral para iniciar o download ou visualizar os materiais no
+                        Google Drive.</p>
+                </div>
+
+                <div id="iframe-container" class="iframe-container hidden">
+                    <div class="iframe-header">
+                        <h3 id="current-class-title"><i class="fas fa-folder-open"></i> Disciplina</h3>
+                        <a id="external-link" href="#" target="_blank" class="glass-btn small-btn"
+                            title="Abrir no Google Drive">
+                            <i class="fas fa-external-link-alt"></i> Abrir Drive
+                        </a>
+                    </div>
+                    <iframe id="drive-iframe" src="" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <div id="unavailable-message" class="unavailable-message hidden">
+                    <div class="unavailable-icon">
+                        <i class="fas fa-folder-minus"></i>
+                    </div>
+                    <h2>Material Indisponível</h2>
+                    <p>O conteúdo desta disciplina foi planejado, mas os arquivos ainda não foram disponibilizados na
+                        nuvem pelo professor.</p>
+                </div>
+            </main>
+        </div>
+
+        <!-- Background Effects -->
+        <div class="bg-shape circle-1"></div>
+        <div class="bg-shape circle-2"></div>
+        <div class="bg-shape circle-3"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js?v=3"></script>
+</body>
+
+</html>
