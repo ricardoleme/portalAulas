@@ -21,90 +21,71 @@ document.addEventListener('DOMContentLoaded', () => {
     function buildMenu(data) {
         menuContainer.innerHTML = ''; // Limpar "Carregando..."
 
-        // Agrupar por curso (novo nível superior) e mapear nome expandido
-        const cursosMap = new Map();
-        data.forEach(item => {
-            if (!cursosMap.has(item.curso)) {
-                cursosMap.set(item.curso, item.nomeCurso || item.curso);
-            }
-        });
+        data.forEach(anoData => {
+            // Criar Grupo de Ano
+            const anoGroup = document.createElement('div');
+            anoGroup.className = 'menu-group ano-group';
 
-        const cursos = Array.from(cursosMap.keys()).sort();
+            const anoTitle = document.createElement('div');
+            anoTitle.className = 'menu-title year-title';
+            anoTitle.style.borderLeftColor = 'var(--pink)';
+            anoTitle.style.color = 'var(--pink)';
+            anoTitle.innerHTML = `<i class="far fa-calendar-alt"></i> Ano letivo ${anoData.ano} <i class="fas fa-chevron-down"></i>`;
 
-        cursos.forEach(curso => {
-            const nomeCursoTooltip = cursosMap.get(curso);
+            const anoContent = document.createElement('div');
+            anoContent.className = 'menu-content';
 
-            // Criar Grupo de Curso
-            const cursoGroup = document.createElement('div');
-            cursoGroup.className = 'menu-group curso-group';
-
-            const cursoTitle = document.createElement('div');
-            cursoTitle.className = 'menu-title curso-title';
-            cursoTitle.style.borderLeftColor = 'var(--pink)';
-            cursoTitle.style.color = 'var(--pink)';
-            cursoTitle.title = nomeCursoTooltip; // Tooltip nativo
-            cursoTitle.innerHTML = `<i class="fas fa-graduation-cap"></i> ${curso} <i class="fas fa-chevron-down"></i>`;
-
-            const cursoContent = document.createElement('div');
-            cursoContent.className = 'menu-content';
-
-            // Toggle do Collapse para o Curso
-            cursoTitle.addEventListener('click', () => {
-                cursoContent.classList.toggle('active');
-                const icon = cursoTitle.querySelector('.fa-chevron-down, .fa-chevron-up');
-                if (cursoContent.classList.contains('active')) {
+            // Toggle do Collapse para o Ano
+            anoTitle.addEventListener('click', () => {
+                anoContent.classList.toggle('active');
+                const icon = anoTitle.querySelector('.fa-chevron-down, .fa-chevron-up');
+                if (anoContent.classList.contains('active')) {
                     icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
                 } else {
                     icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
                 }
             });
 
-            const cursoData = data.filter(d => d.curso === curso);
+            anoData.semestres.forEach(semestreData => {
+                // Criar Grupo de Semestre
+                const semestreGroup = document.createElement('div');
+                semestreGroup.className = 'menu-group semestre-group';
+                semestreGroup.style.margin = '10px 0 10px 10px';
 
-            // Agrupar por ano dentro do curso
-            const years = [...new Set(cursoData.map(item => item.ano))].sort((a, b) => b - a);
+                const semestreTitle = document.createElement('div');
+                semestreTitle.className = 'menu-title';
+                semestreTitle.style.background = 'rgba(0, 0, 0, 0.15)';
+                semestreTitle.innerHTML = `<i class="fas fa-layer-group"></i> ${semestreData.semestre} <i class="fas fa-chevron-down"></i>`;
 
-            years.forEach(year => {
-                // Criar Grupo de Ano
-                const yearGroup = document.createElement('div');
-                yearGroup.className = 'menu-group ano-group';
-                yearGroup.style.margin = '10px 0 10px 10px';
+                const semestreContent = document.createElement('div');
+                semestreContent.className = 'menu-content';
 
-                const yearTitle = document.createElement('div');
-                yearTitle.className = 'menu-title year-title';
-                yearTitle.style.background = 'rgba(0, 0, 0, 0.15)';
-                yearTitle.innerHTML = `<i class="far fa-calendar-alt"></i> Ano letivo ${year} <i class="fas fa-chevron-down"></i>`;
-
-                const yearContent = document.createElement('div');
-                yearContent.className = 'menu-content';
-
-                // Toggle do Collapse para o Ano
-                yearTitle.addEventListener('click', (e) => {
+                // Toggle do Collapse para o Semestre
+                semestreTitle.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    yearContent.classList.toggle('active');
-                    const icon = yearTitle.querySelector('.fa-chevron-down, .fa-chevron-up');
-                    if (yearContent.classList.contains('active')) {
+                    semestreContent.classList.toggle('active');
+                    const icon = semestreTitle.querySelector('.fa-chevron-down, .fa-chevron-up');
+                    if (semestreContent.classList.contains('active')) {
                         icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
                     } else {
                         icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
                     }
                 });
 
-                // Encontrar semestres do ano atual (dentro deste curso)
-                const yearData = cursoData.filter(d => d.ano === year);
+                semestreData.cursos.forEach(cursoData => {
+                    const cursoDiv = document.createElement('div');
+                    cursoDiv.className = 'curso-group-inner';
+                    cursoDiv.style.marginBottom = '10px';
 
-                yearData.forEach(semesterData => {
-                    const semesterDiv = document.createElement('div');
-                    semesterDiv.className = 'semestre-group';
-
-                    const semesterTitle = document.createElement('div');
-                    semesterTitle.className = 'semestre-title';
-                    semesterTitle.innerHTML = `<i class="fas fa-layer-group"></i> ${semesterData.semestre}`;
+                    const cursoTitle = document.createElement('div');
+                    cursoTitle.className = 'curso-label';
+                    cursoTitle.title = cursoData.nomeCurso || cursoData.curso;
+                    cursoTitle.innerHTML = `<i class="fas fa-graduation-cap"></i> ${cursoData.curso}`;
 
                     const disciplinaList = document.createElement('ul');
                     disciplinaList.className = 'disciplina-list';
 
-                    semesterData.disciplinas.forEach(disciplina => {
+                    cursoData.disciplinas.forEach(disciplina => {
                         const li = document.createElement('li');
                         li.className = 'disciplina-item';
                         li.innerHTML = `<i class="fas fa-code-branch"></i> ${disciplina.nome}`;
@@ -121,31 +102,31 @@ document.addEventListener('DOMContentLoaded', () => {
                         disciplinaList.appendChild(li);
                     });
 
-                    semesterDiv.appendChild(semesterTitle);
-                    semesterDiv.appendChild(disciplinaList);
-                    yearContent.appendChild(semesterDiv);
+                    cursoDiv.appendChild(cursoTitle);
+                    cursoDiv.appendChild(disciplinaList);
+                    semestreContent.appendChild(cursoDiv);
                 });
 
-                yearGroup.appendChild(yearTitle);
-                yearGroup.appendChild(yearContent);
-                cursoContent.appendChild(yearGroup);
+                semestreGroup.appendChild(semestreTitle);
+                semestreGroup.appendChild(semestreContent);
+                anoContent.appendChild(semestreGroup);
             });
 
-            cursoGroup.appendChild(cursoTitle);
-            cursoGroup.appendChild(cursoContent);
-            menuContainer.appendChild(cursoGroup);
+            anoGroup.appendChild(anoTitle);
+            anoGroup.appendChild(anoContent);
+            menuContainer.appendChild(anoGroup);
         });
 
-        // Abrir automaticamente o primeiro curso
-        const firstCursoContent = menuContainer.querySelector('.curso-title');
-        if (firstCursoContent) {
-            firstCursoContent.click();
+        // Abrir automaticamente o primeiro ano
+        const firstAnoContent = menuContainer.querySelector('.year-title');
+        if (firstAnoContent) {
+            firstAnoContent.click();
 
-            // Abrir primeiro ano logo em seguida
+            // Abrir primeiro semestre logo em seguida
             setTimeout(() => {
-                const firstYearContent = menuContainer.querySelector('.curso-group .year-title');
-                if (firstYearContent) {
-                    firstYearContent.click();
+                const firstSemestreContent = menuContainer.querySelector('.ano-group .menu-title:not(.year-title)');
+                if (firstSemestreContent) {
+                    firstSemestreContent.click();
                 }
             }, 50);
         }

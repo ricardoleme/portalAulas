@@ -1,37 +1,43 @@
 [
   {
-    "curso": "ADS",
-    "nomeCurso": "Análise e Desenvolvimento de Sistemas",
     "ano": 2026,
-    "semestre": "1o Semestre - 2026",
-    "disciplinas": [
+    "semestres": [
       {
-        "nome": "Banco de Dados",
-        "url": "https://drive.google.com/drive/folders/1zzoV1WqLQMMZbXyGM-UDqycSyQV5kBOJ?usp=sharing",
-        "disponivel": true
-      },
-      {
-        "nome": "Linguagem de Programação",
-        "url": "https://drive.google.com/drive/folders/1rLJCVyFrkto7-sunowRmusYcQ3LHlPcz?usp=sharing",
-        "disponivel": true
-      }
-    ]
-  },
-  {
-    "curso": "GTI",
-    "nomeCurso": "Gestão da Tecnologia da Informação",
-    "ano": 2026,
-    "semestre": "1o Semestre - 2026",
-    "disciplinas": [
-      {
-        "nome": "Programação para a Internet",
-        "url": "https://drive.google.com/drive/folders/1z7UGp1uvlRwETnisXErTqy5lTUbgOXL1?usp=sharing",
-        "disponivel": true
-      },
-      {
-        "nome": "Sistemas Integrados de Gestão e Aplicações",
-        "url": "https://drive.google.com/drive/folders/16tO-ZPPKDpGcA3mRZiB6pT19ORh6QLk_?usp=sharing",
-        "disponivel": true
+        "semestre": "1o Semestre - 2026",
+        "cursos": [
+          {
+            "curso": "ADS",
+            "nomeCurso": "Análise e Desenvolvimento de Sistemas",
+            "disciplinas": [
+              {
+                "nome": "Banco de Dados",
+                "url": "https://drive.google.com/drive/folders/1zzoV1WqLQMMZbXyGM-UDqycSyQV5kBOJ?usp=sharing",
+                "disponivel": true
+              },
+              {
+                "nome": "Linguagem de Programação",
+                "url": "https://drive.google.com/drive/folders/1rLJCVyFrkto7-sunowRmusYcQ3LHlPcz?usp=sharing",
+                "disponivel": true
+              }
+            ]
+          },
+          {
+            "curso": "GTI",
+            "nomeCurso": "Gestão da Tecnologia da Informação",
+            "disciplinas": [
+              {
+                "nome": "Programação para a Internet",
+                "url": "https://drive.google.com/drive/folders/1z7UGp1uvlRwETnisXErTqy5lTUbgOXL1?usp=sharing",
+                "disponivel": true
+              },
+              {
+                "nome": "Sistemas Integrados de Gestão e Aplicações",
+                "url": "https://drive.google.com/drive/folders/16tO-ZPPKDpGcA3mRZiB6pT19ORh6QLk_?usp=sharing",
+                "disponivel": true
+              }
+            ]
+          }
+        ]
       }
     ]
   }

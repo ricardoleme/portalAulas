@@ -298,7 +298,7 @@ header {
     margin-bottom: 10px;
 }
 
-.semestre-title {
+.curso-label {
     color: var(--orange);
     font-size: 0.95rem;
     font-weight: 600;
