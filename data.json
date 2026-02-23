@@ -3,7 +3,7 @@
     "curso": "ADS",
     "nomeCurso": "Análise e Desenvolvimento de Sistemas",
     "ano": 2026,
-    "semestre": "1º Semestre",
+    "semestre": "2º Semestre",
     "disciplinas": [
       {
         "nome": "Banco de Dados",
@@ -13,7 +13,7 @@
       {
         "nome": "Linguagem de Programação",
         "url": "https://drive.google.com/drive/folders/1rLJCVyFrkto7-sunowRmusYcQ3LHlPcz?usp=sharing",
-        "disponivel": false
+        "disponivel": true
       }
     ]
   },
@@ -21,12 +21,12 @@
     "curso": "GTI",
     "nomeCurso": "Gestão da Tecnologia da Informação",
     "ano": 2026,
-    "semestre": "4º Semestre",
+    "semestre": "2º Semestre",
     "disciplinas": [
       {
         "nome": "Programação para a Internet",
-        "url": "",
-        "disponivel": false
+        "url": "https://drive.google.com/drive/folders/1z7UGp1uvlRwETnisXErTqy5lTUbgOXL1?usp=sharing",
+        "disponivel": true
       }
     ]
   },
@@ -34,12 +34,12 @@
     "curso": "GTI",
     "nomeCurso": "Gestão da Tecnologia da Informação",
     "ano": 2026,
-    "semestre": "5º Semestre",
+    "semestre": "2º Semestre",
     "disciplinas": [
       {
         "nome": "Sistemas Integrados de Gestão e Aplicações",
-        "url": "",
-        "disponivel": false
+        "url": "https://drive.google.com/drive/folders/16tO-ZPPKDpGcA3mRZiB6pT19ORh6QLk_?usp=sharing",
+        "disponivel": true
       }
     ]
   }
