@@ -28,7 +28,8 @@
               {
                 "nome": "Programação para a Internet",
                 "url": "https://drive.google.com/drive/folders/1XPPAM3PW_0gSvZr3r2kEFKc0OEnLs1Tf?usp=sharing",
-                "disponivel": true
+                "disponivel": true,
+                "questoes": "questoes/programacao-para-internet-gti-av1.json"
               },
               {
                 "nome": "Sistemas Integrados de Gestão e Aplicações",
