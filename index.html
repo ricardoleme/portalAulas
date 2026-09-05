@@ -38,7 +38,7 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css?v=2">
+    <link rel="stylesheet" href="css/style.css?v=3">
     <link rel="icon" href="images/favicon.png" type="image/png">
 </head>
 
@@ -117,6 +117,21 @@
                     <p>O conteúdo desta disciplina foi planejado, mas os arquivos ainda não foram disponibilizados na
                         nuvem pelo professor.</p>
                 </div>
+
+                <section id="quiz-container" class="quiz-container hidden" aria-live="polite">
+                    <div class="quiz-header">
+                        <div>
+                            <h3 id="quiz-title"><i class="fas fa-clipboard-question"></i> Questões de Fixação</h3>
+                            <p id="quiz-subtitle">Selecione uma avaliação no menu lateral.</p>
+                        </div>
+                        <div class="quiz-scoreboard">
+                            <span><i class="fas fa-check"></i> Acertos: <strong id="quiz-correct">0</strong></span>
+                            <span><i class="fas fa-xmark"></i> Erros: <strong id="quiz-wrong">0</strong></span>
+                            <span><i class="fas fa-star"></i> Nota: <strong id="quiz-grade">0.0</strong></span>
+                        </div>
+                    </div>
+                    <div id="quiz-body" class="quiz-body"></div>
+                </section>
             </main>
         </div>
 
@@ -127,7 +142,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="js/script.js?v=3"></script>
+    <script src="js/script.js?v=4"></script>
 </body>
 
 </html>

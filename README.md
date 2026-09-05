@@ -65,3 +65,53 @@ Abra o arquivo `data.json` e adicione ou remova os blocos seguindo o formato:
 - **`nomeCurso`**: Nome inteiro do curso que aparecerá no Tooltip (ao passar o mouse sobre a sigla).
 - **`url`**: A URL da pasta do Google Drive normal que você copia para compartilhamento. *Observação: A pasta do Drive precisa ter a permissão "Qualquer pessoa com o link pode abrir" ligada nas propriedades de compartilhamento do Google*.
 - **`disponivel`**: Defina como `false` se a disciplina já estiver no cronograma, mas você ainda não liberou a pasta na nuvem. Isso irá mostrar uma tela customizada de "Material Indisponível" na plataforma em vez de um iframe vazio/quebrado. Casos omitidos ou `true` tentarão carregar o Iframe imediatamente.
+- **`questoes`**: Caminho opcional para um arquivo JSON com questões de fixação da disciplina. Se este campo não existir, o menu da disciplina mostra apenas a Área de Download.
+
+## Questões de Fixação
+
+Crie os arquivos de questões dentro da pasta `questoes/` e referencie o caminho em `data.json`:
+
+```json
+{
+  "nome": "Banco de Dados",
+  "url": "https://drive.google.com/drive/folders/ID_DA_SUA_PASTA?usp=sharing",
+  "disponivel": true,
+  "questoes": "questoes/banco-de-dados.json"
+}
+```
+
+Formato recomendado do arquivo de questões:
+
+```json
+{
+  "disciplina": "Banco de Dados",
+  "versao": 1,
+  "avaliacoes": [
+    {
+      "id": "av1",
+      "titulo": "1a avaliação",
+      "questoes": [
+        {
+          "id": "bd-av1-q1",
+          "enunciado": "Qual comando SQL é usado para consultar registros em uma tabela?",
+          "alternativas": [
+            { "id": "A", "texto": "SELECT" },
+            { "id": "B", "texto": "INSERT" },
+            { "id": "C", "texto": "UPDATE" },
+            { "id": "D", "texto": "DELETE" }
+          ],
+          "correta": "A",
+          "feedback": "SELECT é o comando usado para recuperar dados de uma ou mais tabelas."
+        }
+      ]
+    },
+    {
+      "id": "av2",
+      "titulo": "2a avaliação",
+      "questoes": []
+    }
+  ]
+}
+```
+
+Cada questão deve ter 4 alternativas. O campo `correta` deve conter o mesmo `id` da alternativa correta. O feedback sempre aparece após a resposta, independentemente de acerto ou erro. A nota exibida no quiz é calculada por `acertos / total de questões * 10`.

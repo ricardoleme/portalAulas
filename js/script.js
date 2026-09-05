@@ -1,13 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     const menuContainer = document.getElementById('menu-container');
     const welcomeMessage = document.getElementById('welcome-message');
     const iframeContainer = document.getElementById('iframe-container');
     const driveIframe = document.getElementById('drive-iframe');
     const currentClassTitle = document.getElementById('current-class-title');
     const externalLink = document.getElementById('external-link');
+    const unavailableMessage = document.getElementById('unavailable-message');
+    const quizContainer = document.getElementById('quiz-container');
+    const quizTitle = document.getElementById('quiz-title');
+    const quizSubtitle = document.getElementById('quiz-subtitle');
+    const quizBody = document.getElementById('quiz-body');
+    const quizCorrect = document.getElementById('quiz-correct');
+    const quizWrong = document.getElementById('quiz-wrong');
+    const quizGrade = document.getElementById('quiz-grade');
 
-    // Fetch and build menu
+    const quizCache = new Map();
+    let currentQuizState = null;
+
     fetch('data.json')
         .then(response => response.json())
         .then(data => {
@@ -15,14 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => {
             console.error('Erro ao carregar os dados das turmas:', error);
-            menuContainer.innerHTML = `<div class="loading-data"><i class="fas fa-exclamation-triangle"></i> Erro ao carregar dados.</div>`;
+            menuContainer.innerHTML = '<div class="loading-data"><i class="fas fa-exclamation-triangle"></i> Erro ao carregar dados.</div>';
         });
 
     function buildMenu(data) {
-        menuContainer.innerHTML = ''; // Limpar "Carregando..."
+        menuContainer.innerHTML = '';
 
         data.forEach(anoData => {
-            // Criar Grupo de Ano
             const anoGroup = document.createElement('div');
             anoGroup.className = 'menu-group ano-group';
 
@@ -30,24 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
             anoTitle.className = 'menu-title year-title';
             anoTitle.style.borderLeftColor = 'var(--pink)';
             anoTitle.style.color = 'var(--pink)';
-            anoTitle.innerHTML = `<i class="far fa-calendar-alt"></i> Ano letivo ${anoData.ano} <i class="fas fa-chevron-down"></i>`;
+            anoTitle.innerHTML = `<span><i class="far fa-calendar-alt"></i> Ano letivo ${escapeHTML(anoData.ano)}</span> <i class="fas fa-chevron-down"></i>`;
 
             const anoContent = document.createElement('div');
             anoContent.className = 'menu-content';
 
-            // Toggle do Collapse para o Ano
-            anoTitle.addEventListener('click', () => {
-                anoContent.classList.toggle('active');
-                const icon = anoTitle.querySelector('.fa-chevron-down, .fa-chevron-up');
-                if (anoContent.classList.contains('active')) {
-                    icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
-                } else {
-                    icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
-                }
-            });
+            anoTitle.addEventListener('click', () => toggleContent(anoContent, anoTitle));
 
             anoData.semestres.forEach(semestreData => {
-                // Criar Grupo de Semestre
                 const semestreGroup = document.createElement('div');
                 semestreGroup.className = 'menu-group semestre-group';
                 semestreGroup.style.margin = '10px 0 10px 10px';
@@ -55,21 +53,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 const semestreTitle = document.createElement('div');
                 semestreTitle.className = 'menu-title';
                 semestreTitle.style.background = 'rgba(0, 0, 0, 0.15)';
-                semestreTitle.innerHTML = `<i class="fas fa-layer-group"></i> ${semestreData.semestre} <i class="fas fa-chevron-down"></i>`;
+                semestreTitle.innerHTML = `<span><i class="fas fa-layer-group"></i> ${escapeHTML(semestreData.semestre)}</span> <i class="fas fa-chevron-down"></i>`;
 
                 const semestreContent = document.createElement('div');
                 semestreContent.className = 'menu-content';
 
-                // Toggle do Collapse para o Semestre
-                semestreTitle.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    semestreContent.classList.toggle('active');
-                    const icon = semestreTitle.querySelector('.fa-chevron-down, .fa-chevron-up');
-                    if (semestreContent.classList.contains('active')) {
-                        icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
-                    } else {
-                        icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
-                    }
+                semestreTitle.addEventListener('click', event => {
+                    event.stopPropagation();
+                    toggleContent(semestreContent, semestreTitle);
                 });
 
                 semestreData.cursos.forEach(cursoData => {
@@ -80,26 +71,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     const cursoTitle = document.createElement('div');
                     cursoTitle.className = 'curso-label';
                     cursoTitle.title = cursoData.nomeCurso || cursoData.curso;
-                    cursoTitle.innerHTML = `<i class="fas fa-graduation-cap"></i> ${cursoData.curso}`;
+                    cursoTitle.innerHTML = `<i class="fas fa-graduation-cap"></i> ${escapeHTML(cursoData.curso)}`;
 
                     const disciplinaList = document.createElement('ul');
                     disciplinaList.className = 'disciplina-list';
 
                     cursoData.disciplinas.forEach(disciplina => {
-                        const li = document.createElement('li');
-                        li.className = 'disciplina-item';
-                        li.innerHTML = `<i class="fas fa-code-branch"></i> ${disciplina.nome}`;
-
-                        // Adicionar evento de clique para abrir a disciplina
-                        li.addEventListener('click', () => {
-                            // Remover ativo de todos
-                            document.querySelectorAll('.disciplina-item').forEach(el => el.classList.remove('active'));
-                            li.classList.add('active');
-
-                            openDriveLink(disciplina);
-                        });
-
-                        disciplinaList.appendChild(li);
+                        disciplinaList.appendChild(createDisciplinaMenuItem(disciplina));
                     });
 
                     cursoDiv.appendChild(cursoTitle);
@@ -117,12 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
             menuContainer.appendChild(anoGroup);
         });
 
-        // Abrir automaticamente o primeiro ano
         const firstAnoContent = menuContainer.querySelector('.year-title');
         if (firstAnoContent) {
             firstAnoContent.click();
 
-            // Abrir primeiro semestre logo em seguida
             setTimeout(() => {
                 const firstSemestreContent = menuContainer.querySelector('.ano-group .menu-title:not(.year-title)');
                 if (firstSemestreContent) {
@@ -132,61 +108,336 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function createDisciplinaMenuItem(disciplina) {
+        const li = document.createElement('li');
+        li.className = 'disciplina-node';
+
+        const disciplinaTitle = document.createElement('div');
+        disciplinaTitle.className = 'disciplina-item disciplina-title';
+        disciplinaTitle.innerHTML = `<span><i class="fas fa-code-branch"></i> ${escapeHTML(disciplina.nome)}</span> <i class="fas fa-chevron-down"></i>`;
+
+        const actionsList = document.createElement('ul');
+        actionsList.className = 'disciplina-actions';
+
+        const downloadItem = document.createElement('li');
+        downloadItem.className = 'disciplina-action-item';
+        downloadItem.innerHTML = '<i class="fas fa-download"></i> Área de Download';
+        downloadItem.addEventListener('click', event => {
+            event.stopPropagation();
+            setActiveAction(downloadItem);
+            openDriveLink(disciplina);
+        });
+        actionsList.appendChild(downloadItem);
+
+        if (disciplina.questoes) {
+            const quizGroup = document.createElement('li');
+            quizGroup.className = 'disciplina-action-group';
+
+            const quizGroupTitle = document.createElement('div');
+            quizGroupTitle.className = 'disciplina-action-item has-children';
+            quizGroupTitle.innerHTML = '<span><i class="fas fa-circle-question"></i> Questões de Fixação</span> <i class="fas fa-chevron-down"></i>';
+
+            const assessmentsList = document.createElement('ul');
+            assessmentsList.className = 'avaliacao-list';
+
+            quizGroupTitle.addEventListener('click', event => {
+                event.stopPropagation();
+                assessmentsList.classList.toggle('active');
+                replaceChevron(quizGroupTitle, assessmentsList.classList.contains('active'));
+                loadAssessmentMenu(disciplina, assessmentsList);
+            });
+
+            quizGroup.appendChild(quizGroupTitle);
+            quizGroup.appendChild(assessmentsList);
+            actionsList.appendChild(quizGroup);
+        }
+
+        disciplinaTitle.addEventListener('click', event => {
+            event.stopPropagation();
+            actionsList.classList.toggle('active');
+            disciplinaTitle.classList.toggle('active', actionsList.classList.contains('active'));
+            replaceChevron(disciplinaTitle, actionsList.classList.contains('active'));
+        });
+
+        li.appendChild(disciplinaTitle);
+        li.appendChild(actionsList);
+
+        return li;
+    }
+
+    function toggleContent(contentElement, titleElement) {
+        contentElement.classList.toggle('active');
+        replaceChevron(titleElement, contentElement.classList.contains('active'));
+    }
+
+    function replaceChevron(element, isOpen) {
+        const icon = element.querySelector('.fa-chevron-down, .fa-chevron-up');
+        if (!icon) return;
+
+        icon.classList.toggle('fa-chevron-down', !isOpen);
+        icon.classList.toggle('fa-chevron-up', isOpen);
+    }
+
+    function setActiveAction(activeElement) {
+        document.querySelectorAll('.disciplina-item, .disciplina-action-item, .avaliacao-item').forEach(element => {
+            element.classList.remove('active');
+        });
+        activeElement.classList.add('active');
+
+        const disciplineTitle = activeElement.closest('.disciplina-node')?.querySelector('.disciplina-title');
+        if (disciplineTitle) {
+            disciplineTitle.classList.add('active');
+        }
+    }
+
     function getDriveFolderEmbedUrl(url) {
-        // Ex: https://drive.google.com/drive/folders/1zzoV1WqLQMMZbXyGM-UDqycSyQV5kBOJ?usp=sharing
-        // Extrai o ID pra usar no embeddedfolderview
         const match = url.match(/\/folders\/([a-zA-Z0-9_-]+)/);
         if (match && match[1]) {
             return `https://drive.google.com/embeddedfolderview?id=${match[1]}#list`;
         }
-        return url; // Retorna normal se não conseguir converter
+        return url;
     }
 
-    function openDriveLink(dataObj) {
-        // Esconder boas-vindas
+    function hideWelcome() {
         welcomeMessage.style.opacity = '0';
         setTimeout(() => {
             welcomeMessage.style.display = 'none';
         }, 500);
+    }
 
-        // Atualizar titulo e botão
-        currentClassTitle.innerHTML = `<i class="fas fa-folder-open"></i> ${dataObj.nome}`;
-        externalLink.href = dataObj.url; // O link externo vai para o formato normal original
+    function hideAllContent() {
+        hideWelcome();
+        iframeContainer.classList.add('hidden');
+        unavailableMessage.style.opacity = '0';
+        unavailableMessage.style.pointerEvents = 'none';
+        unavailableMessage.classList.add('hidden');
+        quizContainer.classList.add('hidden');
+    }
 
-        // Verifica se a disciplina tem arquivos ('disponivel' explícito como false = ausente)
-        // Se a propriedade 'disponivel' não existir no JSON, assumimos que é true por padrão.
-        const isAvailable = dataObj.hasOwnProperty('disponivel') ? dataObj.disponivel : true;
+    function openDriveLink(dataObj) {
+        hideAllContent();
 
-        const unavailableMessage = document.getElementById('unavailable-message');
+        currentClassTitle.innerHTML = `<i class="fas fa-folder-open"></i> ${escapeHTML(dataObj.nome)}`;
+        externalLink.href = dataObj.url;
+
+        const isAvailable = Object.prototype.hasOwnProperty.call(dataObj, 'disponivel') ? dataObj.disponivel : true;
 
         if (!isAvailable) {
-            // Esconde Iframe, mostra Mensagem de Indisponível
-            iframeContainer.classList.add('hidden');
             unavailableMessage.classList.remove('hidden');
-
-            // Impede transição abrupta
             setTimeout(() => {
                 unavailableMessage.style.opacity = '1';
-                unavailableMessage.style.pointerEvents = 'auto'; // Permitir cliques, se houver
+                unavailableMessage.style.pointerEvents = 'auto';
             }, 50);
 
-            driveIframe.src = "about:blank"; // Limpa iframe anterior da memória
-        } else {
-            // Esconde a mensagem de indisponivel (se estava ativa)
-            unavailableMessage.style.opacity = '0';
-            unavailableMessage.style.pointerEvents = 'none'; // Desativar ponteiros para não bugar nada por cima
-            setTimeout(() => {
-                unavailableMessage.classList.add('hidden');
-            }, 300);
-
-            // Mostrar Iframe
-            const embedUrl = getDriveFolderEmbedUrl(dataObj.url);
-            iframeContainer.classList.remove('hidden');
-
-            // Só recarrega se for URL diferente (evitar piscar)
-            if (driveIframe.src !== embedUrl) {
-                driveIframe.src = embedUrl;
-            }
+            driveIframe.src = 'about:blank';
+            return;
         }
+
+        const embedUrl = getDriveFolderEmbedUrl(dataObj.url);
+        iframeContainer.classList.remove('hidden');
+
+        if (driveIframe.src !== embedUrl) {
+            driveIframe.src = embedUrl;
+        }
+    }
+
+    async function loadAssessmentMenu(disciplina, assessmentsList) {
+        if (assessmentsList.dataset.loaded === 'true') return;
+
+        assessmentsList.innerHTML = '<li class="avaliacao-status"><i class="fas fa-circle-notch fa-spin"></i> Carregando...</li>';
+
+        try {
+            const quizData = await fetchQuizData(disciplina.questoes);
+            const assessments = normalizeAssessments(quizData);
+
+            assessmentsList.innerHTML = '';
+
+            if (!assessments.length) {
+                assessmentsList.innerHTML = '<li class="avaliacao-status">Nenhuma avaliação cadastrada.</li>';
+                return;
+            }
+
+            assessments.forEach((assessment, index) => {
+                const assessmentItem = document.createElement('li');
+                assessmentItem.className = 'avaliacao-item';
+                assessmentItem.innerHTML = `<i class="fas fa-list-check"></i> ${escapeHTML(assessment.titulo || `${index + 1}a avaliação`)}`;
+                assessmentItem.addEventListener('click', event => {
+                    event.stopPropagation();
+                    setActiveAction(assessmentItem);
+                    openQuiz(disciplina, quizData, assessment);
+                });
+                assessmentsList.appendChild(assessmentItem);
+            });
+
+            assessmentsList.dataset.loaded = 'true';
+        } catch (error) {
+            console.error('Erro ao carregar questoes:', error);
+            assessmentsList.innerHTML = '<li class="avaliacao-status error">Erro ao carregar questões.</li>';
+        }
+    }
+
+    async function fetchQuizData(path) {
+        if (quizCache.has(path)) {
+            return quizCache.get(path);
+        }
+
+        const response = await fetch(path);
+        if (!response.ok) {
+            throw new Error(`Arquivo de questoes nao encontrado: ${path}`);
+        }
+
+        const quizData = await response.json();
+        quizCache.set(path, quizData);
+        return quizData;
+    }
+
+    function normalizeAssessments(quizData) {
+        if (Array.isArray(quizData.avaliacoes)) {
+            return quizData.avaliacoes;
+        }
+
+        if (Array.isArray(quizData.questoes)) {
+            return [{
+                id: 'fixacao',
+                titulo: 'Questões de Fixação',
+                questoes: quizData.questoes
+            }];
+        }
+
+        return [];
+    }
+
+    function openQuiz(disciplina, quizData, assessment) {
+        hideAllContent();
+
+        const questions = Array.isArray(assessment.questoes) ? assessment.questoes : [];
+        currentQuizState = {
+            questions,
+            answers: new Map()
+        };
+
+        quizTitle.innerHTML = `<i class="fas fa-clipboard-question"></i> ${escapeHTML(disciplina.nome)}`;
+        quizSubtitle.textContent = `${assessment.titulo || 'Questões de Fixação'} - ${questions.length} questão(ões)`;
+        quizContainer.classList.remove('hidden');
+
+        renderQuizQuestions(questions, quizData);
+        updateScore();
+    }
+
+    function renderQuizQuestions(questions, quizData) {
+        quizBody.innerHTML = '';
+
+        if (!questions.length) {
+            quizBody.innerHTML = '<div class="quiz-empty">Nenhuma questão cadastrada para esta avaliação.</div>';
+            return;
+        }
+
+        questions.forEach((question, questionIndex) => {
+            const article = document.createElement('article');
+            article.className = 'question-card';
+            article.dataset.questionIndex = questionIndex;
+
+            const alternatives = normalizeAlternatives(question.alternativas);
+
+            article.innerHTML = `
+                <div class="question-topline">
+                    <span>Questão ${questionIndex + 1}</span>
+                    <span>${escapeHTML(quizData.disciplina || '')}</span>
+                </div>
+                <h4>${escapeHTML(question.enunciado || '')}</h4>
+                <div class="alternatives"></div>
+                <div class="question-feedback" aria-live="polite"></div>
+            `;
+
+            const alternativesContainer = article.querySelector('.alternatives');
+            alternatives.forEach((alternative, alternativeIndex) => {
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.className = 'alternative-btn';
+                button.dataset.alternativeId = alternative.id;
+                button.innerHTML = `<strong>${escapeHTML(alternative.id)}</strong><span>${escapeHTML(alternative.texto)}</span>`;
+                button.addEventListener('click', () => answerQuestion(question, questionIndex, alternative.id, article));
+                alternativesContainer.appendChild(button);
+            });
+
+            quizBody.appendChild(article);
+        });
+    }
+
+    function answerQuestion(question, questionIndex, selectedId, questionCard) {
+        if (currentQuizState.answers.has(questionIndex)) return;
+
+        const correctId = String(question.correta || '').trim();
+        const isCorrect = selectedId === correctId;
+        currentQuizState.answers.set(questionIndex, isCorrect);
+
+        questionCard.classList.add(isCorrect ? 'correct' : 'wrong');
+        questionCard.querySelectorAll('.alternative-btn').forEach(button => {
+            button.disabled = true;
+            const alternativeId = button.dataset.alternativeId;
+
+            if (alternativeId === correctId) {
+                button.classList.add('correct');
+            }
+
+            if (alternativeId === selectedId && !isCorrect) {
+                button.classList.add('wrong');
+            }
+        });
+
+        const feedback = question.feedback || 'Revise o conteúdo relacionado a esta questão.';
+        const feedbackElement = questionCard.querySelector('.question-feedback');
+        feedbackElement.innerHTML = `
+            <strong>${isCorrect ? 'Resposta correta.' : 'Resposta incorreta.'}</strong>
+            <p>${escapeHTML(feedback)}</p>
+        `;
+
+        updateScore();
+    }
+
+    function updateScore() {
+        if (!currentQuizState) {
+            quizCorrect.textContent = '0';
+            quizWrong.textContent = '0';
+            quizGrade.textContent = '0.0';
+            return;
+        }
+
+        const results = Array.from(currentQuizState.answers.values());
+        const correct = results.filter(Boolean).length;
+        const wrong = results.length - correct;
+        const total = currentQuizState.questions.length || 1;
+        const grade = (correct / total) * 10;
+
+        quizCorrect.textContent = correct;
+        quizWrong.textContent = wrong;
+        quizGrade.textContent = grade.toFixed(1);
+    }
+
+    function normalizeAlternatives(alternatives) {
+        if (!Array.isArray(alternatives)) return [];
+
+        return alternatives.slice(0, 4).map((alternative, index) => {
+            if (typeof alternative === 'string') {
+                return {
+                    id: String.fromCharCode(65 + index),
+                    texto: alternative
+                };
+            }
+
+            return {
+                id: String(alternative.id || String.fromCharCode(65 + index)).trim(),
+                texto: String(alternative.texto || '')
+            };
+        });
+    }
+
+    function escapeHTML(value) {
+        return String(value)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
     }
 });

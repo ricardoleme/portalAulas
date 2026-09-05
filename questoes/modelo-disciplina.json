@@ -1,0 +1,41 @@
+{
+  "disciplina": "Nome da Disciplina",
+  "versao": 1,
+  "avaliacoes": [
+    {
+      "id": "av1",
+      "titulo": "1a avaliacao",
+      "questoes": [
+        {
+          "id": "q1",
+          "enunciado": "Texto da questao aqui.",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "Primeira alternativa."
+            },
+            {
+              "id": "B",
+              "texto": "Segunda alternativa."
+            },
+            {
+              "id": "C",
+              "texto": "Terceira alternativa."
+            },
+            {
+              "id": "D",
+              "texto": "Quarta alternativa."
+            }
+          ],
+          "correta": "A",
+          "feedback": "Explique por que a alternativa correta resolve a questao e, se necessario, por que as demais nao resolvem."
+        }
+      ]
+    },
+    {
+      "id": "av2",
+      "titulo": "2a avaliacao",
+      "questoes": []
+    }
+  ]
+}
