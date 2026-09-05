@@ -3,7 +3,7 @@
     "ano": 2026,
     "semestres": [
       {
-        "semestre": "1o Semestre - 2026",
+        "semestre": "2o Semestre - 2026",
         "cursos": [
           {
             "curso": "ADS",
@@ -11,12 +11,12 @@
             "disciplinas": [
               {
                 "nome": "Banco de Dados",
-                "url": "https://drive.google.com/drive/folders/1zzoV1WqLQMMZbXyGM-UDqycSyQV5kBOJ?usp=sharing",
+                "url": "https://drive.google.com/drive/folders/19SSzgktv7QRHEsFsfFROU72MpYOuEVbP?usp=sharing",
                 "disponivel": true
               },
               {
                 "nome": "Linguagem de Programação",
-                "url": "https://drive.google.com/drive/folders/1rLJCVyFrkto7-sunowRmusYcQ3LHlPcz?usp=sharing",
+                "url": "https://drive.google.com/drive/folders/1ldrFiHCGyxDpCPsvCjD-XOXnjLJfylru?usp=sharing",
                 "disponivel": true
               }
             ]
@@ -27,12 +27,12 @@
             "disciplinas": [
               {
                 "nome": "Programação para a Internet",
-                "url": "https://drive.google.com/drive/folders/1z7UGp1uvlRwETnisXErTqy5lTUbgOXL1?usp=sharing",
+                "url": "https://drive.google.com/drive/folders/1XPPAM3PW_0gSvZr3r2kEFKc0OEnLs1Tf?usp=sharing",
                 "disponivel": true
               },
               {
                 "nome": "Sistemas Integrados de Gestão e Aplicações",
-                "url": "https://drive.google.com/drive/folders/16tO-ZPPKDpGcA3mRZiB6pT19ORh6QLk_?usp=sharing",
+                "url": "https://drive.google.com/drive/folders/14b5n9x9ccN6KfqkEDDL2ABZLtrSYxyHA?usp=sharing",
                 "disponivel": true
               }
             ]
