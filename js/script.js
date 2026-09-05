@@ -313,55 +313,83 @@ document.addEventListener('DOMContentLoaded', () => {
         const questions = Array.isArray(assessment.questoes) ? assessment.questoes : [];
         currentQuizState = {
             questions,
-            answers: new Map()
+            answers: new Map(),
+            currentIndex: 0,
+            quizData
         };
 
         quizTitle.innerHTML = `<i class="fas fa-clipboard-question"></i> ${escapeHTML(disciplina.nome)}`;
-        quizSubtitle.textContent = `${assessment.titulo || 'Questões de Fixação'} - ${questions.length} questão(ões)`;
+        quizSubtitle.textContent = `${assessment.titulo || 'Questões de Fixação'} - ${formatQuestionCount(questions.length)}`;
         quizContainer.classList.remove('hidden');
 
-        renderQuizQuestions(questions, quizData);
+        renderCurrentQuestion();
         updateScore();
     }
 
-    function renderQuizQuestions(questions, quizData) {
+    function renderCurrentQuestion() {
         quizBody.innerHTML = '';
+
+        if (!currentQuizState) return;
+
+        const { questions, currentIndex, quizData } = currentQuizState;
 
         if (!questions.length) {
             quizBody.innerHTML = '<div class="quiz-empty">Nenhuma questão cadastrada para esta avaliação.</div>';
             return;
         }
 
-        questions.forEach((question, questionIndex) => {
-            const article = document.createElement('article');
-            article.className = 'question-card';
-            article.dataset.questionIndex = questionIndex;
+        const question = questions[currentIndex];
+        const answer = currentQuizState.answers.get(currentIndex);
+        const article = document.createElement('article');
+        article.className = 'question-card';
+        article.dataset.questionIndex = currentIndex;
 
-            const alternatives = normalizeAlternatives(question.alternativas);
+        if (answer) {
+            article.classList.add(answer.isCorrect ? 'correct' : 'wrong');
+        }
 
-            article.innerHTML = `
-                <div class="question-topline">
-                    <span>Questão ${questionIndex + 1}</span>
-                    <span>${escapeHTML(quizData.disciplina || '')}</span>
-                </div>
-                <h4>${escapeHTML(question.enunciado || '')}</h4>
-                <div class="alternatives"></div>
-                <div class="question-feedback" aria-live="polite"></div>
-            `;
+        const alternatives = normalizeAlternatives(question.alternativas);
 
-            const alternativesContainer = article.querySelector('.alternatives');
-            alternatives.forEach((alternative, alternativeIndex) => {
-                const button = document.createElement('button');
-                button.type = 'button';
-                button.className = 'alternative-btn';
-                button.dataset.alternativeId = alternative.id;
-                button.innerHTML = `<strong>${escapeHTML(alternative.id)}</strong><span>${escapeHTML(alternative.texto)}</span>`;
-                button.addEventListener('click', () => answerQuestion(question, questionIndex, alternative.id, article));
-                alternativesContainer.appendChild(button);
-            });
+        article.innerHTML = `
+            <div class="question-topline">
+                <span>Questão ${currentIndex + 1} de ${questions.length}</span>
+                <span>${escapeHTML(quizData.disciplina || '')}</span>
+            </div>
+            <h4>${escapeHTML(question.enunciado || '')}</h4>
+            <div class="alternatives"></div>
+            <div class="question-feedback" aria-live="polite"></div>
+        `;
 
-            quizBody.appendChild(article);
+        const alternativesContainer = article.querySelector('.alternatives');
+        alternatives.forEach(alternative => {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'alternative-btn';
+            button.dataset.alternativeId = alternative.id;
+            button.innerHTML = `<strong>${escapeHTML(alternative.id)}</strong><span>${escapeHTML(alternative.texto)}</span>`;
+            button.addEventListener('click', () => answerQuestion(question, currentIndex, alternative.id, article));
+
+            if (answer) {
+                button.disabled = true;
+
+                if (alternative.id === String(question.correta || '').trim()) {
+                    button.classList.add('correct');
+                }
+
+                if (alternative.id === answer.selectedId && !answer.isCorrect) {
+                    button.classList.add('wrong');
+                }
+            }
+
+            alternativesContainer.appendChild(button);
         });
+
+        if (answer) {
+            renderQuestionFeedback(question, answer.isCorrect, article);
+        }
+
+        quizBody.appendChild(article);
+        quizBody.appendChild(createQuizNavigation());
     }
 
     function answerQuestion(question, questionIndex, selectedId, questionCard) {
@@ -369,7 +397,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const correctId = String(question.correta || '').trim();
         const isCorrect = selectedId === correctId;
-        currentQuizState.answers.set(questionIndex, isCorrect);
+        currentQuizState.answers.set(questionIndex, {
+            isCorrect,
+            selectedId
+        });
 
         questionCard.classList.add(isCorrect ? 'correct' : 'wrong');
         questionCard.querySelectorAll('.alternative-btn').forEach(button => {
@@ -385,14 +416,46 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        renderQuestionFeedback(question, isCorrect, questionCard);
+        updateScore();
+    }
+
+    function createQuizNavigation() {
+        const nav = document.createElement('div');
+        nav.className = 'quiz-navigation';
+
+        const previousButton = document.createElement('button');
+        previousButton.type = 'button';
+        previousButton.className = 'glass-btn quiz-nav-btn';
+        previousButton.innerHTML = '<i class="fas fa-arrow-left"></i> Voltar';
+        previousButton.disabled = currentQuizState.currentIndex === 0;
+        previousButton.addEventListener('click', () => {
+            currentQuizState.currentIndex -= 1;
+            renderCurrentQuestion();
+        });
+
+        const nextButton = document.createElement('button');
+        nextButton.type = 'button';
+        nextButton.className = 'glass-btn quiz-nav-btn';
+        nextButton.innerHTML = 'Próxima <i class="fas fa-arrow-right"></i>';
+        nextButton.disabled = currentQuizState.currentIndex === currentQuizState.questions.length - 1;
+        nextButton.addEventListener('click', () => {
+            currentQuizState.currentIndex += 1;
+            renderCurrentQuestion();
+        });
+
+        nav.appendChild(previousButton);
+        nav.appendChild(nextButton);
+        return nav;
+    }
+
+    function renderQuestionFeedback(question, isCorrect, questionCard) {
         const feedback = question.feedback || 'Revise o conteúdo relacionado a esta questão.';
         const feedbackElement = questionCard.querySelector('.question-feedback');
         feedbackElement.innerHTML = `
             <strong>${isCorrect ? 'Resposta correta.' : 'Resposta incorreta.'}</strong>
             <p>${escapeHTML(feedback)}</p>
         `;
-
-        updateScore();
     }
 
     function updateScore() {
@@ -404,7 +467,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const results = Array.from(currentQuizState.answers.values());
-        const correct = results.filter(Boolean).length;
+        const correct = results.filter(result => result.isCorrect).length;
         const wrong = results.length - correct;
         const total = currentQuizState.questions.length || 1;
         const grade = (correct / total) * 10;
@@ -412,6 +475,10 @@ document.addEventListener('DOMContentLoaded', () => {
         quizCorrect.textContent = correct;
         quizWrong.textContent = wrong;
         quizGrade.textContent = grade.toFixed(1);
+    }
+
+    function formatQuestionCount(total) {
+        return total === 1 ? '1 questão' : `${total} questões`;
     }
 
     function normalizeAlternatives(alternatives) {
