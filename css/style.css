@@ -757,6 +757,10 @@ header {
     color: var(--cyan);
 }
 
+.question-card.wrong .question-feedback strong {
+    color: var(--red);
+}
+
 .question-feedback p {
     color: var(--fg-main);
     margin-top: 6px;
