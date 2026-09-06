@@ -12,7 +12,9 @@
               {
                 "nome": "Banco de Dados",
                 "url": "https://drive.google.com/drive/folders/19SSzgktv7QRHEsFsfFROU72MpYOuEVbP?usp=sharing",
-                "disponivel": true
+                "disponivel": true,
+                "questoes": "questoes/banco-de-dados-ads-av1.json"
+
               },
               {
                 "nome": "Linguagem de Programação",

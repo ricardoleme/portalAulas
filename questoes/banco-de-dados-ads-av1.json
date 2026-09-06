@@ -1,0 +1,617 @@
+{
+  "disciplina": "Banco de Dados",
+  "versao": 1,
+  "avaliacoes": [
+    {
+      "id": "av1",
+      "titulo": "1a avaliação",
+      "questoes": [
+        {
+          "id": "bd-av1-q1",
+          "enunciado": "Qual alternativa diferencia corretamente dado e informação?",
+          "alternativas": [
+            { "id": "A", "texto": "Dado é sempre textual; informação é sempre numérica." },
+            { "id": "B", "texto": "Dado é um registro bruto; informação é o dado organizado e interpretado em um contexto." },
+            { "id": "C", "texto": "Dado só existe em banco relacional; informação só existe em planilhas." },
+            { "id": "D", "texto": "Dado e informação são conceitos equivalentes em qualquer sistema." }
+          ],
+          "correta": "B",
+          "feedback": "Dado é um valor bruto, como 35 ou 'Maria'. Informação surge quando esses dados ganham contexto, como 'Maria tem 35 anos'."
+        },
+        {
+          "id": "bd-av1-q2",
+          "enunciado": "Em uma tabela ALUNO com a coluna data_nascimento, o valor '2005-04-18' isolado representa melhor o quê?",
+          "alternativas": [
+            { "id": "A", "texto": "Um dado, pois é um valor registrado sem interpretação completa fora do contexto." },
+            { "id": "B", "texto": "Uma entidade, pois possui existência própria no MER." },
+            { "id": "C", "texto": "Uma cardinalidade máxima, pois limita quantos alunos podem nascer no mesmo dia." },
+            { "id": "D", "texto": "Um relacionamento N-N, pois uma data pode aparecer em várias linhas." }
+          ],
+          "correta": "A",
+          "feedback": "O valor da data é um dado. Ele pode virar informação quando associado ao aluno e usado para interpretar idade, perfil ou estatísticas."
+        },
+        {
+          "id": "bd-av1-q3",
+          "enunciado": "Qual alternativa apresenta um exemplo de informação produzida a partir de dados?",
+          "alternativas": [
+            { "id": "A", "texto": "O número 42 armazenado em uma coluna sem descrição." },
+            { "id": "B", "texto": "A palavra 'ativo' digitada em um campo sem contexto." },
+            { "id": "C", "texto": "A média de notas da turma calculada a partir das notas dos alunos." },
+            { "id": "D", "texto": "O nome de uma coluna antes de a tabela existir." }
+          ],
+          "correta": "C",
+          "feedback": "A média de notas é informação porque resulta de dados processados e contextualizados para responder a uma necessidade."
+        },
+        {
+          "id": "bd-av1-q4",
+          "enunciado": "Qual definição de banco de dados está mais correta?",
+          "alternativas": [
+            { "id": "A", "texto": "Um conjunto organizado de dados relacionados, armazenados para consulta e manutenção." },
+            { "id": "B", "texto": "Um arquivo de texto que não permite atualização." },
+            { "id": "C", "texto": "Um programa usado apenas para desenhar telas." },
+            { "id": "D", "texto": "Uma lista temporária mantida somente na memória do navegador." }
+          ],
+          "correta": "A",
+          "feedback": "Banco de dados organiza dados relacionados e permite operações como inclusão, consulta, alteração e exclusão."
+        },
+        {
+          "id": "bd-av1-q5",
+          "enunciado": "Em um sistema acadêmico, qual conjunto seria mais adequado para compor um banco de dados?",
+          "alternativas": [
+            { "id": "A", "texto": "Cores da interface, tamanho dos botões e fonte do menu." },
+            { "id": "B", "texto": "Alunos, disciplinas, matrículas, notas e professores." },
+            { "id": "C", "texto": "Apenas imagens decorativas usadas na página inicial." },
+            { "id": "D", "texto": "Somente o logotipo da instituição." }
+          ],
+          "correta": "B",
+          "feedback": "Alunos, disciplinas, matrículas, notas e professores são dados do domínio acadêmico e possuem relações importantes entre si."
+        },
+        {
+          "id": "bd-av1-q6",
+          "enunciado": "No MER, o que é uma entidade?",
+          "alternativas": [
+            { "id": "A", "texto": "Uma regra visual usada apenas para colorir diagramas." },
+            { "id": "B", "texto": "Um objeto ou conceito do mundo real sobre o qual se deseja armazenar dados." },
+            { "id": "C", "texto": "Uma linha obrigatoriamente duplicada em uma tabela." },
+            { "id": "D", "texto": "Uma consulta SQL pronta para execução." }
+          ],
+          "correta": "B",
+          "feedback": "Entidade representa algo relevante para o sistema, como Cliente, Produto, Pedido, Aluno ou Disciplina."
+        },
+        {
+          "id": "bd-av1-q7",
+          "enunciado": "Qual alternativa contém apenas exemplos de entidades em um MER de uma loja?",
+          "alternativas": [
+            { "id": "A", "texto": "Cliente, Produto, Pedido e Fornecedor." },
+            { "id": "B", "texto": "Nome, preço, data e quantidade." },
+            { "id": "C", "texto": "1-N, N-N, 1-1 e obrigatória." },
+            { "id": "D", "texto": "Selecionar, inserir, alterar e excluir." }
+          ],
+          "correta": "A",
+          "feedback": "Cliente, Produto, Pedido e Fornecedor são objetos do domínio. Nome, preço e data são exemplos de atributos."
+        },
+        {
+          "id": "bd-av1-q8",
+          "enunciado": "No MER, o que é um atributo?",
+          "alternativas": [
+            { "id": "A", "texto": "Uma característica que descreve uma entidade ou relacionamento." },
+            { "id": "B", "texto": "Uma entidade que sempre vira duas tabelas." },
+            { "id": "C", "texto": "Uma cardinalidade que sempre vale N-N." },
+            { "id": "D", "texto": "Um banco de dados inteiro." }
+          ],
+          "correta": "A",
+          "feedback": "Atributos descrevem propriedades, como nome do cliente, preço do produto ou data do pedido."
+        },
+        {
+          "id": "bd-av1-q9",
+          "enunciado": "Na entidade CLIENTE, qual alternativa apresenta atributos coerentes?",
+          "alternativas": [
+            { "id": "A", "texto": "Nome, CPF, telefone e data_cadastro." },
+            { "id": "B", "texto": "Compra, vende, pertence e possui." },
+            { "id": "C", "texto": "1, N, mínimo e máximo." },
+            { "id": "D", "texto": "SELECT, INSERT, UPDATE e DELETE." }
+          ],
+          "correta": "A",
+          "feedback": "Nome, CPF, telefone e data_cadastro são características que podem descrever clientes."
+        },
+        {
+          "id": "bd-av1-q10",
+          "enunciado": "O que caracteriza um atributo simples no MER?",
+          "alternativas": [
+            { "id": "A", "texto": "Ele pode ser dividido em partes menores com significado próprio." },
+            { "id": "B", "texto": "Ele não é dividido em subatributos relevantes no modelo." },
+            { "id": "C", "texto": "Ele sempre representa um relacionamento N-N." },
+            { "id": "D", "texto": "Ele sempre precisa ser chave estrangeira." }
+          ],
+          "correta": "B",
+          "feedback": "Atributo simples é tratado como indivisível no modelo, como sexo, status ou preço."
+        },
+        {
+          "id": "bd-av1-q11",
+          "enunciado": "Qual alternativa apresenta um atributo simples para a entidade PRODUTO?",
+          "alternativas": [
+            { "id": "A", "texto": "Preço." },
+            { "id": "B", "texto": "Endereço formado por rua, número, bairro e cidade." },
+            { "id": "C", "texto": "Nome completo dividido em nome e sobrenome." },
+            { "id": "D", "texto": "Contato formado por telefone e e-mail." }
+          ],
+          "correta": "A",
+          "feedback": "Preço normalmente é modelado como atributo simples. Endereço, nome completo e contato podem ser compostos."
+        },
+        {
+          "id": "bd-av1-q12",
+          "enunciado": "O que caracteriza um atributo composto no MER?",
+          "alternativas": [
+            { "id": "A", "texto": "É um atributo que pode ser decomposto em partes menores com significado." },
+            { "id": "B", "texto": "É um atributo que nunca aparece no DER." },
+            { "id": "C", "texto": "É uma tabela criada apenas para relacionamentos 1-1." },
+            { "id": "D", "texto": "É uma restrição que impede cardinalidade mínima zero." }
+          ],
+          "correta": "A",
+          "feedback": "Um atributo composto pode ser dividido, como endereço em rua, número, bairro, cidade e CEP."
+        },
+        {
+          "id": "bd-av1-q13",
+          "enunciado": "Na entidade PESSOA, qual exemplo representa melhor um atributo composto?",
+          "alternativas": [
+            { "id": "A", "texto": "CPF." },
+            { "id": "B", "texto": "Estado civil." },
+            { "id": "C", "texto": "Endereço composto por rua, número, bairro, cidade e UF." },
+            { "id": "D", "texto": "Data de cadastro." }
+          ],
+          "correta": "C",
+          "feedback": "Endereço é composto porque pode ser quebrado em atributos menores, cada um com significado próprio."
+        },
+        {
+          "id": "bd-av1-q14",
+          "enunciado": "O que significa dizer que CPF é um atributo único da entidade CLIENTE?",
+          "alternativas": [
+            { "id": "A", "texto": "Vários clientes podem compartilhar o mesmo CPF." },
+            { "id": "B", "texto": "O CPF identifica no máximo um cliente no conjunto de clientes." },
+            { "id": "C", "texto": "O CPF precisa ser dividido em rua, número e cidade." },
+            { "id": "D", "texto": "O CPF só pode ser usado em relacionamentos N-N." }
+          ],
+          "correta": "B",
+          "feedback": "Atributo único não pode se repetir entre ocorrências da entidade. CPF é um exemplo comum de restrição de unicidade."
+        },
+        {
+          "id": "bd-av1-q15",
+          "enunciado": "Qual alternativa contém um atributo que normalmente deveria ser único em uma tabela USUARIO?",
+          "alternativas": [
+            { "id": "A", "texto": "Senha criptografada." },
+            { "id": "B", "texto": "Data de criação." },
+            { "id": "C", "texto": "E-mail de login." },
+            { "id": "D", "texto": "Nome exibido." }
+          ],
+          "correta": "C",
+          "feedback": "Em muitos sistemas, o e-mail usado para login deve ser único para evitar duas contas com o mesmo identificador."
+        },
+        {
+          "id": "bd-av1-q16",
+          "enunciado": "No MER, o que a cardinalidade mínima indica?",
+          "alternativas": [
+            { "id": "A", "texto": "A menor quantidade de ocorrências de uma entidade que deve participar de um relacionamento." },
+            { "id": "B", "texto": "O maior número de colunas permitido em uma tabela." },
+            { "id": "C", "texto": "A quantidade máxima de bancos de dados em um servidor." },
+            { "id": "D", "texto": "O tamanho mínimo em caracteres de um atributo textual." }
+          ],
+          "correta": "A",
+          "feedback": "Cardinalidade mínima expressa obrigatoriedade ou opcionalidade. Mínimo 0 indica participação opcional; mínimo 1 indica participação obrigatória."
+        },
+        {
+          "id": "bd-av1-q17",
+          "enunciado": "No relacionamento CLIENTE realiza PEDIDO, se todo pedido deve pertencer a exatamente um cliente, qual cardinalidade do lado de CLIENTE para cada PEDIDO é adequada?",
+          "alternativas": [
+            { "id": "A", "texto": "Mínima 0 e máxima N." },
+            { "id": "B", "texto": "Mínima 1 e máxima 1." },
+            { "id": "C", "texto": "Mínima N e máxima 1." },
+            { "id": "D", "texto": "Mínima 0 e máxima 0." }
+          ],
+          "correta": "B",
+          "feedback": "Se cada pedido deve estar associado a exatamente um cliente, a participação do cliente em relação a um pedido é 1,1."
+        },
+        {
+          "id": "bd-av1-q18",
+          "enunciado": "No MER, o que a cardinalidade máxima indica?",
+          "alternativas": [
+            { "id": "A", "texto": "A maior quantidade de ocorrências de uma entidade que pode participar de um relacionamento." },
+            { "id": "B", "texto": "O limite máximo de caracteres de todos os nomes de entidades." },
+            { "id": "C", "texto": "A maior versão possível de um banco de dados." },
+            { "id": "D", "texto": "A quantidade máxima de atributos compostos em um diagrama." }
+          ],
+          "correta": "A",
+          "feedback": "Cardinalidade máxima mostra se uma ocorrência se relaciona com uma, muitas ou nenhuma ocorrência do outro lado, conforme a regra de negócio."
+        },
+        {
+          "id": "bd-av1-q19",
+          "enunciado": "Em PROFESSOR orienta ALUNO, se um professor pode orientar vários alunos e cada aluno tem um único orientador, qual é a cardinalidade máxima do relacionamento?",
+          "alternativas": [
+            { "id": "A", "texto": "1-1." },
+            { "id": "B", "texto": "1-N." },
+            { "id": "C", "texto": "N-N." },
+            { "id": "D", "texto": "0-0." }
+          ],
+          "correta": "B",
+          "feedback": "Um professor pode estar ligado a muitos alunos, enquanto cada aluno se liga a um professor. Isso caracteriza 1-N."
+        },
+        {
+          "id": "bd-av1-q20",
+          "enunciado": "Em ALUNO cursa DISCIPLINA, se um aluno pode cursar várias disciplinas e uma disciplina pode ter vários alunos, qual cardinalidade máxima é representada?",
+          "alternativas": [
+            { "id": "A", "texto": "1-1." },
+            { "id": "B", "texto": "1-N." },
+            { "id": "C", "texto": "N-N." },
+            { "id": "D", "texto": "1-0." }
+          ],
+          "correta": "C",
+          "feedback": "Quando várias ocorrências de uma entidade podem se relacionar com várias ocorrências da outra, a cardinalidade máxima é N-N."
+        },
+        {
+          "id": "bd-av1-q21",
+          "enunciado": "Qual alternativa representa uma relação 1-1 coerente?",
+          "alternativas": [
+            { "id": "A", "texto": "Pessoa possui CarteiraDeMotorista, considerando no máximo uma carteira por pessoa e uma pessoa por carteira." },
+            { "id": "B", "texto": "Cliente realiza Pedido, considerando muitos pedidos por cliente." },
+            { "id": "C", "texto": "Aluno cursa Disciplina, considerando muitos alunos em muitas disciplinas." },
+            { "id": "D", "texto": "Pedido contém Produto, considerando vários produtos em vários pedidos." }
+          ],
+          "correta": "A",
+          "feedback": "Pessoa e CarteiraDeMotorista podem formar 1-1 se a regra permitir no máximo uma carteira por pessoa e uma pessoa por carteira."
+        },
+        {
+          "id": "bd-av1-q22",
+          "enunciado": "Qual alternativa representa uma relação 1-N coerente?",
+          "alternativas": [
+            { "id": "A", "texto": "Departamento possui Funcionário, considerando vários funcionários por departamento e um departamento por funcionário." },
+            { "id": "B", "texto": "Aluno cursa Disciplina, considerando várias disciplinas por aluno e vários alunos por disciplina." },
+            { "id": "C", "texto": "Pessoa possui CPF, considerando um CPF por pessoa e uma pessoa por CPF." },
+            { "id": "D", "texto": "Produto aparece em Pedido, considerando vários produtos por pedido e vários pedidos por produto." }
+          ],
+          "correta": "A",
+          "feedback": "Um departamento pode possuir muitos funcionários, mas cada funcionário pertence a um departamento. Isso é 1-N."
+        },
+        {
+          "id": "bd-av1-q23",
+          "enunciado": "Qual alternativa representa uma relação N-N coerente?",
+          "alternativas": [
+            { "id": "A", "texto": "País possui Capital, considerando uma capital por país e um país por capital." },
+            { "id": "B", "texto": "Departamento possui Funcionário, considerando um departamento por funcionário." },
+            { "id": "C", "texto": "Médico atende Paciente, considerando vários médicos por paciente e vários pacientes por médico." },
+            { "id": "D", "texto": "Pedido pertence a Cliente, considerando um cliente por pedido." }
+          ],
+          "correta": "C",
+          "feedback": "Médico e Paciente formam N-N quando cada médico atende vários pacientes e cada paciente pode ser atendido por vários médicos."
+        },
+        {
+          "id": "bd-av1-q24",
+          "enunciado": "No DER relacional, uma entidade forte CLIENTE com atributos id_cliente, nome e cpf normalmente vira o quê?",
+          "alternativas": [
+            { "id": "A", "texto": "Uma tabela CLIENTE com colunas id_cliente, nome e cpf." },
+            { "id": "B", "texto": "Um relacionamento sem tabela." },
+            { "id": "C", "texto": "Uma cardinalidade mínima obrigatória." },
+            { "id": "D", "texto": "Uma chave estrangeira sem tabela de origem." }
+          ],
+          "correta": "A",
+          "feedback": "Ao converter MER para DER, entidades normalmente se tornam tabelas e seus atributos viram colunas."
+        },
+        {
+          "id": "bd-av1-q25",
+          "enunciado": "Ao converter um atributo composto endereço(rua, numero, bairro, cidade) para o DER, qual prática é mais adequada?",
+          "alternativas": [
+            { "id": "A", "texto": "Criar apenas uma coluna endereço e descartar as partes." },
+            { "id": "B", "texto": "Criar colunas para os componentes relevantes, como rua, numero, bairro e cidade." },
+            { "id": "C", "texto": "Transformar endereço em cardinalidade N-N." },
+            { "id": "D", "texto": "Usar endereço como chave primária de todas as tabelas." }
+          ],
+          "correta": "B",
+          "feedback": "Atributos compostos costumam ser decompostos no modelo relacional para manter cada parte consultável e bem estruturada."
+        },
+        {
+          "id": "bd-av1-q26",
+          "enunciado": "No DER, como representar que o CPF de CLIENTE deve ser único?",
+          "alternativas": [
+            { "id": "A", "texto": "Criando uma restrição UNIQUE sobre a coluna cpf." },
+            { "id": "B", "texto": "Duplicando a coluna cpf em todas as tabelas." },
+            { "id": "C", "texto": "Transformando cpf em relacionamento N-N." },
+            { "id": "D", "texto": "Removendo a chave primária da tabela CLIENTE." }
+          ],
+          "correta": "A",
+          "feedback": "Uma restrição UNIQUE impede que dois registros usem o mesmo valor de CPF."
+        },
+        {
+          "id": "bd-av1-q27",
+          "enunciado": "Ao mapear uma relação 1-N entre DEPARTAMENTO e FUNCIONARIO, qual solução relacional é mais comum?",
+          "alternativas": [
+            { "id": "A", "texto": "Colocar id_departamento como chave estrangeira em FUNCIONARIO." },
+            { "id": "B", "texto": "Colocar todos os funcionários em uma única coluna textual de DEPARTAMENTO." },
+            { "id": "C", "texto": "Criar obrigatoriamente uma tabela associativa, mesmo sem necessidade." },
+            { "id": "D", "texto": "Remover a tabela FUNCIONARIO." }
+          ],
+          "correta": "A",
+          "feedback": "Em 1-N, a chave estrangeira normalmente fica no lado N. Assim, cada funcionário referencia o departamento ao qual pertence."
+        },
+        {
+          "id": "bd-av1-q28",
+          "enunciado": "Considere CLIENTE(id_cliente, nome) e PEDIDO(id_pedido, data). Se um cliente realiza vários pedidos e cada pedido pertence a um cliente, qual coluna deve aparecer em PEDIDO no DER?",
+          "alternativas": [
+            { "id": "A", "texto": "id_cliente como chave estrangeira." },
+            { "id": "B", "texto": "nome_cliente como chave primária obrigatória." },
+            { "id": "C", "texto": "lista_pedidos como coluna multivalorada." },
+            { "id": "D", "texto": "id_pedido repetido na tabela CLIENTE para cada pedido." }
+          ],
+          "correta": "A",
+          "feedback": "PEDIDO é o lado N da relação, portanto recebe id_cliente como chave estrangeira para indicar seu cliente."
+        },
+        {
+          "id": "bd-av1-q29",
+          "enunciado": "Ao converter uma relação N-N entre ALUNO e DISCIPLINA, qual estrutura deve ser criada no DER?",
+          "alternativas": [
+            { "id": "A", "texto": "Uma tabela associativa, como MATRICULA, com chaves estrangeiras para ALUNO e DISCIPLINA." },
+            { "id": "B", "texto": "Uma única coluna disciplina dentro de ALUNO contendo vários nomes separados por vírgula." },
+            { "id": "C", "texto": "A remoção de DISCIPLINA, pois N-N não pode existir em banco relacional." },
+            { "id": "D", "texto": "Uma chave primária duplicada nas duas tabelas sem relacionamento." }
+          ],
+          "correta": "A",
+          "feedback": "Relacionamentos N-N são resolvidos com uma tabela associativa que guarda as chaves das entidades relacionadas."
+        },
+        {
+          "id": "bd-av1-q30",
+          "enunciado": "Qual alternativa mostra um DER adequado para ALUNO cursa DISCIPLINA em relação N-N?",
+          "alternativas": [
+            { "id": "A", "texto": "ALUNO(id_aluno, nome), DISCIPLINA(id_disciplina, nome), MATRICULA(id_aluno, id_disciplina)." },
+            { "id": "B", "texto": "ALUNO(id_aluno, nome, disciplina1, disciplina2, disciplina3)." },
+            { "id": "C", "texto": "DISCIPLINA(id_disciplina, nome, aluno1, aluno2, aluno3)." },
+            { "id": "D", "texto": "ALUNO_DISCIPLINA(nome_aluno, nome_disciplina) sem chaves estrangeiras." }
+          ],
+          "correta": "A",
+          "feedback": "A tabela MATRICULA representa a associação e referencia as chaves primárias de ALUNO e DISCIPLINA."
+        },
+        {
+          "id": "bd-av1-q31",
+          "enunciado": "Em uma tabela associativa MATRICULA(id_aluno, id_disciplina, data_matricula), qual é o papel de data_matricula?",
+          "alternativas": [
+            { "id": "A", "texto": "Atributo do relacionamento entre ALUNO e DISCIPLINA." },
+            { "id": "B", "texto": "Entidade independente obrigatória." },
+            { "id": "C", "texto": "Cardinalidade máxima da entidade ALUNO." },
+            { "id": "D", "texto": "Chave primária da tabela DISCIPLINA." }
+          ],
+          "correta": "A",
+          "feedback": "Quando um dado descreve a associação, como a data em que o aluno se matriculou na disciplina, ele vira atributo da tabela associativa."
+        },
+        {
+          "id": "bd-av1-q32",
+          "enunciado": "Ao mapear uma relação 1-1 entre PESSOA e PASSAPORTE, qual solução pode ser adequada no DER?",
+          "alternativas": [
+            { "id": "A", "texto": "Colocar a chave estrangeira em uma das tabelas e aplicar UNIQUE para manter o vínculo 1-1." },
+            { "id": "B", "texto": "Criar uma coluna com vários passaportes dentro de PESSOA." },
+            { "id": "C", "texto": "Criar obrigatoriamente uma relação N-N." },
+            { "id": "D", "texto": "Usar a cardinalidade como nome da chave primária." }
+          ],
+          "correta": "A",
+          "feedback": "Em 1-1, uma chave estrangeira com restrição UNIQUE em uma das tabelas preserva que cada registro se relacione com no máximo um do outro lado."
+        },
+        {
+          "id": "bd-av1-q33",
+          "enunciado": "Considere FUNCIONARIO(id_funcionario, nome) e CRACHA(id_cracha, numero). Se cada crachá pertence a um único funcionário e cada funcionário tem no máximo um crachá, qual coluna é coerente em CRACHA?",
+          "alternativas": [
+            { "id": "A", "texto": "id_funcionario como chave estrangeira com restrição UNIQUE." },
+            { "id": "B", "texto": "varios_funcionarios como lista textual." },
+            { "id": "C", "texto": "id_cracha repetido várias vezes em FUNCIONARIO." },
+            { "id": "D", "texto": "cardinalidade_maxima como chave estrangeira." }
+          ],
+          "correta": "A",
+          "feedback": "A chave estrangeira em CRACHA aponta para FUNCIONARIO e o UNIQUE impede que vários crachás apontem para o mesmo funcionário."
+        },
+        {
+          "id": "bd-av1-q34",
+          "enunciado": "Qual alternativa descreve corretamente o mapeamento de uma relação 1-N obrigatória do lado N?",
+          "alternativas": [
+            { "id": "A", "texto": "A chave estrangeira no lado N deve aceitar obrigatoriamente valor nulo." },
+            { "id": "B", "texto": "A chave estrangeira no lado N deve ser NOT NULL para indicar participação obrigatória." },
+            { "id": "C", "texto": "A entidade do lado 1 deve ser removida." },
+            { "id": "D", "texto": "A chave estrangeira deve ser substituída por uma coluna multivalorada." }
+          ],
+          "correta": "B",
+          "feedback": "Se a participação do lado N é obrigatória, cada registro do lado N precisa referenciar um registro do lado 1, então a chave estrangeira não deve ser nula."
+        },
+        {
+          "id": "bd-av1-q35",
+          "enunciado": "Em PEDIDO pertence a CLIENTE, se um pedido pode existir apenas quando há cliente associado, como id_cliente em PEDIDO deve ser tratado?",
+          "alternativas": [
+            { "id": "A", "texto": "Como chave estrangeira NOT NULL." },
+            { "id": "B", "texto": "Como coluna opcional sem referência." },
+            { "id": "C", "texto": "Como atributo composto." },
+            { "id": "D", "texto": "Como lista de vários clientes." }
+          ],
+          "correta": "A",
+          "feedback": "Se todo pedido deve ter cliente, a chave estrangeira id_cliente em PEDIDO precisa ser obrigatória."
+        },
+        {
+          "id": "bd-av1-q36",
+          "enunciado": "Em uma relação 1-N opcional do lado N, o que uma chave estrangeira que aceita NULL pode indicar?",
+          "alternativas": [
+            { "id": "A", "texto": "Que o registro do lado N pode existir temporariamente sem estar associado ao lado 1." },
+            { "id": "B", "texto": "Que a relação virou automaticamente N-N." },
+            { "id": "C", "texto": "Que a chave primária foi removida." },
+            { "id": "D", "texto": "Que todos os atributos são compostos." }
+          ],
+          "correta": "A",
+          "feedback": "NULL na chave estrangeira pode representar participação opcional, quando a regra de negócio permite ausência de associação."
+        },
+        {
+          "id": "bd-av1-q37",
+          "enunciado": "Qual alternativa mostra um erro comum ao mapear uma relação N-N?",
+          "alternativas": [
+            { "id": "A", "texto": "Criar uma tabela associativa com as duas chaves estrangeiras." },
+            { "id": "B", "texto": "Adicionar atributos próprios do relacionamento na tabela associativa." },
+            { "id": "C", "texto": "Guardar vários códigos em uma única coluna, separados por vírgula." },
+            { "id": "D", "texto": "Usar chave composta na tabela associativa quando adequado." }
+          ],
+          "correta": "C",
+          "feedback": "Guardar vários valores em uma única coluna dificulta integridade, consulta e manutenção. Em N-N, usa-se tabela associativa."
+        },
+        {
+          "id": "bd-av1-q38",
+          "enunciado": "Considere PEDIDO e PRODUTO em relação N-N, com quantidade em cada item. Qual DER é mais adequado?",
+          "alternativas": [
+            { "id": "A", "texto": "PEDIDO(id_pedido), PRODUTO(id_produto), ITEM_PEDIDO(id_pedido, id_produto, quantidade)." },
+            { "id": "B", "texto": "PEDIDO(id_pedido, produtos, quantidades)." },
+            { "id": "C", "texto": "PRODUTO(id_produto, pedidos)." },
+            { "id": "D", "texto": "ITEM_PEDIDO(quantidade) sem referência a pedido ou produto." }
+          ],
+          "correta": "A",
+          "feedback": "ITEM_PEDIDO resolve o N-N e armazena quantidade, que é atributo da associação entre pedido e produto."
+        },
+        {
+          "id": "bd-av1-q39",
+          "enunciado": "Em uma tabela ITEM_PEDIDO(id_pedido, id_produto, quantidade), id_pedido e id_produto são normalmente o quê?",
+          "alternativas": [
+            { "id": "A", "texto": "Chaves estrangeiras que apontam para PEDIDO e PRODUTO." },
+            { "id": "B", "texto": "Atributos compostos sem relação com outras tabelas." },
+            { "id": "C", "texto": "Cardinalidades mínimas." },
+            { "id": "D", "texto": "Informações calculadas automaticamente sem dados." }
+          ],
+          "correta": "A",
+          "feedback": "A tabela associativa contém chaves estrangeiras para as entidades que ela conecta."
+        },
+        {
+          "id": "bd-av1-q40",
+          "enunciado": "Qual alternativa define melhor chave primária no DER?",
+          "alternativas": [
+            { "id": "A", "texto": "Coluna ou conjunto de colunas que identifica unicamente cada registro de uma tabela." },
+            { "id": "B", "texto": "Texto livre usado para explicar o objetivo do banco de dados." },
+            { "id": "C", "texto": "Valor repetido obrigatoriamente em todas as linhas." },
+            { "id": "D", "texto": "Apenas o primeiro atributo simples desenhado no MER." }
+          ],
+          "correta": "A",
+          "feedback": "A chave primária garante identificação única de cada linha, como id_cliente em CLIENTE."
+        },
+        {
+          "id": "bd-av1-q41",
+          "enunciado": "Qual alternativa define melhor chave estrangeira no DER?",
+          "alternativas": [
+            { "id": "A", "texto": "Coluna que referencia a chave de outra tabela para representar relacionamento." },
+            { "id": "B", "texto": "Coluna que nunca pode participar de relacionamento." },
+            { "id": "C", "texto": "Atributo usado apenas para armazenar imagens." },
+            { "id": "D", "texto": "Nome alternativo para cardinalidade máxima." }
+          ],
+          "correta": "A",
+          "feedback": "Chave estrangeira cria vínculo entre tabelas e ajuda a manter integridade referencial."
+        },
+        {
+          "id": "bd-av1-q42",
+          "enunciado": "No DER CLIENTE(id_cliente PK, nome) e PEDIDO(id_pedido PK, data, id_cliente FK), qual relacionamento está representado?",
+          "alternativas": [
+            { "id": "A", "texto": "CLIENTE 1-N PEDIDO." },
+            { "id": "B", "texto": "CLIENTE N-N PEDIDO sem tabela associativa." },
+            { "id": "C", "texto": "CLIENTE 1-1 PEDIDO obrigatoriamente." },
+            { "id": "D", "texto": "PEDIDO como atributo composto de CLIENTE." }
+          ],
+          "correta": "A",
+          "feedback": "A chave estrangeira id_cliente em PEDIDO indica que vários pedidos podem apontar para o mesmo cliente."
+        },
+        {
+          "id": "bd-av1-q43",
+          "enunciado": "No DER ALUNO(id_aluno PK), DISCIPLINA(id_disciplina PK), MATRICULA(id_aluno FK, id_disciplina FK), qual relacionamento do MER foi convertido?",
+          "alternativas": [
+            { "id": "A", "texto": "Um relacionamento N-N entre ALUNO e DISCIPLINA." },
+            { "id": "B", "texto": "Um atributo simples chamado matrícula." },
+            { "id": "C", "texto": "Um relacionamento 1-1 sem chaves estrangeiras." },
+            { "id": "D", "texto": "Uma cardinalidade mínima zero em todas as tabelas." }
+          ],
+          "correta": "A",
+          "feedback": "A tabela MATRICULA é a tabela associativa criada para representar o relacionamento N-N."
+        },
+        {
+          "id": "bd-av1-q44",
+          "enunciado": "Qual alternativa mostra um mapeamento adequado para CLIENTE possui TELEFONE, se um cliente pode ter vários telefones e cada telefone pertence a um cliente?",
+          "alternativas": [
+            { "id": "A", "texto": "CLIENTE(id_cliente, nome) e TELEFONE(id_telefone, numero, id_cliente)." },
+            { "id": "B", "texto": "CLIENTE(id_cliente, nome, telefone1, telefone2, telefone3)." },
+            { "id": "C", "texto": "TELEFONE(numero) sem chave primária e sem cliente." },
+            { "id": "D", "texto": "CLIENTE_TELEFONE(nome_cliente, todos_os_telefones)." }
+          ],
+          "correta": "A",
+          "feedback": "Como um cliente pode ter muitos telefones, TELEFONE fica no lado N e recebe id_cliente como chave estrangeira."
+        },
+        {
+          "id": "bd-av1-q45",
+          "enunciado": "Em uma relação TURMA possui ALUNO, se uma turma pode ter zero ou muitos alunos, mas cada aluno deve estar em uma turma, qual leitura está correta?",
+          "alternativas": [
+            { "id": "A", "texto": "Do lado de TURMA para ALUNO, a participação de alunos pode ter mínimo 0 e máximo N." },
+            { "id": "B", "texto": "Cada aluno pode estar em N turmas obrigatoriamente." },
+            { "id": "C", "texto": "A relação é N-N e dispensa chave estrangeira." },
+            { "id": "D", "texto": "A cardinalidade máxima de TURMA é sempre 1-1." }
+          ],
+          "correta": "A",
+          "feedback": "Uma turma pode existir sem alunos e depois receber muitos. Para cada aluno, a turma é obrigatória conforme a regra descrita."
+        },
+        {
+          "id": "bd-av1-q46",
+          "enunciado": "Considere MER: AUTOR escreve LIVRO. Um autor escreve vários livros e um livro pode ter vários autores. Qual mapeamento relacional é adequado?",
+          "alternativas": [
+            { "id": "A", "texto": "AUTOR(id_autor), LIVRO(id_livro), AUTORIA(id_autor, id_livro)." },
+            { "id": "B", "texto": "AUTOR(id_autor, livros) e LIVRO(id_livro)." },
+            { "id": "C", "texto": "LIVRO(id_livro, autores) apenas." },
+            { "id": "D", "texto": "AUTOR(id_autor) apenas, pois livros são atributos simples." }
+          ],
+          "correta": "A",
+          "feedback": "AUTOR e LIVRO em N-N exigem uma tabela associativa, como AUTORIA, com as chaves estrangeiras das duas entidades."
+        },
+        {
+          "id": "bd-av1-q47",
+          "enunciado": "No mapeamento de AUTORIA(id_autor, id_livro, ordem_autor), o atributo ordem_autor pertence melhor a quê?",
+          "alternativas": [
+            { "id": "A", "texto": "Ao relacionamento AUTOR escreve LIVRO, pois depende da associação entre autor e livro." },
+            { "id": "B", "texto": "Somente à entidade AUTOR, independente do livro." },
+            { "id": "C", "texto": "Somente à entidade LIVRO, independente do autor." },
+            { "id": "D", "texto": "À cardinalidade mínima de AUTOR." }
+          ],
+          "correta": "A",
+          "feedback": "A ordem de autoria faz sentido para um autor em um livro específico, por isso é atributo da associação."
+        },
+        {
+          "id": "bd-av1-q48",
+          "enunciado": "Qual alternativa apresenta uma conversão correta de MER para DER em relação 1-1 opcional entre PESSOA e PERFIL?",
+          "alternativas": [
+            { "id": "A", "texto": "PERFIL(id_perfil PK, bio, id_pessoa FK UNIQUE NULL), se o perfil puder existir sem pessoa temporariamente." },
+            { "id": "B", "texto": "PERFIL(id_perfil, bio, pessoas) com vários ids separados por vírgula." },
+            { "id": "C", "texto": "PESSOA(id_pessoa, perfis) com lista de perfis." },
+            { "id": "D", "texto": "Remover PESSOA, pois relação 1-1 opcional não pode ser mapeada." }
+          ],
+          "correta": "A",
+          "feedback": "Em 1-1, UNIQUE preserva no máximo um perfil por pessoa. Permitir NULL pode representar participação opcional, conforme a regra."
+        },
+        {
+          "id": "bd-av1-q49",
+          "enunciado": "Qual alternativa mostra uma tabela resultante adequada para a entidade FUNCIONARIO com nome composto por primeiro_nome e sobrenome?",
+          "alternativas": [
+            { "id": "A", "texto": "FUNCIONARIO(id_funcionario, primeiro_nome, sobrenome)." },
+            { "id": "B", "texto": "FUNCIONARIO(id_funcionario, nome_composto_obrigatoriamente_sem_partes)." },
+            { "id": "C", "texto": "FUNCIONARIO(primeiro_nome_sobrenome_cardinalidade)." },
+            { "id": "D", "texto": "FUNCIONARIO(id_funcionario) e excluir o nome." }
+          ],
+          "correta": "A",
+          "feedback": "Se o nome foi modelado como composto, suas partes relevantes podem virar colunas separadas no DER."
+        },
+        {
+          "id": "bd-av1-q50",
+          "enunciado": "Considere o MER: CLIENTE realiza PEDIDO; PEDIDO contém PRODUTO. Cliente-Pedido é 1-N e Pedido-Produto é N-N com quantidade. Qual conjunto de tabelas representa melhor o DER?",
+          "alternativas": [
+            { "id": "A", "texto": "CLIENTE(id_cliente), PEDIDO(id_pedido, id_cliente), PRODUTO(id_produto), ITEM_PEDIDO(id_pedido, id_produto, quantidade)." },
+            { "id": "B", "texto": "CLIENTE(id_cliente, pedidos, produtos, quantidades)." },
+            { "id": "C", "texto": "PEDIDO(id_pedido, clientes) e PRODUTO(id_produto, pedidos)." },
+            { "id": "D", "texto": "ITEM_PEDIDO(quantidade) sem chaves estrangeiras." }
+          ],
+          "correta": "A",
+          "feedback": "O 1-N entre CLIENTE e PEDIDO coloca id_cliente em PEDIDO. O N-N entre PEDIDO e PRODUTO é resolvido por ITEM_PEDIDO, que também armazena quantidade."
+        }
+      ]
+    },
+    {
+      "id": "av2",
+      "titulo": "2a avaliação",
+      "questoes": []
+    }
+  ]
+}
