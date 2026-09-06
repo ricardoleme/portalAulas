@@ -425,6 +425,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         renderQuestionFeedback(question, isCorrect, questionCard);
         updateScore();
+
+        if (questionIndex === currentQuizState.questions.length - 1) {
+            renderCurrentQuestion();
+        }
     }
 
     function createQuizNavigation() {
