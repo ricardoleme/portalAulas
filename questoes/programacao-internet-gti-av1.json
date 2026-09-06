@@ -8,603 +8,603 @@
       "questoes": [
         {
           "id": "pi-av1-q1",
-          "enunciado": "Qual tag HTML representa o conteúdo visível principal de uma página?",
+          "enunciado": "Em uma página HTML, qual alternativa descreve corretamente a função da tag <body>?",
           "alternativas": [
-            { "id": "A", "texto": "<body>" },
-            { "id": "B", "texto": "<script>" },
-            { "id": "C", "texto": "<link>" },
-            { "id": "D", "texto": "<thead>" }
+            { "id": "A", "texto": "Agrupa metadados, links de CSS e configurações que não aparecem diretamente na página." },
+            { "id": "B", "texto": "Define apenas scripts que serão executados antes do carregamento do documento." },
+            { "id": "C", "texto": "Contém o conteúdo renderizado para o usuário, como textos, imagens, tabelas e formulários." },
+            { "id": "D", "texto": "Cria automaticamente a estrutura de cabeçalho, corpo e rodapé de uma tabela." }
           ],
-          "correta": "A",
-          "feedback": "A tag <body> contém o conteúdo visível da página, como textos, imagens, tabelas, formulários e botões."
+          "correta": "C",
+          "feedback": "A tag <body> contém o conteúdo visível/interativo da página. Metadados e links de recursos normalmente ficam no <head>."
         },
         {
           "id": "pi-av1-q2",
-          "enunciado": "Para que serve a tag <script> em um documento HTML?",
+          "enunciado": "Qual uso da tag <script> está correto em HTML?",
           "alternativas": [
-            { "id": "A", "texto": "Criar uma tabela de dados." },
-            { "id": "B", "texto": "Inserir ou referenciar código JavaScript." },
-            { "id": "C", "texto": "Definir o rodapé de uma tabela." },
-            { "id": "D", "texto": "Criar um campo obrigatório." }
+            { "id": "A", "texto": "Carregar ou escrever código JavaScript que pode manipular a página." },
+            { "id": "B", "texto": "Criar um link de navegação clicável com texto visível." },
+            { "id": "C", "texto": "Referenciar uma folha CSS externa usando rel=\"stylesheet\"." },
+            { "id": "D", "texto": "Exibir uma imagem obrigatória com texto alternativo." }
           ],
-          "correta": "B",
-          "feedback": "A tag <script> é usada para incluir JavaScript diretamente na página ou carregar um arquivo JavaScript externo."
+          "correta": "A",
+          "feedback": "A tag <script> é usada para JavaScript, seja escrevendo o código no próprio HTML ou apontando para um arquivo externo com src."
         },
         {
           "id": "pi-av1-q3",
-          "enunciado": "Qual tag é normalmente usada para vincular um arquivo CSS externo ao HTML?",
+          "enunciado": "Para vincular corretamente um arquivo CSS externo chamado estilo.css, qual alternativa é mais adequada?",
           "alternativas": [
-            { "id": "A", "texto": "<a>" },
-            { "id": "B", "texto": "<link>" },
-            { "id": "C", "texto": "<img>" },
-            { "id": "D", "texto": "<input>" }
+            { "id": "A", "texto": "<script href=\"estilo.css\"></script>" },
+            { "id": "B", "texto": "<a rel=\"stylesheet\" src=\"estilo.css\">CSS</a>" },
+            { "id": "C", "texto": "<style src=\"estilo.css\"></style>" },
+            { "id": "D", "texto": "<link rel=\"stylesheet\" href=\"estilo.css\">" }
           ],
-          "correta": "B",
-          "feedback": "A tag <link>, geralmente dentro do <head>, pode ligar a página a uma folha de estilos externa usando rel=\"stylesheet\"."
+          "correta": "D",
+          "feedback": "Arquivos CSS externos são vinculados com <link rel=\"stylesheet\" href=\"...\">. A tag <script> é para JavaScript."
         },
         {
           "id": "pi-av1-q4",
-          "enunciado": "Qual atributo da tag <a> indica o endereço de destino do link?",
+          "enunciado": "Em um link criado com <a>, qual atributo define para onde o usuário será levado ao clicar?",
           "alternativas": [
-            { "id": "A", "texto": "src" },
-            { "id": "B", "texto": "href" },
-            { "id": "C", "texto": "alt" },
-            { "id": "D", "texto": "maxlength" }
+            { "id": "A", "texto": "src, pois todo recurso externo em HTML usa esse atributo." },
+            { "id": "B", "texto": "href, pois ele informa o destino da navegação." },
+            { "id": "C", "texto": "alt, pois ele descreve o destino para o navegador." },
+            { "id": "D", "texto": "target, pois ele sempre contém o endereço completo do link." }
           ],
           "correta": "B",
-          "feedback": "O atributo href define para onde o link aponta, como uma página, arquivo, e-mail ou seção do próprio documento."
+          "feedback": "Em <a>, o destino fica no href. O target pode controlar onde abrir, mas não substitui o href."
         },
         {
           "id": "pi-av1-q5",
-          "enunciado": "Qual tag HTML é usada para exibir uma imagem na página?",
+          "enunciado": "Qual alternativa diferencia melhor os atributos href e src?",
           "alternativas": [
-            { "id": "A", "texto": "<img>" },
-            { "id": "B", "texto": "<image>" },
-            { "id": "C", "texto": "<picture-only>" },
-            { "id": "D", "texto": "<src>" }
+            { "id": "A", "texto": "href é usado apenas em imagens; src é usado apenas em links de texto." },
+            { "id": "B", "texto": "href define texto alternativo; src define o limite máximo de caracteres." },
+            { "id": "C", "texto": "href e src são equivalentes e podem ser trocados sem mudar o comportamento." },
+            { "id": "D", "texto": "href é usado em links de navegação; src indica a origem de recursos incorporados, como imagens ou scripts." }
           ],
-          "correta": "A",
-          "feedback": "A tag <img> exibe imagens e normalmente usa os atributos src e alt."
+          "correta": "D",
+          "feedback": "href aponta para um destino de navegação ou relação; src aponta para a origem de um recurso a ser carregado."
         },
         {
           "id": "pi-av1-q6",
-          "enunciado": "Na tag <img>, qual atributo informa o caminho ou endereço da imagem?",
+          "enunciado": "Qual combinação de tag e atributo é adequada para inserir uma imagem com descrição alternativa?",
           "alternativas": [
-            { "id": "A", "texto": "href" },
-            { "id": "B", "texto": "src" },
-            { "id": "C", "texto": "title" },
-            { "id": "D", "texto": "required" }
+            { "id": "A", "texto": "<a src=\"foto.png\" title=\"Foto do produto\">" },
+            { "id": "B", "texto": "<link href=\"foto.png\" alt=\"Foto do produto\">" },
+            { "id": "C", "texto": "<img href=\"foto.png\" placeholder=\"Foto do produto\">" },
+            { "id": "D", "texto": "<img src=\"foto.png\" alt=\"Foto do produto\">" }
           ],
-          "correta": "B",
-          "feedback": "O atributo src define a origem da imagem, podendo ser um arquivo local ou uma URL."
+          "correta": "D",
+          "feedback": "A imagem usa <img>, a origem fica em src e a descrição alternativa fica em alt."
         },
         {
           "id": "pi-av1-q7",
-          "enunciado": "Qual é a principal função do atributo alt em uma imagem?",
+          "enunciado": "Sobre o atributo alt em <img>, qual afirmação está correta?",
           "alternativas": [
-            { "id": "A", "texto": "Definir a largura máxima do arquivo." },
-            { "id": "B", "texto": "Criar um link para outra página." },
-            { "id": "C", "texto": "Fornecer um texto alternativo para acessibilidade e falha de carregamento." },
-            { "id": "D", "texto": "Executar JavaScript ao carregar a imagem." }
+            { "id": "A", "texto": "Ele substitui o src quando a imagem está hospedada na internet." },
+            { "id": "B", "texto": "Ele descreve a imagem para acessibilidade e para casos de falha no carregamento." },
+            { "id": "C", "texto": "Ele define a largura máxima da imagem dentro do formulário." },
+            { "id": "D", "texto": "Ele cria uma dica visual igual ao placeholder de campos de texto." }
           ],
-          "correta": "C",
-          "feedback": "O atributo alt descreve a imagem para leitores de tela e aparece como alternativa quando a imagem não pode ser carregada."
+          "correta": "B",
+          "feedback": "O alt fornece texto alternativo, importante para leitores de tela e para quando a imagem não carrega."
         },
         {
           "id": "pi-av1-q8",
-          "enunciado": "Qual tag HTML cria uma tabela?",
+          "enunciado": "Qual estrutura representa melhor a hierarquia básica de uma tabela HTML com uma linha e uma célula de dados?",
           "alternativas": [
-            { "id": "A", "texto": "<table>" },
-            { "id": "B", "texto": "<tbody>" },
-            { "id": "C", "texto": "<tr>" },
-            { "id": "D", "texto": "<td>" }
+            { "id": "A", "texto": "<tr><table><td>Dado</td></table></tr>" },
+            { "id": "B", "texto": "<td><tr><table>Dado</table></tr></td>" },
+            { "id": "C", "texto": "<table><tr><td>Dado</td></tr></table>" },
+            { "id": "D", "texto": "<table><td><tr>Dado</tr></td></table>" }
           ],
-          "correta": "A",
-          "feedback": "A tag <table> representa a tabela. Dentro dela são usadas tags como <thead>, <tbody>, <tr>, <th> e <td>."
+          "correta": "C",
+          "feedback": "A ordem correta é tabela, linha e célula: <table> contém <tr>, e <tr> contém <td> ou <th>."
         },
         {
           "id": "pi-av1-q9",
-          "enunciado": "Em uma tabela HTML, qual tag representa uma linha?",
+          "enunciado": "Em tabelas HTML, qual diferença entre <th> e <td> está correta?",
           "alternativas": [
-            { "id": "A", "texto": "<td>" },
-            { "id": "B", "texto": "<tr>" },
-            { "id": "C", "texto": "<th>" },
-            { "id": "D", "texto": "<tfoot>" }
+            { "id": "A", "texto": "<td> cria uma linha; <th> cria uma tabela completa." },
+            { "id": "B", "texto": "<th> é usado para célula de cabeçalho; <td> é usado para célula comum de dados." },
+            { "id": "C", "texto": "<th> só pode aparecer no rodapé; <td> só pode aparecer no cabeçalho." },
+            { "id": "D", "texto": "<td> agrupa várias tabelas; <th> agrupa vários formulários." }
           ],
           "correta": "B",
-          "feedback": "A tag <tr> representa uma linha da tabela. As células dessa linha são criadas com <td> ou <th>."
+          "feedback": "<th> indica célula de cabeçalho e <td> indica célula de dados comum."
         },
         {
           "id": "pi-av1-q10",
-          "enunciado": "Qual tag representa uma célula comum de dados em uma tabela HTML?",
+          "enunciado": "Qual alternativa organiza semanticamente uma tabela em cabeçalho, corpo e rodapé?",
           "alternativas": [
-            { "id": "A", "texto": "<td>" },
-            { "id": "B", "texto": "<th>" },
-            { "id": "C", "texto": "<thead>" },
-            { "id": "D", "texto": "<tbody>" }
+            { "id": "A", "texto": "<head>, <body> e <footer>" },
+            { "id": "B", "texto": "<th>, <tr> e <td>" },
+            { "id": "C", "texto": "<form>, <input> e <button>" },
+            { "id": "D", "texto": "<thead>, <tbody> e <tfoot>" }
           ],
-          "correta": "A",
-          "feedback": "A tag <td> cria uma célula de dados comum dentro de uma linha <tr>."
+          "correta": "D",
+          "feedback": "<thead>, <tbody> e <tfoot> agrupam as partes semânticas da tabela. <tr>, <th> e <td> formam linhas e células."
         },
         {
           "id": "pi-av1-q11",
-          "enunciado": "Qual tag representa uma célula de cabeçalho em uma tabela?",
+          "enunciado": "Qual alternativa usa corretamente <thead> em uma tabela?",
           "alternativas": [
-            { "id": "A", "texto": "<td>" },
-            { "id": "B", "texto": "<tr>" },
-            { "id": "C", "texto": "<th>" },
-            { "id": "D", "texto": "<form>" }
+            { "id": "A", "texto": "<thead><td>Nome</td></thead>, pois cabeçalhos sempre usam td." },
+            { "id": "B", "texto": "<table><thead><tr><th>Nome</th></tr></thead></table>, pois o cabeçalho contém linha e célula de cabeçalho." },
+            { "id": "C", "texto": "<table><thead><input value=\"Nome\"></thead></table>, pois o cabeçalho deve ser um campo." },
+            { "id": "D", "texto": "<thead><table><th>Nome</th></table></thead>, pois thead deve ficar fora da tabela." }
           ],
-          "correta": "C",
-          "feedback": "A tag <th> representa uma célula de cabeçalho, normalmente exibida em negrito e centralizada pelos estilos padrão do navegador."
+          "correta": "B",
+          "feedback": "O <thead> deve estar dentro de <table> e normalmente contém linhas <tr> com células <th>."
         },
         {
           "id": "pi-av1-q12",
-          "enunciado": "Qual tag agrupa o cabeçalho de uma tabela HTML?",
+          "enunciado": "Qual papel do <tfoot> é mais adequado em uma tabela de vendas?",
           "alternativas": [
-            { "id": "A", "texto": "<thead>" },
-            { "id": "B", "texto": "<tbody>" },
-            { "id": "C", "texto": "<tfoot>" },
-            { "id": "D", "texto": "<input>" }
+            { "id": "A", "texto": "Guardar os scripts que calculam o total da venda." },
+            { "id": "B", "texto": "Trocar automaticamente as células <td> por campos <input>." },
+            { "id": "C", "texto": "Agrupar linhas finais, como total, média ou resumo." },
+            { "id": "D", "texto": "Definir o endereço externo da tabela com href." }
           ],
-          "correta": "A",
-          "feedback": "A tag <thead> agrupa as linhas de cabeçalho da tabela."
+          "correta": "C",
+          "feedback": "O <tfoot> é apropriado para linhas de resumo ou totalização da tabela."
         },
         {
           "id": "pi-av1-q13",
-          "enunciado": "Qual tag agrupa o corpo principal de dados de uma tabela?",
+          "enunciado": "Qual alternativa descreve corretamente a função da tag <form>?",
           "alternativas": [
-            { "id": "A", "texto": "<thead>" },
-            { "id": "B", "texto": "<tbody>" },
-            { "id": "C", "texto": "<tfoot>" },
-            { "id": "D", "texto": "<body>" }
+            { "id": "A", "texto": "Agrupar campos e controles que podem ser enviados ou processados juntos." },
+            { "id": "B", "texto": "Criar obrigatoriamente uma tabela com cabeçalho e corpo." },
+            { "id": "C", "texto": "Carregar arquivos CSS externos no final da página." },
+            { "id": "D", "texto": "Exibir imagens com descrição alternativa." }
           ],
-          "correta": "B",
-          "feedback": "A tag <tbody> agrupa as linhas que formam o corpo principal da tabela."
+          "correta": "A",
+          "feedback": "A tag <form> agrupa controles de entrada, botões e dados relacionados a uma ação de envio ou processamento."
         },
         {
           "id": "pi-av1-q14",
-          "enunciado": "Qual tag é usada para agrupar linhas de resumo ou rodapé de uma tabela?",
+          "enunciado": "Em <input type=\"number\" max=\"10\">, qual é o papel do atributo max?",
           "alternativas": [
-            { "id": "A", "texto": "<tfoot>" },
-            { "id": "B", "texto": "<footer-table>" },
-            { "id": "C", "texto": "<td>" },
-            { "id": "D", "texto": "<link>" }
+            { "id": "A", "texto": "Limitar a quantidade de caracteres digitados a 10." },
+            { "id": "B", "texto": "Definir o tamanho visual do campo em 10 pixels." },
+            { "id": "C", "texto": "Transformar o campo em obrigatório quando o valor for 10." },
+            { "id": "D", "texto": "Definir 10 como maior valor numérico aceito pelo campo." }
           ],
-          "correta": "A",
-          "feedback": "A tag <tfoot> representa o rodapé da tabela, frequentemente usado para totais, médias ou observações."
+          "correta": "D",
+          "feedback": "Em campos numéricos, max define o maior valor permitido. Para quantidade de caracteres, o atributo é maxlength."
         },
         {
           "id": "pi-av1-q15",
-          "enunciado": "Qual tag HTML é usada para criar um formulário?",
+          "enunciado": "Qual alternativa compara corretamente maxlength e max?",
           "alternativas": [
-            { "id": "A", "texto": "<form>" },
-            { "id": "B", "texto": "<input>" },
-            { "id": "C", "texto": "<label>" },
-            { "id": "D", "texto": "<button>" }
+            { "id": "A", "texto": "maxlength limita valores numéricos; max limita o texto alternativo." },
+            { "id": "B", "texto": "maxlength e max fazem a mesma validação em qualquer tipo de input." },
+            { "id": "C", "texto": "maxlength limita a quantidade de caracteres; max limita o maior valor em tipos compatíveis." },
+            { "id": "D", "texto": "maxlength define dica visual; max define se o campo é obrigatório." }
           ],
-          "correta": "A",
-          "feedback": "A tag <form> agrupa campos e controles usados para coletar e enviar dados do usuário."
+          "correta": "C",
+          "feedback": "maxlength limita caracteres em campos textuais. max define um valor máximo para tipos como number, date e range."
         },
         {
           "id": "pi-av1-q16",
-          "enunciado": "Qual tag é usada para criar campos como texto, senha, número, e-mail ou checkbox?",
+          "enunciado": "Qual atributo impede o envio de um formulário quando um campo obrigatório está vazio?",
           "alternativas": [
-            { "id": "A", "texto": "<input>" },
-            { "id": "B", "texto": "<table>" },
-            { "id": "C", "texto": "<script>" },
-            { "id": "D", "texto": "<tbody>" }
+            { "id": "A", "texto": "placeholder" },
+            { "id": "B", "texto": "title" },
+            { "id": "C", "texto": "alt" },
+            { "id": "D", "texto": "required" }
           ],
-          "correta": "A",
-          "feedback": "A tag <input> cria diferentes tipos de campos de entrada, definidos principalmente pelo atributo type."
+          "correta": "D",
+          "feedback": "required ativa a validação nativa de preenchimento obrigatório no navegador."
         },
         {
           "id": "pi-av1-q17",
-          "enunciado": "Em um campo de formulário, para que serve o atributo placeholder?",
+          "enunciado": "Qual afirmação sobre placeholder está correta?",
           "alternativas": [
-            { "id": "A", "texto": "Enviar o formulário automaticamente." },
-            { "id": "B", "texto": "Mostrar uma dica dentro do campo antes da digitação." },
-            { "id": "C", "texto": "Definir o arquivo CSS da página." },
-            { "id": "D", "texto": "Criar uma linha na tabela." }
+            { "id": "A", "texto": "É uma dica temporária dentro do campo e não substitui um rótulo claro." },
+            { "id": "B", "texto": "É enviado como valor do campo mesmo que o usuário não digite nada." },
+            { "id": "C", "texto": "Torna o campo obrigatório sem precisar de required." },
+            { "id": "D", "texto": "Só pode ser usado em imagens, junto com alt." }
           ],
-          "correta": "B",
-          "feedback": "O placeholder exibe um texto de orientação temporário dentro do campo, desaparecendo quando o usuário informa um valor."
+          "correta": "A",
+          "feedback": "placeholder serve como dica temporária. Ele não é o valor do campo e não substitui o uso de label."
         },
         {
           "id": "pi-av1-q18",
-          "enunciado": "Qual atributo limita a quantidade máxima de caracteres digitados em um campo de texto?",
-          "alternativas": [
-            { "id": "A", "texto": "max" },
-            { "id": "B", "texto": "maxlength" },
-            { "id": "C", "texto": "required" },
-            { "id": "D", "texto": "alt" }
-          ],
-          "correta": "B",
-          "feedback": "O atributo correto é maxlength. Ele limita a quantidade máxima de caracteres que podem ser digitados no campo."
-        },
-        {
-          "id": "pi-av1-q19",
-          "enunciado": "Em um <input type=\"number\">, qual atributo pode definir o maior valor aceito?",
-          "alternativas": [
-            { "id": "A", "texto": "max" },
-            { "id": "B", "texto": "maxlength" },
-            { "id": "C", "texto": "href" },
-            { "id": "D", "texto": "src" }
-          ],
-          "correta": "A",
-          "feedback": "O atributo max define o maior valor permitido para campos numéricos, datas e outros tipos compatíveis."
-        },
-        {
-          "id": "pi-av1-q20",
-          "enunciado": "Qual atributo torna obrigatório o preenchimento de um campo antes do envio do formulário?",
+          "enunciado": "Qual atributo pode oferecer uma dica adicional sobre um elemento, geralmente exibida ao passar o mouse?",
           "alternativas": [
             { "id": "A", "texto": "required" },
             { "id": "B", "texto": "title" },
-            { "id": "C", "texto": "alt" },
-            { "id": "D", "texto": "target" }
+            { "id": "C", "texto": "src" },
+            { "id": "D", "texto": "type" }
           ],
-          "correta": "A",
-          "feedback": "O atributo required ativa a validação nativa do navegador para impedir o envio do formulário com o campo vazio."
+          "correta": "B",
+          "feedback": "O atributo title pode fornecer uma dica contextual. Ele não define origem, tipo ou obrigatoriedade."
+        },
+        {
+          "id": "pi-av1-q19",
+          "enunciado": "Qual alternativa cria um campo de texto obrigatório com uma dica de preenchimento?",
+          "alternativas": [
+            { "id": "A", "texto": "<input type=\"text\" alt=\"Digite seu nome\" max=\"10\">" },
+            { "id": "B", "texto": "<form type=\"text\" required placeholder=\"Digite seu nome\"></form>" },
+            { "id": "C", "texto": "<input type=\"text\" required placeholder=\"Digite seu nome\">" },
+            { "id": "D", "texto": "<a required placeholder=\"Digite seu nome\">Nome</a>" }
+          ],
+          "correta": "C",
+          "feedback": "O campo é criado com <input>, o tipo textual vem de type=\"text\", required obriga preenchimento e placeholder mostra a dica."
+        },
+        {
+          "id": "pi-av1-q20",
+          "enunciado": "Qual alternativa usa melhor o atributo type em um <input>?",
+          "alternativas": [
+            { "id": "A", "texto": "type define o conteúdo alternativo de uma imagem quando o campo não carrega." },
+            { "id": "B", "texto": "type define o arquivo CSS externo que será aplicado ao campo." },
+            { "id": "C", "texto": "type define o destino de navegação quando o campo é clicado." },
+            { "id": "D", "texto": "type define o comportamento do campo, como text, number, email ou password." }
+          ],
+          "correta": "D",
+          "feedback": "O atributo type determina o tipo de controle exibido e a validação esperada pelo navegador."
         },
         {
           "id": "pi-av1-q21",
-          "enunciado": "Qual atributo pode exibir uma informação adicional ao passar o mouse sobre um elemento?",
+          "enunciado": "Qual alternativa cria um link clicável com texto visível para o usuário?",
           "alternativas": [
-            { "id": "A", "texto": "title" },
-            { "id": "B", "texto": "src" },
-            { "id": "C", "texto": "tbody" },
-            { "id": "D", "texto": "font-family" }
+            { "id": "A", "texto": "<link href=\"pagina.html\">Abrir página</link>" },
+            { "id": "B", "texto": "<script src=\"pagina.html\">Abrir página</script>" },
+            { "id": "C", "texto": "<a href=\"pagina.html\">Abrir página</a>" },
+            { "id": "D", "texto": "<img src=\"pagina.html\" alt=\"Abrir página\">" }
           ],
-          "correta": "A",
-          "feedback": "O atributo title pode exibir uma dica contextual, geralmente como tooltip do navegador."
+          "correta": "C",
+          "feedback": "Links clicáveis de navegação são criados com <a href=\"...\">texto</a>."
         },
         {
           "id": "pi-av1-q22",
-          "enunciado": "Qual combinação está correta para carregar uma folha de estilos chamada style.css?",
+          "enunciado": "Em uma tabela, onde células <td> ou <th> devem aparecer diretamente?",
           "alternativas": [
-            { "id": "A", "texto": "<script src=\"style.css\"></script>" },
-            { "id": "B", "texto": "<link rel=\"stylesheet\" href=\"style.css\">" },
-            { "id": "C", "texto": "<a href=\"style.css\">CSS</a>" },
-            { "id": "D", "texto": "<img src=\"style.css\" alt=\"CSS\">" }
+            { "id": "A", "texto": "Dentro de uma linha <tr>." },
+            { "id": "B", "texto": "Diretamente dentro de <body>, sem tabela." },
+            { "id": "C", "texto": "Dentro de <link>, quando houver CSS externo." },
+            { "id": "D", "texto": "Dentro de <input>, quando o formulário tiver dados." }
           ],
-          "correta": "B",
-          "feedback": "Para CSS externo, usa-se <link rel=\"stylesheet\" href=\"style.css\">."
+          "correta": "A",
+          "feedback": "Células de tabela devem ficar dentro de linhas <tr>, que por sua vez ficam dentro da estrutura da tabela."
         },
         {
           "id": "pi-av1-q23",
-          "enunciado": "Qual alternativa representa uma estrutura básica correta de tabela com cabeçalho e corpo?",
+          "enunciado": "Qual alternativa descreve corretamente uma boa relação entre <label> e <input>?",
           "alternativas": [
-            { "id": "A", "texto": "<table><thead><tr><th>Nome</th></tr></thead><tbody><tr><td>Ana</td></tr></tbody></table>" },
-            { "id": "B", "texto": "<table><td><tr>Nome</tr></td></table>" },
-            { "id": "C", "texto": "<thead><table><body><td>Ana</td></body></table></thead>" },
-            { "id": "D", "texto": "<tr><table><th>Nome</th></table></tr>" }
+            { "id": "A", "texto": "O <label> substitui o input e envia o valor sozinho." },
+            { "id": "B", "texto": "O <input> deve ficar sempre dentro de uma tabela para o label funcionar." },
+            { "id": "C", "texto": "O <label> só pode ser usado em imagens com atributo alt." },
+            { "id": "D", "texto": "O <label> identifica o campo e melhora usabilidade e acessibilidade do formulário." }
           ],
-          "correta": "A",
-          "feedback": "A estrutura correta usa <table> como contêiner, <thead> para cabeçalho, <tbody> para dados, <tr> para linhas e <th>/<td> para células."
+          "correta": "D",
+          "feedback": "Labels tornam o formulário mais claro e acessível, pois indicam ao usuário o significado de cada campo."
         },
         {
           "id": "pi-av1-q24",
-          "enunciado": "Em formulários HTML, qual atributo do <input> define o tipo de dado ou controle exibido?",
+          "enunciado": "Qual alternativa apresenta uma diferença correta entre <link> e <a>?",
           "alternativas": [
-            { "id": "A", "texto": "type" },
-            { "id": "B", "texto": "alt" },
-            { "id": "C", "texto": "rel" },
-            { "id": "D", "texto": "thead" }
+            { "id": "A", "texto": "<link> relaciona o documento a recursos como CSS; <a> cria links clicáveis no conteúdo." },
+            { "id": "B", "texto": "<a> só pode ficar no <head>; <link> só pode ficar dentro de tabelas." },
+            { "id": "C", "texto": "<link> sempre exibe texto clicável; <a> nunca aparece para o usuário." },
+            { "id": "D", "texto": "<link> carrega JavaScript; <a> carrega imagens externas." }
           ],
           "correta": "A",
-          "feedback": "O atributo type define o comportamento do <input>, como text, number, email, password, checkbox, radio e submit."
+          "feedback": "<link> descreve relações com recursos externos, como CSS. <a> cria um hyperlink clicável no conteúdo da página."
         },
         {
           "id": "pi-av1-q25",
-          "enunciado": "Qual alternativa cria um link que abre o site informado?",
+          "enunciado": "Qual alternativa usa uma marcação mais adequada para uma tabela com cabeçalhos Nome e Idade?",
           "alternativas": [
-            { "id": "A", "texto": "<a href=\"https://exemplo.com\">Acessar</a>" },
-            { "id": "B", "texto": "<link src=\"https://exemplo.com\">Acessar</link>" },
-            { "id": "C", "texto": "<img href=\"https://exemplo.com\">Acessar</img>" },
-            { "id": "D", "texto": "<script href=\"https://exemplo.com\">Acessar</script>" }
+            { "id": "A", "texto": "<table><tr><td>Nome</td><td>Idade</td></tr></table>, pois todo cabeçalho deve ser td." },
+            { "id": "B", "texto": "<table><thead><tr><th>Nome</th><th>Idade</th></tr></thead></table>, pois os títulos das colunas são cabeçalhos." },
+            { "id": "C", "texto": "<form><thead><th>Nome</th><th>Idade</th></thead></form>, pois tabelas precisam estar em formulários." },
+            { "id": "D", "texto": "<table><input value=\"Nome\"><input value=\"Idade\"></table>, pois input representa célula." }
           ],
-          "correta": "A",
-          "feedback": "Links navegáveis são criados com <a> e o destino é informado no atributo href."
+          "correta": "B",
+          "feedback": "Títulos de colunas devem ser representados por células <th>, normalmente dentro de uma linha no <thead>."
         },
         {
           "id": "pi-av1-q26",
-          "enunciado": "No CSS apresentado, qual cor de fundo é aplicada ao body?",
+          "enunciado": "Em CSS, o que acontece quando um elemento recebe display: flex?",
           "alternativas": [
-            { "id": "A", "texto": "#b7b4f4" },
-            { "id": "B", "texto": "#007bff" },
-            { "id": "C", "texto": "#E4A23F" },
-            { "id": "D", "texto": "#D62516" }
+            { "id": "A", "texto": "Ele passa a tratar seus filhos como itens flexíveis, permitindo alinhamento e distribuição pelo Flexbox." },
+            { "id": "B", "texto": "Ele transforma automaticamente todos os textos em links clicáveis." },
+            { "id": "C", "texto": "Ele deixa o elemento invisível, mas mantendo seu espaço ocupado." },
+            { "id": "D", "texto": "Ele aplica negrito em todos os elementos filhos sem afetar layout." }
           ],
           "correta": "A",
-          "feedback": "A propriedade background do body está definida como #b7b4f4."
+          "feedback": "display: flex ativa o modelo Flexbox para organizar os filhos diretos do elemento."
         },
         {
           "id": "pi-av1-q27",
-          "enunciado": "No seletor body, qual propriedade transforma o elemento em um contêiner flexível?",
+          "enunciado": "No Flexbox, qual afirmação sobre flex-direction: row está correta?",
           "alternativas": [
-            { "id": "A", "texto": "display: flex;" },
-            { "id": "B", "texto": "flex-direction: row;" },
-            { "id": "C", "texto": "height: 100vh;" },
-            { "id": "D", "texto": "font-family: 'Roboto', sans-serif, Arial;" }
+            { "id": "A", "texto": "Define que align-items passará a controlar o eixo horizontal principal." },
+            { "id": "B", "texto": "Define o eixo principal na direção horizontal no fluxo padrão da página." },
+            { "id": "C", "texto": "Remove o comportamento flexível e retorna ao display block." },
+            { "id": "D", "texto": "Faz todos os filhos ocuparem obrigatoriamente 100% da largura." }
           ],
-          "correta": "A",
-          "feedback": "display: flex ativa o Flexbox no elemento, permitindo alinhamento e distribuição dos itens filhos."
+          "correta": "B",
+          "feedback": "Com flex-direction: row, o eixo principal é horizontal no fluxo padrão. justify-content atua nesse eixo."
         },
         {
           "id": "pi-av1-q28",
-          "enunciado": "Com flex-direction: row, qual é o eixo principal do Flexbox?",
+          "enunciado": "Com display: flex e flex-direction: row, qual propriedade centraliza os filhos no eixo principal?",
           "alternativas": [
-            { "id": "A", "texto": "Horizontal, da esquerda para a direita no fluxo padrão." },
-            { "id": "B", "texto": "Vertical, de baixo para cima sempre." },
-            { "id": "C", "texto": "Diagonal, dependendo da cor de fundo." },
-            { "id": "D", "texto": "Nenhum, pois row desativa o Flexbox." }
+            { "id": "A", "texto": "align-items: center" },
+            { "id": "B", "texto": "text-align: center" },
+            { "id": "C", "texto": "justify-content: center" },
+            { "id": "D", "texto": "margin-top: center" }
           ],
-          "correta": "A",
-          "feedback": "Com flex-direction: row, o eixo principal é horizontal no fluxo padrão."
+          "correta": "C",
+          "feedback": "Em row, justify-content controla o eixo principal, que é horizontal no fluxo padrão."
         },
         {
           "id": "pi-av1-q29",
-          "enunciado": "No CSS do body, justify-content: center centraliza os itens em qual eixo quando flex-direction é row?",
+          "enunciado": "Com display: flex e flex-direction: row, qual propriedade centraliza os filhos no eixo transversal?",
           "alternativas": [
-            { "id": "A", "texto": "No eixo horizontal." },
-            { "id": "B", "texto": "No eixo vertical." },
-            { "id": "C", "texto": "Na borda esquerda." },
-            { "id": "D", "texto": "Apenas no eixo de profundidade." }
+            { "id": "A", "texto": "justify-content: center" },
+            { "id": "B", "texto": "align-items: center" },
+            { "id": "C", "texto": "font-weight: center" },
+            { "id": "D", "texto": "border-radius: center" }
           ],
-          "correta": "A",
-          "feedback": "Com flex-direction: row, justify-content atua no eixo principal, que é horizontal."
+          "correta": "B",
+          "feedback": "Em row, align-items controla o eixo transversal, que normalmente é vertical."
         },
         {
           "id": "pi-av1-q30",
-          "enunciado": "No CSS do body, align-items: center centraliza os itens em qual eixo quando flex-direction é row?",
+          "enunciado": "Qual alternativa explica corretamente a unidade vh em height: 100vh?",
           "alternativas": [
-            { "id": "A", "texto": "No eixo vertical." },
-            { "id": "B", "texto": "No eixo horizontal." },
-            { "id": "C", "texto": "Somente dentro de tabelas." },
-            { "id": "D", "texto": "Apenas quando há hover." }
+            { "id": "A", "texto": "vh mede a largura do elemento pai; 100vh equivale a 100% da largura disponível." },
+            { "id": "B", "texto": "vh mede o tamanho da fonte; 100vh equivale a 100 vezes o tamanho do texto." },
+            { "id": "C", "texto": "vh mede a altura da viewport; 100vh equivale à altura total visível da janela." },
+            { "id": "D", "texto": "vh mede a distância entre bordas; 100vh equivale a 100 pixels fixos." }
           ],
-          "correta": "A",
-          "feedback": "Com flex-direction: row, align-items atua no eixo transversal, que é vertical."
+          "correta": "C",
+          "feedback": "vh é baseada na altura da viewport. 100vh ocupa toda a altura visível da janela."
         },
         {
           "id": "pi-av1-q31",
-          "enunciado": "O que significa height: 100vh no body?",
+          "enunciado": "Qual diferença entre margin e padding está correta?",
           "alternativas": [
-            { "id": "A", "texto": "A altura será igual a 100% da altura da janela de visualização." },
-            { "id": "B", "texto": "A largura será sempre 100 pixels." },
-            { "id": "C", "texto": "A fonte terá 100 pontos." },
-            { "id": "D", "texto": "A borda terá 100% de transparência." }
+            { "id": "A", "texto": "padding cria espaço externo; margin cria espaço interno entre conteúdo e borda." },
+            { "id": "B", "texto": "margin altera a cor da borda; padding altera a cor do texto." },
+            { "id": "C", "texto": "margin só funciona em tabelas; padding só funciona em formulários." },
+            { "id": "D", "texto": "margin cria espaço externo; padding cria espaço interno entre conteúdo e borda." }
           ],
-          "correta": "A",
-          "feedback": "A unidade vh representa a altura da viewport. 100vh ocupa toda a altura visível da janela."
+          "correta": "D",
+          "feedback": "margin é espaçamento externo. padding é espaçamento interno, entre o conteúdo e a borda."
         },
         {
           "id": "pi-av1-q32",
-          "enunciado": "No seletor label, qual propriedade faz cada rótulo ocupar uma linha própria?",
+          "enunciado": "O que uma declaração como border: 1px solid #ccc define em CSS?",
           "alternativas": [
-            { "id": "A", "texto": "display: block;" },
-            { "id": "B", "texto": "font-size: 14px;" },
-            { "id": "C", "texto": "color: #101015;" },
-            { "id": "D", "texto": "margin-top: 16px;" }
+            { "id": "A", "texto": "Apenas a cor do texto do elemento." },
+            { "id": "B", "texto": "Apenas o arredondamento dos cantos." },
+            { "id": "C", "texto": "Espessura, estilo e cor da borda em uma forma abreviada." },
+            { "id": "D", "texto": "A largura, altura e sombra do elemento em uma forma abreviada." }
           ],
-          "correta": "A",
-          "feedback": "display: block faz o elemento se comportar como bloco, ocupando a linha e empurrando o próximo conteúdo para baixo."
+          "correta": "C",
+          "feedback": "A propriedade border pode combinar largura, estilo e cor da borda em uma única declaração."
         },
         {
           "id": "pi-av1-q33",
-          "enunciado": "No seletor label, qual propriedade deixa o texto em negrito?",
+          "enunciado": "Qual propriedade CSS é usada para arredondar os cantos de uma caixa?",
           "alternativas": [
-            { "id": "A", "texto": "font-weight: bold;" },
-            { "id": "B", "texto": "font-size: 14px;" },
-            { "id": "C", "texto": "display: block;" },
-            { "id": "D", "texto": "margin-top: 16px;" }
+            { "id": "A", "texto": "box-shadow" },
+            { "id": "B", "texto": "border-radius" },
+            { "id": "C", "texto": "font-weight" },
+            { "id": "D", "texto": "display" }
           ],
-          "correta": "A",
-          "feedback": "font-weight: bold define o peso da fonte como negrito."
+          "correta": "B",
+          "feedback": "border-radius controla o arredondamento dos cantos do elemento."
         },
         {
           "id": "pi-av1-q34",
-          "enunciado": "No seletor .formulario, o ponto antes do nome indica que se trata de qual tipo de seletor?",
+          "enunciado": "Qual alternativa descreve melhor box-shadow?",
           "alternativas": [
-            { "id": "A", "texto": "Seletor de classe." },
-            { "id": "B", "texto": "Seletor de id." },
-            { "id": "C", "texto": "Seletor de tag." },
-            { "id": "D", "texto": "Seletor de atributo obrigatório." }
+            { "id": "A", "texto": "Define uma sombra visual, podendo configurar deslocamento, desfoque, espalhamento e cor." },
+            { "id": "B", "texto": "Define o espaço interno entre o texto e a borda." },
+            { "id": "C", "texto": "Define obrigatoriamente uma borda sólida ao redor do elemento." },
+            { "id": "D", "texto": "Define o eixo principal dos elementos flexíveis." }
           ],
           "correta": "A",
-          "feedback": "Em CSS, o ponto indica uma classe. Assim, .formulario aplica estilos aos elementos com class=\"formulario\"."
+          "feedback": "box-shadow adiciona sombra ao elemento. Seus valores podem indicar deslocamentos, desfoque, expansão e cor."
         },
         {
           "id": "pi-av1-q35",
-          "enunciado": "No seletor .formulario, qual propriedade define a largura do formulário como 320 pixels?",
+          "enunciado": "Em CSS, qual efeito prático costuma ocorrer com display: block em um label?",
           "alternativas": [
-            { "id": "A", "texto": "width: 320px;" },
-            { "id": "B", "texto": "padding: 32px;" },
-            { "id": "C", "texto": "border-radius: 16px;" },
-            { "id": "D", "texto": "background: #fff;" }
+            { "id": "A", "texto": "O label passa a se comportar como célula de tabela." },
+            { "id": "B", "texto": "O label fica invisível, mas continua ocupando espaço." },
+            { "id": "C", "texto": "O label passa a ocupar a linha disponível, colocando o próximo elemento abaixo." },
+            { "id": "D", "texto": "O label se torna automaticamente um botão clicável." }
           ],
-          "correta": "A",
-          "feedback": "width: 320px define a largura do elemento em 320 pixels."
+          "correta": "C",
+          "feedback": "Elementos com display: block ocupam a linha disponível e normalmente quebram a linha antes do próximo elemento."
         },
         {
           "id": "pi-av1-q36",
-          "enunciado": "No seletor .formulario, qual propriedade arredonda os cantos do elemento?",
+          "enunciado": "Qual propriedade CSS define o peso visual da fonte, como normal ou negrito?",
           "alternativas": [
-            { "id": "A", "texto": "border-radius: 16px;" },
-            { "id": "B", "texto": "padding: 32px;" },
-            { "id": "C", "texto": "box-shadow: 0 8px 24px rgba(0,0,0,0.8);" },
-            { "id": "D", "texto": "width: 320px;" }
+            { "id": "A", "texto": "font-size" },
+            { "id": "B", "texto": "font-family" },
+            { "id": "C", "texto": "line-height" },
+            { "id": "D", "texto": "font-weight" }
           ],
-          "correta": "A",
-          "feedback": "border-radius controla o arredondamento dos cantos da caixa."
+          "correta": "D",
+          "feedback": "font-weight controla o peso da fonte, como normal, bold ou valores numéricos."
         },
         {
           "id": "pi-av1-q37",
-          "enunciado": "No seletor .formulario, para que serve padding: 32px?",
+          "enunciado": "Qual propriedade CSS define a família tipográfica preferida e fontes alternativas?",
           "alternativas": [
-            { "id": "A", "texto": "Criar espaçamento interno entre o conteúdo e as bordas." },
-            { "id": "B", "texto": "Criar sombra externa no elemento." },
-            { "id": "C", "texto": "Alterar o tipo da fonte." },
-            { "id": "D", "texto": "Esconder o elemento da tela." }
+            { "id": "A", "texto": "font-family" },
+            { "id": "B", "texto": "font-weight" },
+            { "id": "C", "texto": "font-size" },
+            { "id": "D", "texto": "text-transform" }
           ],
           "correta": "A",
-          "feedback": "padding cria espaçamento interno, afastando o conteúdo das bordas do elemento."
+          "feedback": "font-family define a lista de fontes que o navegador tentará usar, em ordem de preferência."
         },
         {
           "id": "pi-av1-q38",
-          "enunciado": "No box-shadow: 0 8px 24px rgba(0,0,0,0.8), qual valor representa o deslocamento vertical da sombra?",
+          "enunciado": "Qual alternativa diferencia width: 100% de padding?",
           "alternativas": [
-            { "id": "A", "texto": "8px" },
-            { "id": "B", "texto": "0" },
-            { "id": "C", "texto": "24px" },
-            { "id": "D", "texto": "0.8" }
+            { "id": "A", "texto": "width: 100% define fonte em negrito; padding define família de fonte." },
+            { "id": "B", "texto": "width: 100% faz o elemento ocupar toda a largura disponível; padding cria espaço interno." },
+            { "id": "C", "texto": "width: 100% cria sombra; padding muda a cor do fundo." },
+            { "id": "D", "texto": "width: 100% oculta o elemento; padding torna o campo obrigatório." }
           ],
-          "correta": "A",
-          "feedback": "Na ordem usada, 0 é o deslocamento horizontal, 8px é o deslocamento vertical, 24px é o desfoque e rgba define a cor da sombra."
+          "correta": "B",
+          "feedback": "width controla largura. padding controla o espaço interno entre conteúdo e borda."
         },
         {
           "id": "pi-av1-q39",
-          "enunciado": "No CSS dos inputs, o que faz width: 100%?",
+          "enunciado": "O que a pseudoclasse :hover permite fazer?",
           "alternativas": [
-            { "id": "A", "texto": "Faz o campo ocupar toda a largura disponível do elemento pai." },
-            { "id": "B", "texto": "Faz o campo ter altura de 100 pixels." },
-            { "id": "C", "texto": "Impede o usuário de digitar." },
-            { "id": "D", "texto": "Transforma o input em botão." }
+            { "id": "A", "texto": "Aplicar estilos quando o usuário passa o ponteiro sobre o elemento." },
+            { "id": "B", "texto": "Aplicar estilos apenas quando o formulário é enviado com sucesso." },
+            { "id": "C", "texto": "Selecionar somente elementos que possuem atributo required." },
+            { "id": "D", "texto": "Transformar qualquer tag HTML em imagem." }
           ],
           "correta": "A",
-          "feedback": "width: 100% faz o input ocupar toda a largura disponível no contêiner onde está inserido."
+          "feedback": ":hover aplica regras enquanto o ponteiro está sobre o elemento, sendo comum em botões e links."
         },
         {
           "id": "pi-av1-q40",
-          "enunciado": "No seletor input, qual declaração define a borda cinza de 1 pixel?",
+          "enunciado": "Qual declaração CSS indica visualmente que um elemento é clicável ao mudar o ponteiro do mouse?",
           "alternativas": [
-            { "id": "A", "texto": "border: 1px solid #CCC;" },
-            { "id": "B", "texto": "border-radius: 8px;" },
-            { "id": "C", "texto": "padding: 8px;" },
-            { "id": "D", "texto": "margin-top: 4px;" }
+            { "id": "A", "texto": "display: pointer;" },
+            { "id": "B", "texto": "cursor: pointer;" },
+            { "id": "C", "texto": "mouse: click;" },
+            { "id": "D", "texto": "hover: cursor;" }
           ],
-          "correta": "A",
-          "feedback": "border: 1px solid #CCC define espessura, estilo e cor da borda."
+          "correta": "B",
+          "feedback": "cursor: pointer muda o cursor para o formato normalmente associado a elementos clicáveis."
         },
         {
           "id": "pi-av1-q41",
-          "enunciado": "No seletor button, qual propriedade muda o ponteiro do mouse para a mãozinha?",
+          "enunciado": "Quando um botão usa display: flex e contém um ícone e um texto, para que serve gap?",
           "alternativas": [
-            { "id": "A", "texto": "cursor: pointer;" },
-            { "id": "B", "texto": "border: none;" },
-            { "id": "C", "texto": "gap: 8px;" },
-            { "id": "D", "texto": "align-items: center;" }
+            { "id": "A", "texto": "Para criar espaço entre os itens filhos do botão." },
+            { "id": "B", "texto": "Para remover a borda padrão do botão." },
+            { "id": "C", "texto": "Para transformar o texto em maiúsculas." },
+            { "id": "D", "texto": "Para definir o destino de envio do formulário." }
           ],
           "correta": "A",
-          "feedback": "cursor: pointer indica visualmente que o elemento é clicável."
+          "feedback": "gap cria espaçamento entre itens em layouts flexíveis ou em grid."
         },
         {
           "id": "pi-av1-q42",
-          "enunciado": "No seletor button, qual propriedade remove a borda padrão do botão?",
+          "enunciado": "Qual diferença entre seletor de classe e seletor de id está correta?",
           "alternativas": [
-            { "id": "A", "texto": "border: none;" },
-            { "id": "B", "texto": "background: #007bff;" },
-            { "id": "C", "texto": "color: #fff;" },
-            { "id": "D", "texto": "font-size: 16px;" }
+            { "id": "A", "texto": "Classe usa # e id usa ponto; ambos só selecionam tags table." },
+            { "id": "B", "texto": "Classe e id usam sempre a mesma sintaxe, mudando apenas a propriedade color." },
+            { "id": "C", "texto": "Classe usa ponto e pode ser reutilizada; id usa # e deve identificar um elemento específico." },
+            { "id": "D", "texto": "Classe só funciona em CSS externo; id só funciona em CSS inline." }
           ],
-          "correta": "A",
-          "feedback": "border: none remove a borda do botão."
+          "correta": "C",
+          "feedback": "Seletores de classe usam ponto, como .exemplo. Seletores de id usam #, como #elemento."
         },
         {
           "id": "pi-av1-q43",
-          "enunciado": "No seletor button, qual propriedade cria espaço entre os itens internos quando o botão usa display: flex?",
+          "enunciado": "Qual alternativa explica display: none corretamente?",
           "alternativas": [
-            { "id": "A", "texto": "gap: 8px;" },
-            { "id": "B", "texto": "padding: 16px;" },
-            { "id": "C", "texto": "margin-top: 16px;" },
-            { "id": "D", "texto": "width: 100%;" }
+            { "id": "A", "texto": "Oculta o elemento, mas preserva obrigatoriamente sua área vazia no layout." },
+            { "id": "B", "texto": "Mostra o elemento apenas quando ele está com :hover." },
+            { "id": "C", "texto": "Transforma o elemento em contêiner flexível invisível." },
+            { "id": "D", "texto": "Oculta o elemento e também remove o espaço que ele ocuparia no layout." }
           ],
-          "correta": "A",
-          "feedback": "gap define o espaçamento entre os itens filhos dentro de um contêiner flexível."
+          "correta": "D",
+          "feedback": "display: none remove o elemento da renderização visual e do fluxo do layout."
         },
         {
           "id": "pi-av1-q44",
-          "enunciado": "O que acontece com o botão quando o usuário passa o mouse sobre ele, conforme button:hover?",
+          "enunciado": "Qual propriedade CSS remove a borda de um botão ou campo quando esse é o objetivo visual?",
           "alternativas": [
-            { "id": "A", "texto": "O fundo muda para #E4A23F e o texto para #000." },
-            { "id": "B", "texto": "O botão desaparece da tela." },
-            { "id": "C", "texto": "A largura muda para 320px." },
-            { "id": "D", "texto": "A borda esquerda fica azul." }
+            { "id": "A", "texto": "border: none;" },
+            { "id": "B", "texto": "border-radius: none;" },
+            { "id": "C", "texto": "outline-color: none;" },
+            { "id": "D", "texto": "padding: none;" }
           ],
           "correta": "A",
-          "feedback": "A pseudoclasse :hover aplica estilos quando o mouse está sobre o botão, mudando background e color."
+          "feedback": "border: none remove a borda definida para o elemento."
         },
         {
           "id": "pi-av1-q45",
-          "enunciado": "No CSS apresentado, qual seletor aplica background: #D62516?",
+          "enunciado": "Qual alternativa descreve corretamente uma borda aplicada somente do lado esquerdo?",
           "alternativas": [
-            { "id": "A", "texto": ".limpar" },
-            { "id": "B", "texto": "#resultado" },
-            { "id": "C", "texto": ".marcatexto" },
-            { "id": "D", "texto": "label" }
+            { "id": "A", "texto": "border-radius, pois ele controla apenas a lateral esquerda." },
+            { "id": "B", "texto": "border-left, pois ele define somente a borda esquerda." },
+            { "id": "C", "texto": "margin-left, pois ele cria a linha lateral." },
+            { "id": "D", "texto": "padding-left, pois ele pinta automaticamente uma borda." }
           ],
-          "correta": "A",
-          "feedback": "O seletor .limpar aplica a cor de fundo #D62516 aos elementos que possuem class=\"limpar\"."
+          "correta": "B",
+          "feedback": "border-left permite configurar apenas a borda esquerda, sem alterar necessariamente os outros lados."
         },
         {
           "id": "pi-av1-q46",
-          "enunciado": "No seletor #resultado, o símbolo # indica qual tipo de seletor CSS?",
+          "enunciado": "Qual alternativa diferencia background e color em CSS?",
           "alternativas": [
-            { "id": "A", "texto": "Seletor de id." },
-            { "id": "B", "texto": "Seletor de classe." },
-            { "id": "C", "texto": "Seletor de tag." },
-            { "id": "D", "texto": "Seletor universal." }
+            { "id": "A", "texto": "background define a fonte; color define a largura do elemento." },
+            { "id": "B", "texto": "background define o preenchimento interno; color define a margem externa." },
+            { "id": "C", "texto": "background define o fundo do elemento; color define a cor do texto." },
+            { "id": "D", "texto": "background define o tipo de display; color define a direção do Flexbox." }
           ],
-          "correta": "A",
-          "feedback": "Em CSS, # indica id. Assim, #resultado seleciona o elemento com id=\"resultado\"."
+          "correta": "C",
+          "feedback": "background controla o fundo do elemento. color controla a cor do texto."
         },
         {
           "id": "pi-av1-q47",
-          "enunciado": "No seletor #resultado, o que faz display: none?",
+          "enunciado": "Em uma declaração como font-family: 'Roboto', sans-serif, Arial, qual é a ideia principal da lista de fontes?",
           "alternativas": [
-            { "id": "A", "texto": "Oculta o elemento e remove seu espaço no layout." },
-            { "id": "B", "texto": "Deixa o texto em negrito." },
-            { "id": "C", "texto": "Centraliza o elemento no eixo horizontal." },
-            { "id": "D", "texto": "Adiciona uma borda arredondada." }
+            { "id": "A", "texto": "O navegador tenta usar a primeira fonte disponível e usa alternativas caso ela não exista." },
+            { "id": "B", "texto": "Todas as fontes são misturadas ao mesmo tempo em cada letra." },
+            { "id": "C", "texto": "A última fonte da lista sempre será obrigatoriamente usada." },
+            { "id": "D", "texto": "A lista define apenas o tamanho da fonte, não sua família." }
           ],
           "correta": "A",
-          "feedback": "display: none faz o elemento não ser exibido e não ocupar espaço visual na página."
+          "feedback": "O navegador segue a ordem da lista e usa a primeira fonte disponível no ambiente."
         },
         {
           "id": "pi-av1-q48",
-          "enunciado": "No seletor #resultado, qual declaração cria uma borda azul apenas à esquerda?",
+          "enunciado": "Qual alternativa descreve melhor a relação entre padding e border-radius?",
           "alternativas": [
-            { "id": "A", "texto": "border-left: 4px solid #007bff;" },
-            { "id": "B", "texto": "border: 1px solid #CCC;" },
-            { "id": "C", "texto": "box-shadow: 0 8px 24px rgba(0,0,0,0.8);" },
-            { "id": "D", "texto": "background: #fff;" }
+            { "id": "A", "texto": "padding arredonda cantos; border-radius cria espaço interno." },
+            { "id": "B", "texto": "padding cria espaço interno; border-radius arredonda os cantos." },
+            { "id": "C", "texto": "padding e border-radius sempre deixam o elemento invisível." },
+            { "id": "D", "texto": "padding define a cor do texto; border-radius define o tipo da fonte." }
           ],
-          "correta": "A",
-          "feedback": "border-left define somente a borda esquerda, com espessura de 4px, estilo solid e cor #007bff."
+          "correta": "B",
+          "feedback": "padding controla espaçamento interno. border-radius controla o arredondamento dos cantos."
         },
         {
           "id": "pi-av1-q49",
-          "enunciado": "No seletor .marcatexto, qual cor de fundo é usada para destacar o texto?",
+          "enunciado": "Qual alternativa representa melhor a ordem comum de valores em box-shadow: 0 8px 24px rgba(...)?",
           "alternativas": [
-            { "id": "A", "texto": "#ebf13a" },
-            { "id": "B", "texto": "#101015" },
-            { "id": "C", "texto": "#fff" },
-            { "id": "D", "texto": "#000" }
+            { "id": "A", "texto": "tamanho da fonte, peso da fonte, largura e cor." },
+            { "id": "B", "texto": "margem, padding, borda e raio." },
+            { "id": "C", "texto": "tipo de display, direção flexível, alinhamento e cor." },
+            { "id": "D", "texto": "deslocamento horizontal, deslocamento vertical, desfoque e cor." }
           ],
-          "correta": "A",
-          "feedback": "A classe .marcatexto usa background: #ebf13a, criando um destaque visual semelhante a marca-texto."
+          "correta": "D",
+          "feedback": "Na forma comum, box-shadow usa deslocamento horizontal, deslocamento vertical, blur/desfoque e cor."
         },
         {
           "id": "pi-av1-q50",
-          "enunciado": "Qual alternativa descreve corretamente margin-top no CSS apresentado?",
+          "enunciado": "Qual alternativa descreve uma consequência comum de aplicar width: 100% em um input dentro de um formulário?",
           "alternativas": [
-            { "id": "A", "texto": "Cria espaçamento externo acima do elemento." },
-            { "id": "B", "texto": "Cria espaçamento interno à esquerda do elemento." },
-            { "id": "C", "texto": "Define a cor do texto." },
-            { "id": "D", "texto": "Define o tipo de campo do formulário." }
+            { "id": "A", "texto": "O input tende a ocupar toda a largura disponível do contêiner pai." },
+            { "id": "B", "texto": "O input passa a aceitar exatamente 100 caracteres." },
+            { "id": "C", "texto": "O input passa a ter altura igual à viewport." },
+            { "id": "D", "texto": "O input deixa de participar do envio do formulário." }
           ],
           "correta": "A",
-          "feedback": "margin-top cria uma margem externa na parte superior do elemento, afastando-o do conteúdo acima."
+          "feedback": "width: 100% faz o campo usar toda a largura disponível no elemento pai, respeitando o modelo de caixa aplicado."
         }
       ]
     },

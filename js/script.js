@@ -389,6 +389,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         quizBody.appendChild(article);
+
+        if (answer && currentIndex === questions.length - 1) {
+            quizBody.appendChild(createQuizResultCard());
+        }
+
         quizBody.appendChild(createQuizNavigation());
     }
 
