@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
             menuContainer.innerHTML = '<div class="loading-data"><i class="fas fa-exclamation-triangle"></i> Erro ao carregar dados.</div>';
         });
 
+    document.addEventListener('keydown', handleQuizShortcut);
+
     function buildMenu(data) {
         menuContainer.innerHTML = '';
 
@@ -429,6 +431,33 @@ document.addEventListener('DOMContentLoaded', () => {
         if (questionIndex === currentQuizState.questions.length - 1) {
             renderCurrentQuestion();
         }
+    }
+
+    function handleQuizShortcut(event) {
+        if (!currentQuizState || quizContainer.classList.contains('hidden')) return;
+        if (event.ctrlKey || event.altKey || event.metaKey) return;
+        if (isTextEntryElement(event.target)) return;
+
+        const selectedId = event.key.toUpperCase();
+        if (!['A', 'B', 'C', 'D'].includes(selectedId)) return;
+
+        const currentIndex = currentQuizState.currentIndex;
+        if (currentQuizState.answers.has(currentIndex)) return;
+
+        const currentQuestionCard = quizBody.querySelector(`.question-card[data-question-index="${currentIndex}"]`);
+        const selectedButton = currentQuestionCard?.querySelector(`.alternative-btn[data-alternative-id="${selectedId}"]`);
+
+        if (!selectedButton || selectedButton.disabled) return;
+
+        event.preventDefault();
+        selectedButton.click();
+    }
+
+    function isTextEntryElement(element) {
+        if (!element) return false;
+
+        const tagName = element.tagName;
+        return element.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(tagName);
     }
 
     function createQuizNavigation() {
