@@ -293,10 +293,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function normalizeAssessments(quizData) {
         if (Array.isArray(quizData.avaliacoes)) {
-            return quizData.avaliacoes;
+            return quizData.avaliacoes.filter(assessment => {
+                return Array.isArray(assessment.questoes) && assessment.questoes.length > 0;
+            });
         }
 
-        if (Array.isArray(quizData.questoes)) {
+        if (Array.isArray(quizData.questoes) && quizData.questoes.length > 0) {
             return [{
                 id: 'fixacao',
                 titulo: 'Questões de Fixação',
