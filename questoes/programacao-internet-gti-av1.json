@@ -605,6 +605,306 @@
           ],
           "correta": "A",
           "feedback": "width: 100% faz o campo usar toda a largura disponível no elemento pai, respeitando o modelo de caixa aplicado."
+        },
+        {
+          "id": "pi-av1-q51",
+          "enunciado": "No JavaScript estudado, qual é a principal função de calculaImc(peso, altura)?",
+          "alternativas": [
+            { "id": "A", "texto": "Buscar os campos nome, peso e altura diretamente no HTML." },
+            { "id": "B", "texto": "Mostrar o resultado formatado dentro da div de resultado." },
+            { "id": "C", "texto": "Classificar automaticamente o usuário como abaixo do peso, normal, sobrepeso ou obesidade." },
+            { "id": "D", "texto": "Calcular o IMC usando peso dividido pela altura ao quadrado e devolver esse valor." }
+          ],
+          "correta": "D",
+          "feedback": "calculaImc recebe peso e altura, calcula peso / (altura ** 2) e retorna o valor numérico do IMC."
+        },
+        {
+          "id": "pi-av1-q52",
+          "enunciado": "Na expressão altura ** 2, o operador ** faz o quê?",
+          "alternativas": [
+            { "id": "A", "texto": "Compara se altura é igual a 2." },
+            { "id": "B", "texto": "Multiplica altura por 2 apenas quando o valor é inteiro." },
+            { "id": "C", "texto": "Eleva altura à potência 2." },
+            { "id": "D", "texto": "Converte altura para texto com duas casas decimais." }
+          ],
+          "correta": "C",
+          "feedback": "O operador ** é usado para exponenciação. Assim, altura ** 2 significa altura elevada ao quadrado."
+        },
+        {
+          "id": "pi-av1-q53",
+          "enunciado": "Qual alternativa descreve corretamente o papel do return dentro de calculaImc?",
+          "alternativas": [
+            { "id": "A", "texto": "Ele mostra uma mensagem de alerta na tela." },
+            { "id": "B", "texto": "Ele impede o formulário de recarregar a página." },
+            { "id": "C", "texto": "Ele busca o campo pelo id informado." },
+            { "id": "D", "texto": "Ele devolve o valor calculado para quem chamou a função." }
+          ],
+          "correta": "D",
+          "feedback": "return encerra a função e devolve um valor. No caso, devolve o IMC calculado."
+        },
+        {
+          "id": "pi-av1-q54",
+          "enunciado": "Na função processaCalculo(event), por que aparece if (event) event.preventDefault()?",
+          "alternativas": [
+            { "id": "A", "texto": "Para evitar o comportamento padrão do evento, como recarregar a página ao enviar o formulário." },
+            { "id": "B", "texto": "Para transformar todos os campos do formulário em números válidos." },
+            { "id": "C", "texto": "Para limpar automaticamente a div de resultado." },
+            { "id": "D", "texto": "Para executar classificaImc antes de calcular o IMC." }
+          ],
+          "correta": "A",
+          "feedback": "preventDefault evita o comportamento padrão do evento. Em formulários, isso costuma impedir o recarregamento da página."
+        },
+        {
+          "id": "pi-av1-q55",
+          "enunciado": "O que document.getElementById('nome').value faz no código estudado?",
+          "alternativas": [
+            { "id": "A", "texto": "Cria um novo campo com id nome e o adiciona ao formulário." },
+            { "id": "B", "texto": "Altera o CSS do campo nome para display block." },
+            { "id": "C", "texto": "Seleciona o elemento com id nome e obtém o valor digitado nele." },
+            { "id": "D", "texto": "Valida se o nome tem apenas números válidos." }
+          ],
+          "correta": "C",
+          "feedback": "getElementById localiza o elemento pelo id, e .value acessa o valor atual de campos de formulário."
+        },
+        {
+          "id": "pi-av1-q56",
+          "enunciado": "No trecho if (!nome || !nascimento), o operador ! antes de nome e nascimento indica o quê?",
+          "alternativas": [
+            { "id": "A", "texto": "Que o valor será convertido para número antes da comparação." },
+            { "id": "B", "texto": "Que os campos serão preenchidos automaticamente." },
+            { "id": "C", "texto": "Que o texto será exibido em negrito no resultado." },
+            { "id": "D", "texto": "Que o teste verifica ausência ou valor vazio desses campos." }
+          ],
+          "correta": "D",
+          "feedback": "O operador ! nega a condição. Em valores vazios, !nome ou !nascimento se torna verdadeiro."
+        },
+        {
+          "id": "pi-av1-q57",
+          "enunciado": "No teste if (!nome || !nascimento), qual é o sentido do operador ||?",
+          "alternativas": [
+            { "id": "A", "texto": "Executar o bloco se nome e nascimento estiverem preenchidos ao mesmo tempo." },
+            { "id": "B", "texto": "Executar o bloco somente se os dois campos forem números válidos." },
+            { "id": "C", "texto": "Executar o bloco se pelo menos uma das condições for verdadeira." },
+            { "id": "D", "texto": "Somar os textos dos dois campos antes da validação." }
+          ],
+          "correta": "C",
+          "feedback": "O operador || significa OU lógico. Basta uma das condições ser verdadeira para o bloco ser executado."
+        },
+        {
+          "id": "pi-av1-q58",
+          "enunciado": "Para que serve alert('Por favor, preencha o nome e nascimento!') no código?",
+          "alternativas": [
+            { "id": "A", "texto": "Para exibir uma mensagem ao usuário quando a validação encontra campos obrigatórios vazios." },
+            { "id": "B", "texto": "Para inserir o resultado formatado dentro da página." },
+            { "id": "C", "texto": "Para arredondar o IMC para duas casas decimais." },
+            { "id": "D", "texto": "Para registrar a mensagem apenas no console do navegador." }
+          ],
+          "correta": "A",
+          "feedback": "alert exibe uma caixa de mensagem ao usuário. No trecho, ele avisa sobre campos obrigatórios não preenchidos."
+        },
+        {
+          "id": "pi-av1-q59",
+          "enunciado": "O que acontece quando o código executa return logo após um alert dentro de uma validação?",
+          "alternativas": [
+            { "id": "A", "texto": "A função reinicia e tenta calcular novamente com valores vazios." },
+            { "id": "B", "texto": "O navegador troca automaticamente o alert por innerHTML." },
+            { "id": "C", "texto": "O valor do campo é convertido para número inteiro." },
+            { "id": "D", "texto": "A função para naquele ponto e não continua para as próximas etapas do cálculo." }
+          ],
+          "correta": "D",
+          "feedback": "return interrompe a execução da função. Por isso, depois de uma validação inválida, o cálculo não prossegue."
+        },
+        {
+          "id": "pi-av1-q60",
+          "enunciado": "No trecho if (isNaN(peso) || isNaN(altura)), qual é a intenção principal?",
+          "alternativas": [
+            { "id": "A", "texto": "Testar se peso e altura foram digitados com letras maiúsculas." },
+            { "id": "B", "texto": "Garantir que nome e nascimento tenham sido preenchidos." },
+            { "id": "C", "texto": "Verificar se peso ou altura não representam números válidos." },
+            { "id": "D", "texto": "Formatar peso e altura com duas casas decimais." }
+          ],
+          "correta": "C",
+          "feedback": "isNaN verifica se um valor não é um número válido. O teste evita calcular IMC com peso ou altura inválidos."
+        },
+        {
+          "id": "pi-av1-q61",
+          "enunciado": "No código, qual linha obtém a área da página onde o resultado será mostrado?",
+          "alternativas": [
+            { "id": "A", "texto": "const divResultado = document.getElementById('resultado')" },
+            { "id": "B", "texto": "const classificacao = classificaImc(imc)" },
+            { "id": "C", "texto": "const imc = calculaImc(peso, altura)" },
+            { "id": "D", "texto": "divResultado.style.display = 'block'" }
+          ],
+          "correta": "A",
+          "feedback": "document.getElementById('resultado') seleciona o elemento HTML que receberá a mensagem final."
+        },
+        {
+          "id": "pi-av1-q62",
+          "enunciado": "Qual é o efeito de divResultado.style.display = 'block'?",
+          "alternativas": [
+            { "id": "A", "texto": "Remove o elemento da tela e do fluxo do layout." },
+            { "id": "B", "texto": "Faz o elemento voltar a ser exibido como bloco." },
+            { "id": "C", "texto": "Apaga definitivamente o elemento do HTML." },
+            { "id": "D", "texto": "Transforma o resultado em número com duas casas decimais." }
+          ],
+          "correta": "B",
+          "feedback": "Ao alterar display para block, o código mostra novamente a área do resultado que poderia estar oculta."
+        },
+        {
+          "id": "pi-av1-q63",
+          "enunciado": "No trecho divResultado.innerHTML = `...`, por que foi usado innerHTML?",
+          "alternativas": [
+            { "id": "A", "texto": "Para validar se peso e altura são números antes do cálculo." },
+            { "id": "B", "texto": "Para impedir que o formulário seja enviado." },
+            { "id": "C", "texto": "Para trocar o conteúdo interno da div por uma mensagem contendo texto e tags HTML." },
+            { "id": "D", "texto": "Para selecionar um elemento da tela pelo seu id." }
+          ],
+          "correta": "C",
+          "feedback": "innerHTML altera o conteúdo interno do elemento e permite inserir marcação HTML, como <b> e <br>."
+        },
+        {
+          "id": "pi-av1-q64",
+          "enunciado": "Na template string `<b>${nome}</b>`, qual é o papel de ${nome}?",
+          "alternativas": [
+            { "id": "A", "texto": "Criar uma variável chamada nome dentro do HTML." },
+            { "id": "B", "texto": "Inserir o valor da variável nome dentro do texto montado." },
+            { "id": "C", "texto": "Executar uma validação obrigatória no campo nome." },
+            { "id": "D", "texto": "Converter nome para um número válido." }
+          ],
+          "correta": "B",
+          "feedback": "Em template strings, ${...} permite interpolar valores de variáveis ou expressões dentro do texto."
+        },
+        {
+          "id": "pi-av1-q65",
+          "enunciado": "O que imc.toFixed(2) faz antes de exibir o resultado?",
+          "alternativas": [
+            { "id": "A", "texto": "Classifica o IMC em uma das faixas de peso." },
+            { "id": "B", "texto": "Transforma o IMC em campo obrigatório." },
+            { "id": "C", "texto": "Busca o IMC dentro do documento pelo id." },
+            { "id": "D", "texto": "Formata o número com duas casas decimais." }
+          ],
+          "correta": "D",
+          "feedback": "toFixed(2) formata o número para exibição com duas casas decimais."
+        },
+        {
+          "id": "pi-av1-q66",
+          "enunciado": "Qual é a função de classificaImc(imc)?",
+          "alternativas": [
+            { "id": "A", "texto": "Receber o IMC já calculado e retornar uma classificação textual." },
+            { "id": "B", "texto": "Ler peso e altura diretamente dos campos do formulário." },
+            { "id": "C", "texto": "Evitar o recarregamento da página durante o envio." },
+            { "id": "D", "texto": "Limpar o resultado quando o formulário for resetado." }
+          ],
+          "correta": "A",
+          "feedback": "classificaImc recebe o valor do IMC e devolve textos como Abaixo do peso, Peso Normal, Sobrepeso ou Obesidade."
+        },
+        {
+          "id": "pi-av1-q67",
+          "enunciado": "No início de classificaImc, por que aparece let resultado = ''?",
+          "alternativas": [
+            { "id": "A", "texto": "Porque const não pode ser usado em funções JavaScript." },
+            { "id": "B", "texto": "Porque resultado precisa começar vazio e depois pode receber outro texto." },
+            { "id": "C", "texto": "Porque strings vazias são obrigatórias antes de qualquer alert." },
+            { "id": "D", "texto": "Porque let transforma automaticamente qualquer valor em número." }
+          ],
+          "correta": "B",
+          "feedback": "let permite que a variável receba outro valor depois. Ela começa vazia e é preenchida conforme a faixa do IMC."
+        },
+        {
+          "id": "pi-av1-q68",
+          "enunciado": "Na cadeia if, else if e else de classificaImc, qual alternativa descreve corretamente o fluxo?",
+          "alternativas": [
+            { "id": "A", "texto": "Todas as condições verdadeiras são executadas, mesmo depois da primeira classificação." },
+            { "id": "B", "texto": "O else é executado antes dos testes com if e else if." },
+            { "id": "C", "texto": "O código testa as faixas em ordem e usa o primeiro bloco cuja condição seja satisfeita." },
+            { "id": "D", "texto": "else if serve apenas para repetir a mesma condição do if inicial." }
+          ],
+          "correta": "C",
+          "feedback": "Em uma cadeia if/else if/else, apenas um dos blocos é escolhido: o primeiro que satisfaz a condição, ou o else final."
+        },
+        {
+          "id": "pi-av1-q69",
+          "enunciado": "Se o IMC for 24, qual classificação a função classificaImc retorna?",
+          "alternativas": [
+            { "id": "A", "texto": "Abaixo do peso" },
+            { "id": "B", "texto": "Peso Normal" },
+            { "id": "C", "texto": "Sobrepeso" },
+            { "id": "D", "texto": "Obesidade" }
+          ],
+          "correta": "B",
+          "feedback": "24 não é menor que 18.5, mas é menor que 25. Por isso, retorna Peso Normal."
+        },
+        {
+          "id": "pi-av1-q70",
+          "enunciado": "Se o IMC for exatamente 25, qual classificação será retornada pelo código?",
+          "alternativas": [
+            { "id": "A", "texto": "Peso Normal, pois 25 ainda entra em imc < 25." },
+            { "id": "B", "texto": "Abaixo do peso, pois 25 é maior que 18.5." },
+            { "id": "C", "texto": "Obesidade, pois qualquer valor acima de 25 cai no else final." },
+            { "id": "D", "texto": "Sobrepeso, pois 25 não passa em imc < 25, mas passa em imc < 30." }
+          ],
+          "correta": "D",
+          "feedback": "Como a condição é imc < 25, o valor 25 não entra em Peso Normal. Ele entra em Sobrepeso por ser menor que 30."
+        },
+        {
+          "id": "pi-av1-q71",
+          "enunciado": "Para que serve document.addEventListener('reset', ()=> { ... }) no código?",
+          "alternativas": [
+            { "id": "A", "texto": "Para executar uma função quando ocorrer o evento reset no documento." },
+            { "id": "B", "texto": "Para calcular o IMC assim que a página termina de carregar." },
+            { "id": "C", "texto": "Para impedir que campos numéricos aceitem letras." },
+            { "id": "D", "texto": "Para transformar todos os botões em links." }
+          ],
+          "correta": "A",
+          "feedback": "addEventListener registra uma função para responder a um evento. Nesse caso, o evento observado é reset."
+        },
+        {
+          "id": "pi-av1-q72",
+          "enunciado": "No evento de reset, por que o código faz divResultado.innerHTML = ''?",
+          "alternativas": [
+            { "id": "A", "texto": "Para calcular novamente o IMC com valor zero." },
+            { "id": "B", "texto": "Para limpar o conteúdo textual/HTML que estava dentro da área de resultado." },
+            { "id": "C", "texto": "Para remover o evento reset do documento." },
+            { "id": "D", "texto": "Para converter o resultado em número válido." }
+          ],
+          "correta": "B",
+          "feedback": "Atribuir uma string vazia ao innerHTML remove o conteúdo exibido dentro daquele elemento."
+        },
+        {
+          "id": "pi-av1-q73",
+          "enunciado": "Qual alternativa descreve melhor a arrow function ()=> { ... } usada no addEventListener?",
+          "alternativas": [
+            { "id": "A", "texto": "É uma forma de escrever uma função que será executada quando o evento ocorrer." },
+            { "id": "B", "texto": "É uma forma obrigatória de declarar variáveis constantes." },
+            { "id": "C", "texto": "É um seletor CSS usado para apontar para ids." },
+            { "id": "D", "texto": "É uma tag HTML usada para limpar formulários." }
+          ],
+          "correta": "A",
+          "feedback": "A sintaxe ()=> { ... } cria uma função anônima, usada como ação a executar quando o evento reset acontecer."
+        },
+        {
+          "id": "pi-av1-q74",
+          "enunciado": "Qual alternativa mostra a sequência mais coerente feita por processaCalculo?",
+          "alternativas": [
+            { "id": "A", "texto": "Classifica o IMC, depois busca os campos, depois valida e por último calcula." },
+            { "id": "B", "texto": "Busca valores da tela, valida os dados, calcula o IMC, classifica e exibe o resultado." },
+            { "id": "C", "texto": "Limpa o resultado, apaga os campos, carrega CSS e abre um link externo." },
+            { "id": "D", "texto": "Cria inputs novos, monta uma tabela, adiciona imagens e recarrega a página." }
+          ],
+          "correta": "B",
+          "feedback": "A função coleta os valores, valida entradas, calcula o IMC, obtém a classificação e mostra a mensagem final na tela."
+        },
+        {
+          "id": "pi-av1-q75",
+          "enunciado": "No código estudado, qual diferença entre console.log e alert está correta?",
+          "alternativas": [
+            { "id": "A", "texto": "console.log exibe uma caixa para o usuário; alert escreve apenas no HTML." },
+            { "id": "B", "texto": "console.log e alert sempre têm exatamente o mesmo efeito visual." },
+            { "id": "C", "texto": "console.log registra mensagens no console; alert mostra uma mensagem em uma caixa para o usuário." },
+            { "id": "D", "texto": "console.log só funciona dentro de CSS; alert só funciona dentro de HTML." }
+          ],
+          "correta": "C",
+          "feedback": "console.log é usado para registrar informações no console do navegador. alert mostra uma mensagem visível ao usuário."
         }
       ]
     },

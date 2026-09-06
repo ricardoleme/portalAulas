@@ -486,6 +486,61 @@ document.addEventListener('DOMContentLoaded', () => {
         return total === 1 ? '1 questão' : `${total} questões`;
     }
 
+    function createQuizResultCard() {
+        const grade = getCurrentQuizGrade();
+        const result = getQuizResultByGrade(grade);
+        const card = document.createElement('section');
+        card.className = `quiz-result-card ${result.status}`;
+        card.setAttribute('aria-live', 'polite');
+        card.innerHTML = `
+            <div class="quiz-result-icon"><i class="${result.icon}"></i></div>
+            <div>
+                <span>Resultado final</span>
+                <h4>${result.title}</h4>
+                <p>${result.message}</p>
+                <strong>Nota ${grade.toFixed(1)}</strong>
+            </div>
+        `;
+
+        return card;
+    }
+
+    function getCurrentQuizGrade() {
+        if (!currentQuizState) return 0;
+
+        const results = Array.from(currentQuizState.answers.values());
+        const correct = results.filter(result => result.isCorrect).length;
+        const total = currentQuizState.questions.length || 1;
+        return (correct / total) * 10;
+    }
+
+    function getQuizResultByGrade(grade) {
+        if (grade < 6) {
+            return {
+                status: 'failed',
+                icon: 'fas fa-triangle-exclamation',
+                title: 'Você não atingiu a média.',
+                message: 'Revise os tópicos com erro e tente responder novamente depois do estudo.'
+            };
+        }
+
+        if (grade <= 8) {
+            return {
+                status: 'average',
+                icon: 'fas fa-thumbs-up',
+                title: 'Foi razoável.',
+                message: 'Você acertou boa parte do conteúdo, mas ainda há pontos para reforçar.'
+            };
+        }
+
+        return {
+            status: 'excellent',
+            icon: 'fas fa-trophy',
+            title: 'Você foi muito bem.',
+            message: 'Seu desempenho mostra domínio forte dos principais pontos desta avaliação.'
+        };
+    }
+
     function normalizeAlternatives(alternatives) {
         if (!Array.isArray(alternatives)) return [];
 
