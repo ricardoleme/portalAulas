@@ -310,13 +310,13 @@
           "id": "bd-av1-q26",
           "enunciado": "No DER, como representar que o CPF de CLIENTE deve ser único?",
           "alternativas": [
-            { "id": "A", "texto": "Criando uma restrição UNIQUE sobre a coluna cpf." },
+            { "id": "A", "texto": "Criando uma restrição chave primária sobre a coluna cpf." },
             { "id": "B", "texto": "Duplicando a coluna cpf em todas as tabelas." },
             { "id": "C", "texto": "Transformando cpf em relacionamento N-N." },
             { "id": "D", "texto": "Removendo a chave primária da tabela CLIENTE." }
           ],
           "correta": "A",
-          "feedback": "Uma restrição UNIQUE impede que dois registros usem o mesmo valor de CPF."
+          "feedback": "Uma restrição chave primária impede que dois registros usem o mesmo valor de CPF."
         },
         {
           "id": "bd-av1-q27",
@@ -605,6 +605,126 @@
           ],
           "correta": "A",
           "feedback": "O 1-N entre CLIENTE e PEDIDO coloca id_cliente em PEDIDO. O N-N entre PEDIDO e PRODUTO é resolvido por ITEM_PEDIDO, que também armazena quantidade."
+        },
+        {
+          "id": "bd-av1-q51",
+          "enunciado": "[Fonte: INSTITUTO AOCP - IF-CE - Professor EBTT - 2026, adaptada] Em um MER, a definição do número de ocorrências de uma entidade que podem se associar a ocorrências de outra entidade recebe qual nome?",
+          "alternativas": [
+            { "id": "A", "texto": "Cardinalidade." },
+            { "id": "B", "texto": "Normalização." },
+            { "id": "C", "texto": "Domínio do atributo." },
+            { "id": "D", "texto": "Índice secundário." }
+          ],
+          "correta": "A",
+          "feedback": "Cardinalidade indica quantas ocorrências de uma entidade podem ou devem participar de um relacionamento com outra entidade."
+        },
+        {
+          "id": "bd-av1-q52",
+          "enunciado": "[Fonte: INSTITUTO AOCP - IF-CE - Professor EBTT - 2026, adaptada] Em um sistema acadêmico, ALUNO participa de PROJETO por meio de PARTICIPACAO, que possui atributos próprios como carga_horaria e função. Qual modelagem é mais adequada?",
+          "alternativas": [
+            { "id": "A", "texto": "Tratar PARTICIPACAO como entidade associativa entre ALUNO e PROJETO." },
+            { "id": "B", "texto": "Eliminar ALUNO, pois o relacionamento já representa todos os dados." },
+            { "id": "C", "texto": "Guardar todos os projetos em uma coluna textual dentro de ALUNO." },
+            { "id": "D", "texto": "Transformar carga_horaria em cardinalidade máxima." }
+          ],
+          "correta": "A",
+          "feedback": "Quando a associação tem atributos próprios e depende do vínculo entre duas entidades, uma entidade associativa pode representar melhor o relacionamento."
+        },
+        {
+          "id": "bd-av1-q53",
+          "enunciado": "[Fonte: Instituto Acesso - Câmara de Manaus - Analista de Banco de Dados - 2024, adaptada] Sobre atributos em MER, qual alternativa está correta?",
+          "alternativas": [
+            { "id": "A", "texto": "Atributos compostos podem ser divididos em componentes menores com significado próprio." },
+            { "id": "B", "texto": "Atributos compostos são sempre listas de valores repetidos." },
+            { "id": "C", "texto": "Atributos multivalorados e derivados são obrigatoriamente a mesma coisa." },
+            { "id": "D", "texto": "A cardinalidade de um relacionamento define apenas o tipo de dado de cada atributo." }
+          ],
+          "correta": "A",
+          "feedback": "Atributo composto é aquele que pode ser decomposto, como endereço em rua, número, bairro, cidade e UF."
+        },
+        {
+          "id": "bd-av1-q54",
+          "enunciado": "[Fonte: Qconcursos - Modelagem de dados - questão sobre clínica veterinária, adaptada] Em um DER, o identificador profissional CRMV da entidade VETERINARIO deve ser representado como o quê?",
+          "alternativas": [
+            { "id": "A", "texto": "Um atributo da entidade VETERINARIO, podendo ter restrição de unicidade." },
+            { "id": "B", "texto": "Um relacionamento, pois todo identificador é desenhado como losango." },
+            { "id": "C", "texto": "Uma entidade fraca, pois identifica um profissional." },
+            { "id": "D", "texto": "Uma cardinalidade mínima obrigatória." }
+          ],
+          "correta": "A",
+          "feedback": "CRMV descreve o veterinário e pode identificá-lo de forma única, portanto é atributo da entidade, não relacionamento."
+        },
+        {
+          "id": "bd-av1-q55",
+          "enunciado": "[Fonte: Instituto Consulplan - Prefeitura de Campos dos Goytacazes - Analista de Sistemas - 2024, adaptada] Em um MER, uma cardinalidade mínima igual a 1 indica qual interpretação?",
+          "alternativas": [
+            { "id": "A", "texto": "Associação obrigatória da ocorrência da entidade ao relacionamento." },
+            { "id": "B", "texto": "Associação proibida entre entidades." },
+            { "id": "C", "texto": "Relacionamento obrigatoriamente N-N." },
+            { "id": "D", "texto": "Número máximo de atributos simples da entidade." }
+          ],
+          "correta": "A",
+          "feedback": "Cardinalidade mínima 1 indica que a participação é obrigatória, ou seja, a ocorrência precisa estar associada ao relacionamento."
+        },
+        {
+          "id": "bd-av1-q56",
+          "enunciado": "[Fonte: Instituto Consulplan - Prefeitura de Campos dos Goytacazes - Analista de Sistemas - 2024, adaptada] Em um MER, uma cardinalidade mínima igual a 0 indica qual interpretação?",
+          "alternativas": [
+            { "id": "A", "texto": "A participação no relacionamento é opcional." },
+            { "id": "B", "texto": "A entidade não pode ter chave primária." },
+            { "id": "C", "texto": "A cardinalidade máxima sempre será zero." },
+            { "id": "D", "texto": "O relacionamento precisa ser removido do modelo." }
+          ],
+          "correta": "A",
+          "feedback": "Mínimo 0 significa que pode não haver associação para aquela ocorrência, caracterizando participação opcional."
+        },
+        {
+          "id": "bd-av1-q57",
+          "enunciado": "[Fonte: Qconcursos - DER e cardinalidade M-N, adaptada] Se estudantes podem estar associados a vários professores e professores podem estar associados a vários estudantes, qual cardinalidade máxima está presente?",
+          "alternativas": [
+            { "id": "A", "texto": "1-1." },
+            { "id": "B", "texto": "1-N." },
+            { "id": "C", "texto": "N-N." },
+            { "id": "D", "texto": "0-1." }
+          ],
+          "correta": "C",
+          "feedback": "Quando há muitos de um lado para muitos do outro, a cardinalidade máxima é N-N ou M-N."
+        },
+        {
+          "id": "bd-av1-q58",
+          "enunciado": "[Fonte: CEBRASPE/CESPE - MEC - Administrador de Dados - 2011, adaptada] Em EMPREGADO possui DEPENDENTE, se um empregado pode não ter dependentes, como essa regra aparece no MER?",
+          "alternativas": [
+            { "id": "A", "texto": "Cardinalidade mínima 0 do lado da participação de DEPENDENTE em relação a EMPREGADO." },
+            { "id": "B", "texto": "Cardinalidade máxima 0 para todo empregado." },
+            { "id": "C", "texto": "Relacionamento N-N obrigatório entre empregado e dependente." },
+            { "id": "D", "texto": "Atributo composto chamado dependente dentro de empregado." }
+          ],
+          "correta": "A",
+          "feedback": "Se empregado pode existir sem dependente, a participação correspondente é opcional e a cardinalidade mínima é 0."
+        },
+        {
+          "id": "bd-av1-q59",
+          "enunciado": "[Fonte: CEBRASPE/CESPE - TRE-PE - Técnico Judiciário - 2016, adaptada] Em um relacionamento autorrelacionado da entidade PESSOA, como 'pessoa indica pessoa', qual mapeamento relacional é coerente quando uma pessoa pode indicar várias outras?",
+          "alternativas": [
+            { "id": "A", "texto": "Adicionar em PESSOA uma chave estrangeira id_pessoa_indicadora que referencia PESSOA(id_pessoa)." },
+            { "id": "B", "texto": "Criar uma coluna com uma lista de todos os indicados separados por vírgula." },
+            { "id": "C", "texto": "Remover a chave primária de PESSOA." },
+            { "id": "D", "texto": "Transformar cada pessoa indicada em atributo simples da pessoa indicadora." }
+          ],
+          "correta": "A",
+          "feedback": "Relacionamentos autorrelacionados podem ser mapeados com uma chave estrangeira na própria tabela, quando a regra corresponde a 1-N."
+        },
+        {
+          "id": "bd-av1-q60",
+          "enunciado": "[Fonte: TecConcursos - Modelagem e Mapeamento ER-relacional, adaptada] Ao converter um relacionamento N-N entre PESSOA e PREFERENCIA para tabelas relacionais, qual solução preserva melhor a integridade?",
+          "alternativas": [
+            { "id": "A", "texto": "Criar PESSOA(id_pessoa), PREFERENCIA(id_preferencia) e PESSOA_PREFERENCIA(id_pessoa, id_preferencia)." },
+            { "id": "B", "texto": "Guardar todas as preferências em uma coluna texto dentro de PESSOA." },
+            { "id": "C", "texto": "Duplicar todas as pessoas dentro da tabela PREFERENCIA." },
+            { "id": "D", "texto": "Usar a descrição da preferência como única chave primária de PESSOA." }
+          ],
+          "correta": "A",
+          "feedback": "Em N-N, a tabela associativa com chaves estrangeiras para as duas entidades permite integridade referencial e evita listas em uma única coluna."
         }
       ]
     },
