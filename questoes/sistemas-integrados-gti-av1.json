@@ -1,0 +1,1602 @@
+{
+  "disciplina": "Sistemas Integrados de Gestão e Aplicações",
+  "versao": 1,
+  "curso": "Gestão da Tecnologia da Informação",
+  "observacao": "As 65 questões estão reunidas em uma única avaliação: 10 transcritas e revisadas a partir do anexo, 40 questões autorais sobre funções SQL Server e 15 questões autorais sobre constraints PK, UK, CK e DF.",
+  "avaliacoes": [
+    {
+      "id": "av1",
+      "titulo": "Avaliação única - 65 questões",
+      "questoes": [
+        {
+          "id": "sig-gti-anexo-q1",
+          "enunciado": "Qual função do SQL Server retorna a primeira posição de um caractere ou de uma expressão dentro de uma string?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "REVERSE"
+            },
+            {
+              "id": "B",
+              "texto": "FIRST"
+            },
+            {
+              "id": "C",
+              "texto": "SUBSTRING"
+            },
+            {
+              "id": "D",
+              "texto": "CHAR"
+            },
+            {
+              "id": "E",
+              "texto": "CHARINDEX"
+            }
+          ],
+          "correta": "E",
+          "feedback": "CHARINDEX localiza a primeira ocorrência de uma expressão e retorna sua posição."
+        },
+        {
+          "id": "sig-gti-anexo-q2",
+          "enunciado": "Qual é a função da Primary Key em uma tabela do SQL Server?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "Garantir que cada registro seja identificado de forma única e não aceite NULL na chave."
+            },
+            {
+              "id": "B",
+              "texto": "Permitir a criação de colunas virtuais que combinam dados de várias tabelas."
+            },
+            {
+              "id": "C",
+              "texto": "Impedir sempre a exclusão de registros em outras tabelas relacionadas."
+            },
+            {
+              "id": "D",
+              "texto": "Impor qualquer restrição de valor em uma coluna."
+            }
+          ],
+          "correta": "A",
+          "feedback": "A PRIMARY KEY identifica unicamente cada linha e, por definição, não permite valores NULL. Ela não substitui CHECK nem impede toda exclusão em tabelas relacionadas."
+        },
+        {
+          "id": "sig-gti-anexo-q3",
+          "enunciado": "Qual comando retorna o dia da semana da data atual por extenso no SQL Server?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "DATENAME(wk, GETDATE())"
+            },
+            {
+              "id": "B",
+              "texto": "DATEPART(wk, GETDATE())"
+            },
+            {
+              "id": "C",
+              "texto": "DATENAME(weekname, GETDATE())"
+            },
+            {
+              "id": "D",
+              "texto": "DATEPART(dw, GETDATE())"
+            },
+            {
+              "id": "E",
+              "texto": "DATENAME(dw, GETDATE())"
+            }
+          ],
+          "correta": "E",
+          "feedback": "DATENAME retorna o nome textual da parte da data. DATEPART retorna o número correspondente."
+        },
+        {
+          "id": "sig-gti-anexo-q4",
+          "enunciado": "Qual é o resultado de SELECT REVERSE(UPPER(LEFT(REVERSE('Fatec Itu'), 3))); no SQL Server?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "FAT"
+            },
+            {
+              "id": "B",
+              "texto": "UTI"
+            },
+            {
+              "id": "C",
+              "texto": "Itu"
+            },
+            {
+              "id": "D",
+              "texto": "F AT"
+            },
+            {
+              "id": "E",
+              "texto": "ITU"
+            }
+          ],
+          "correta": "E",
+          "feedback": "REVERSE produz 'utI cetaF'; LEFT pega 'utI'; UPPER produz 'UTI'; e o REVERSE final resulta em 'ITU'."
+        },
+        {
+          "id": "sig-gti-anexo-q5",
+          "enunciado": "Considere: I - É possível ter apenas uma constraint PRIMARY KEY por tabela. II - É possível ter apenas uma constraint UNIQUE por tabela. III - A constraint CHECK pode limitar o intervalo de valores armazenados. Quais afirmações estão corretas?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "Apenas III"
+            },
+            {
+              "id": "B",
+              "texto": "Apenas I"
+            },
+            {
+              "id": "C",
+              "texto": "Apenas I e II"
+            },
+            {
+              "id": "D",
+              "texto": "Apenas II"
+            },
+            {
+              "id": "E",
+              "texto": "Apenas I e III"
+            }
+          ],
+          "correta": "E",
+          "feedback": "Uma tabela pode ter somente uma PRIMARY KEY, mas pode ter várias constraints UNIQUE. CHECK permite restringir valores conforme uma expressão lógica."
+        },
+        {
+          "id": "sig-gti-anexo-q6",
+          "enunciado": "Selecione a única afirmação incorreta sobre XML.",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "XML concentra-se na estrutura da informação e não em sua aparência."
+            },
+            {
+              "id": "B",
+              "texto": "XML integra dados e metadados por meio de marcações."
+            },
+            {
+              "id": "C",
+              "texto": "XML pode ser flexível, autocontido e portável."
+            },
+            {
+              "id": "D",
+              "texto": "XML significa eXtensible Markup Language."
+            },
+            {
+              "id": "E",
+              "texto": "XML é uma linguagem de programação usada para executar a lógica de integração entre sistemas."
+            }
+          ],
+          "correta": "E",
+          "feedback": "XML é uma linguagem de marcação para representar e transportar dados; não é uma linguagem de programação executável."
+        },
+        {
+          "id": "sig-gti-anexo-q7",
+          "enunciado": "Considerando SELECT CONCAT(10, 20); e SELECT LEN(CONCAT(10, 20));, quais valores são retornados?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "A primeira retorna 30 e a segunda 2."
+            },
+            {
+              "id": "B",
+              "texto": "A primeira retorna 30 e a segunda 30."
+            },
+            {
+              "id": "C",
+              "texto": "A primeira retorna 1020 e a segunda 2."
+            },
+            {
+              "id": "D",
+              "texto": "A primeira retorna 1020 e a segunda 30."
+            },
+            {
+              "id": "E",
+              "texto": "A primeira retorna 1020 e a segunda 4."
+            }
+          ],
+          "correta": "E",
+          "feedback": "CONCAT converte os argumentos e os concatena, produzindo '1020'. LEN conta quatro caracteres."
+        },
+        {
+          "id": "sig-gti-anexo-q8",
+          "enunciado": "Selecione a única afirmação incorreta sobre funções built-in do SQL Server.",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "Comandos DDL podem variar entre diferentes SGBDs."
+            },
+            {
+              "id": "B",
+              "texto": "REVERSE() inverte o conteúdo de uma string."
+            },
+            {
+              "id": "C",
+              "texto": "REPLICATE() repete uma expressão de caracteres um determinado número de vezes."
+            },
+            {
+              "id": "D",
+              "texto": "LTRIM() remove espaços à esquerda e RTRIM() remove espaços à direita."
+            },
+            {
+              "id": "E",
+              "texto": "A função LOWERCASE() do SQL Server converte caracteres para maiúsculo."
+            }
+          ],
+          "correta": "E",
+          "feedback": "No SQL Server, LOWER() converte para minúsculas e UPPER() para maiúsculas. LOWERCASE() não é a função nativa usada para essa finalidade."
+        },
+        {
+          "id": "sig-gti-anexo-q9",
+          "enunciado": "Quais valores são retornados por SELECT DATEPART(YY, '2026-04-16'); e SELECT DATENAME(dd, '2026-04-16');?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "2026 e dezesseis."
+            },
+            {
+              "id": "B",
+              "texto": "26 e 16."
+            },
+            {
+              "id": "C",
+              "texto": "26 e dezesseis."
+            },
+            {
+              "id": "D",
+              "texto": "2026 e 16."
+            }
+          ],
+          "correta": "B",
+          "feedback": "DATEPART(YY, ...) retorna o ano numérico completo, 2026. DATENAME(dd, ...) retorna o dia do mês como texto numérico, '16'."
+        },
+        {
+          "id": "sig-gti-anexo-q10",
+          "enunciado": "Qual é o resultado de SELECT SUBSTRING('Olá, mundo!', 6, 5);?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "mundo!"
+            },
+            {
+              "id": "B",
+              "texto": "Olá"
+            },
+            {
+              "id": "C",
+              "texto": "mundo"
+            },
+            {
+              "id": "D",
+              "texto": "Erro, pois o tamanho final é menor que o inicial"
+            }
+          ],
+          "correta": "C",
+          "feedback": "A posição 6 é o início de 'mundo' e o terceiro argumento solicita cinco caracteres."
+        },
+        {
+          "id": "sig-gti-fun-q1",
+          "enunciado": "Em SQL Server, qual valor DATEPART(year, '2026-09-10') retorna?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "9"
+            },
+            {
+              "id": "B",
+              "texto": "10"
+            },
+            {
+              "id": "C",
+              "texto": "20260910"
+            },
+            {
+              "id": "D",
+              "texto": "2026"
+            }
+          ],
+          "correta": "D",
+          "feedback": "DATEPART(year, data) retorna a parte do ano como número inteiro."
+        },
+        {
+          "id": "sig-gti-fun-q2",
+          "enunciado": "Qual expressão retorna o número do mês da data atual?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "DATEPART(month, GETDATE())"
+            },
+            {
+              "id": "B",
+              "texto": "DATENAME(month, GETDATE())"
+            },
+            {
+              "id": "C",
+              "texto": "DATEADD(month, GETDATE())"
+            },
+            {
+              "id": "D",
+              "texto": "DATEDIFF(month, GETDATE())"
+            }
+          ],
+          "correta": "A",
+          "feedback": "DATEPART extrai a parte numérica do mês; GETDATE fornece a data e hora atuais."
+        },
+        {
+          "id": "sig-gti-fun-q3",
+          "enunciado": "O que DATENAME(month, CAST('2026-04-16' AS date)) retorna?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "2026"
+            },
+            {
+              "id": "B",
+              "texto": "4"
+            },
+            {
+              "id": "C",
+              "texto": "16"
+            },
+            {
+              "id": "D",
+              "texto": "April ou abril, conforme o idioma da sessão"
+            }
+          ],
+          "correta": "B",
+          "feedback": "DATENAME retorna o nome textual da parte solicitada e respeita o idioma configurado na sessão."
+        },
+        {
+          "id": "sig-gti-fun-q4",
+          "enunciado": "Qual função retorna a data e a hora atuais do servidor?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "DATEPART()"
+            },
+            {
+              "id": "B",
+              "texto": "DATENAME()"
+            },
+            {
+              "id": "C",
+              "texto": "GETDATE()"
+            },
+            {
+              "id": "D",
+              "texto": "CURRENTDAY()"
+            }
+          ],
+          "correta": "C",
+          "feedback": "GETDATE() retorna um valor datetime com a data e a hora atuais do sistema do SQL Server."
+        },
+        {
+          "id": "sig-gti-fun-q5",
+          "enunciado": "Qual consulta calcula quantos dias existem entre '2026-04-01' e '2026-04-16'?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "DATEPART(day, '2026-04-01', '2026-04-16')"
+            },
+            {
+              "id": "B",
+              "texto": "DATEADD(day, '2026-04-01', '2026-04-16')"
+            },
+            {
+              "id": "C",
+              "texto": "DATENAME(day, '2026-04-01', '2026-04-16')"
+            },
+            {
+              "id": "D",
+              "texto": "DATEDIFF(day, '2026-04-01', '2026-04-16')"
+            }
+          ],
+          "correta": "D",
+          "feedback": "DATEDIFF calcula a diferença entre duas datas usando a parte informada, neste caso day."
+        },
+        {
+          "id": "sig-gti-fun-q6",
+          "enunciado": "Qual é o resultado de DATEDIFF(month, '2026-01-31', '2026-02-01')?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "1, pois houve mudança de fronteira de mês"
+            },
+            {
+              "id": "B",
+              "texto": "0, pois passou apenas um dia"
+            },
+            {
+              "id": "C",
+              "texto": "31"
+            },
+            {
+              "id": "D",
+              "texto": "-1"
+            }
+          ],
+          "correta": "A",
+          "feedback": "DATEDIFF conta fronteiras de partes de data atravessadas; a mudança de janeiro para fevereiro conta como um mês."
+        },
+        {
+          "id": "sig-gti-fun-q7",
+          "enunciado": "Qual expressão adiciona 30 dias a uma data de cadastro?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "DATEPART(day, 30, data_cadastro)"
+            },
+            {
+              "id": "B",
+              "texto": "DATEDIFF(day, 30, data_cadastro)"
+            },
+            {
+              "id": "C",
+              "texto": "DATENAME(day, 30, data_cadastro)"
+            },
+            {
+              "id": "D",
+              "texto": "DATEADD(day, 30, data_cadastro)"
+            }
+          ],
+          "correta": "B",
+          "feedback": "DATEADD recebe a parte da data, o número a adicionar e a data de referência."
+        },
+        {
+          "id": "sig-gti-fun-q8",
+          "enunciado": "Como obter a data correspondente ao primeiro dia do mês de uma data @d, sem usar EOMONTH?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "DATEDIFF(month, 0, @d)"
+            },
+            {
+              "id": "B",
+              "texto": "DATEPART(month, 0, @d)"
+            },
+            {
+              "id": "C",
+              "texto": "DATEADD(month, DATEDIFF(month, 0, @d), 0)"
+            },
+            {
+              "id": "D",
+              "texto": "DATENAME(month, 0, @d)"
+            }
+          ],
+          "correta": "C",
+          "feedback": "A expressão calcula a quantidade de meses desde a data base 1900-01-01 e os adiciona novamente à mesma base."
+        },
+        {
+          "id": "sig-gti-fun-q9",
+          "enunciado": "Qual o resultado de ROUND(123.4567, 2)?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "123.45"
+            },
+            {
+              "id": "B",
+              "texto": "123.4567"
+            },
+            {
+              "id": "C",
+              "texto": "120"
+            },
+            {
+              "id": "D",
+              "texto": "123.46"
+            }
+          ],
+          "correta": "D",
+          "feedback": "ROUND arredonda para duas casas; o terceiro algarismo decimal é 6, então 123.45 vira 123.46."
+        },
+        {
+          "id": "sig-gti-fun-q10",
+          "enunciado": "Qual expressão arredonda o preço para a dezena mais próxima?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "ROUND(preco, -1)"
+            },
+            {
+              "id": "B",
+              "texto": "ROUND(preco, 1)"
+            },
+            {
+              "id": "C",
+              "texto": "ROUND(10, preco)"
+            },
+            {
+              "id": "D",
+              "texto": "ROUND(preco, 10)"
+            }
+          ],
+          "correta": "A",
+          "feedback": "Uma precisão negativa arredonda posições à esquerda do separador decimal; -1 corresponde às dezenas."
+        },
+        {
+          "id": "sig-gti-fun-q11",
+          "enunciado": "O que retorna UPPER('Gestão Integrada')?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "Gestão Integrada"
+            },
+            {
+              "id": "B",
+              "texto": "gestão integrada"
+            },
+            {
+              "id": "C",
+              "texto": "GESTÃO integrada"
+            },
+            {
+              "id": "D",
+              "texto": "GESTÃO INTEGRADA"
+            }
+          ],
+          "correta": "B",
+          "feedback": "UPPER converte as letras da expressão para maiúsculas."
+        },
+        {
+          "id": "sig-gti-fun-q12",
+          "enunciado": "Qual expressão normaliza um e-mail para comparação sem diferenciar maiúsculas de minúsculas?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "UPPER(email, TRIM)"
+            },
+            {
+              "id": "B",
+              "texto": "LTRIM(LOWER)"
+            },
+            {
+              "id": "C",
+              "texto": "LOWER(TRIM(email))"
+            },
+            {
+              "id": "D",
+              "texto": "SUBSTRING(email, LOWER)"
+            }
+          ],
+          "correta": "C",
+          "feedback": "TRIM remove espaços nas extremidades e LOWER converte o texto para minúsculas."
+        },
+        {
+          "id": "sig-gti-fun-q13",
+          "enunciado": "Qual é o resultado de LOWER('SQL Server')?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "SQL SERVER"
+            },
+            {
+              "id": "B",
+              "texto": "Sql Server"
+            },
+            {
+              "id": "C",
+              "texto": "SQL Server"
+            },
+            {
+              "id": "D",
+              "texto": "sql server"
+            }
+          ],
+          "correta": "D",
+          "feedback": "LOWER converte caracteres alfabéticos para minúsculas."
+        },
+        {
+          "id": "sig-gti-fun-q14",
+          "enunciado": "Qual função remove espaços em branco no início de uma string?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "LTRIM"
+            },
+            {
+              "id": "B",
+              "texto": "RTRIM"
+            },
+            {
+              "id": "C",
+              "texto": "REVERSE"
+            },
+            {
+              "id": "D",
+              "texto": "TRIMRIGHT"
+            }
+          ],
+          "correta": "A",
+          "feedback": "LTRIM remove espaços à esquerda; RTRIM remove espaços à direita."
+        },
+        {
+          "id": "sig-gti-fun-q15",
+          "enunciado": "Qual é o resultado de RTRIM('ABC   ') + 'X'?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "ABC   X"
+            },
+            {
+              "id": "B",
+              "texto": "ABCX"
+            },
+            {
+              "id": "C",
+              "texto": "   ABCX"
+            },
+            {
+              "id": "D",
+              "texto": "XABC"
+            }
+          ],
+          "correta": "B",
+          "feedback": "RTRIM remove os espaços à direita antes da concatenação com X."
+        },
+        {
+          "id": "sig-gti-fun-q16",
+          "enunciado": "No SQL Server, qual expressão remove espaços nas duas extremidades de uma string?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "TRIM(texto, 2)"
+            },
+            {
+              "id": "B",
+              "texto": "LTRIM + RTRIM sem argumentos"
+            },
+            {
+              "id": "C",
+              "texto": "TRIM(texto)"
+            },
+            {
+              "id": "D",
+              "texto": "REVERSE(texto)"
+            }
+          ],
+          "correta": "C",
+          "feedback": "TRIM(expression) remove espaços à esquerda e à direita da expressão."
+        },
+        {
+          "id": "sig-gti-fun-q17",
+          "enunciado": "Qual é o resultado de SUBSTRING('INTEGRACAO', 1, 5)?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "GRACA"
+            },
+            {
+              "id": "B",
+              "texto": "INTEGR"
+            },
+            {
+              "id": "C",
+              "texto": "ACAO"
+            },
+            {
+              "id": "D",
+              "texto": "INTEG"
+            }
+          ],
+          "correta": "D",
+          "feedback": "A posição inicial no SQL Server é 1; cinco caracteres a partir daí formam INTEG."
+        },
+        {
+          "id": "sig-gti-fun-q18",
+          "enunciado": "Qual expressão retorna os quatro últimos caracteres do campo codigo, considerando que LEN(codigo) desconsidera espaços finais?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "SUBSTRING(codigo, LEN(codigo)-3, 4)"
+            },
+            {
+              "id": "B",
+              "texto": "SUBSTRING(codigo, 4, LEN(codigo))"
+            },
+            {
+              "id": "C",
+              "texto": "SUBSTRING(codigo, 0, 4)"
+            },
+            {
+              "id": "D",
+              "texto": "SUBSTRING(codigo, LEN(codigo), 4)"
+            }
+          ],
+          "correta": "A",
+          "feedback": "O início dos quatro últimos caracteres é LEN(codigo)-3, e o comprimento solicitado é 4."
+        },
+        {
+          "id": "sig-gti-fun-q19",
+          "enunciado": "Qual é o resultado de REVERSE('GTI')?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "GTI"
+            },
+            {
+              "id": "B",
+              "texto": "ITG"
+            },
+            {
+              "id": "C",
+              "texto": "GIT"
+            },
+            {
+              "id": "D",
+              "texto": "TIG"
+            }
+          ],
+          "correta": "B",
+          "feedback": "REVERSE devolve os caracteres em ordem inversa."
+        },
+        {
+          "id": "sig-gti-fun-q20",
+          "enunciado": "Qual expressão transforma 'AB-123' em '321-BA'?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "UPPER('AB-123')"
+            },
+            {
+              "id": "B",
+              "texto": "CHARINDEX('-', 'AB-123')"
+            },
+            {
+              "id": "C",
+              "texto": "SUBSTRING('AB-123', 3, 3)"
+            },
+            {
+              "id": "D",
+              "texto": "REVERSE('AB-123')"
+            }
+          ],
+          "correta": "C",
+          "feedback": "REVERSE inverte todos os caracteres, incluindo o hífen."
+        },
+        {
+          "id": "sig-gti-fun-q21",
+          "enunciado": "Qual valor CHARINDEX('@', 'aluno@fatec.sp.gov.br') retorna?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "0"
+            },
+            {
+              "id": "B",
+              "texto": "5"
+            },
+            {
+              "id": "C",
+              "texto": "21"
+            },
+            {
+              "id": "D",
+              "texto": "6"
+            }
+          ],
+          "correta": "D",
+          "feedback": "A arroba está na sexta posição da string, pois a contagem começa em 1."
+        },
+        {
+          "id": "sig-gti-fun-q22",
+          "enunciado": "O que CHARINDEX('-', 'ABC') retorna quando o caractere não é encontrado?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "0"
+            },
+            {
+              "id": "B",
+              "texto": "NULL"
+            },
+            {
+              "id": "C",
+              "texto": "-1"
+            },
+            {
+              "id": "D",
+              "texto": "1"
+            }
+          ],
+          "correta": "A",
+          "feedback": "CHARINDEX retorna 0 quando a expressão procurada não aparece na string."
+        },
+        {
+          "id": "sig-gti-fun-q23",
+          "enunciado": "Qual expressão retorna a parte anterior ao primeiro hífen de codigo, quando codigo = 'PED-2026'?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "SUBSTRING(codigo, CHARINDEX('-', codigo), 1)"
+            },
+            {
+              "id": "B",
+              "texto": "SUBSTRING(codigo, 1, CHARINDEX('-', codigo)-1)"
+            },
+            {
+              "id": "C",
+              "texto": "CHARINDEX(codigo, '-')"
+            },
+            {
+              "id": "D",
+              "texto": "LEFT(codigo, 0)"
+            }
+          ],
+          "correta": "B",
+          "feedback": "CHARINDEX encontra o hífen e o -1 impede que ele faça parte do trecho anterior."
+        },
+        {
+          "id": "sig-gti-fun-q24",
+          "enunciado": "Qual é o resultado de STR(12.345, 6, 2)?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "'12'"
+            },
+            {
+              "id": "B",
+              "texto": "'0012.35'"
+            },
+            {
+              "id": "C",
+              "texto": "12.345"
+            },
+            {
+              "id": "D",
+              "texto": "'12.35'"
+            }
+          ],
+          "correta": "C",
+          "feedback": "STR converte número em texto com largura e casas decimais especificadas; 12.345 é arredondado para 12.35."
+        },
+        {
+          "id": "sig-gti-fun-q25",
+          "enunciado": "Qual cuidado é necessário ao usar STR(valor, 5, 2) para um número que não cabe na largura?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "O SQL Server retorna a representação com asteriscos."
+            },
+            {
+              "id": "B",
+              "texto": "O valor é convertido automaticamente em data."
+            },
+            {
+              "id": "C",
+              "texto": "A função sempre aumenta a largura sem limite."
+            },
+            {
+              "id": "D",
+              "texto": "O SQL Server pode retornar asteriscos para indicar estouro de largura."
+            }
+          ],
+          "correta": "D",
+          "feedback": "Quando o número não cabe na largura informada, STR pode retornar asteriscos, indicando que a largura foi insuficiente."
+        },
+        {
+          "id": "sig-gti-fun-q26",
+          "enunciado": "Qual é o resultado de LEN('SQL Server')?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "10"
+            },
+            {
+              "id": "B",
+              "texto": "9"
+            },
+            {
+              "id": "C",
+              "texto": "8"
+            },
+            {
+              "id": "D",
+              "texto": "11"
+            }
+          ],
+          "correta": "A",
+          "feedback": "A string possui 10 caracteres, incluindo o espaço entre SQL e Server."
+        },
+        {
+          "id": "sig-gti-fun-q27",
+          "enunciado": "Qual comportamento diferencia LEN de DATALENGTH em uma coluna varchar?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "LEN conta bytes e DATALENGTH conta palavras."
+            },
+            {
+              "id": "B",
+              "texto": "LEN desconsidera espaços finais; DATALENGTH conta bytes armazenados."
+            },
+            {
+              "id": "C",
+              "texto": "LEN só funciona com datas."
+            },
+            {
+              "id": "D",
+              "texto": "DATALENGTH sempre retorna o mesmo que LEN."
+            }
+          ],
+          "correta": "B",
+          "feedback": "LEN retorna caracteres sem contar espaços finais; DATALENGTH retorna o tamanho em bytes."
+        },
+        {
+          "id": "sig-gti-fun-q28",
+          "enunciado": "Qual consulta extrai o ano da data de criação e o nome do mês em duas colunas?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "SELECT GETDATE(year), GETDATE(month)"
+            },
+            {
+              "id": "B",
+              "texto": "SELECT DATEADD(year, data_criacao), DATEDIFF(month, data_criacao)"
+            },
+            {
+              "id": "C",
+              "texto": "SELECT DATENAME(year, data_criacao), DATEPART(month, data_criacao)"
+            },
+            {
+              "id": "D",
+              "texto": "SELECT DATEPART(year, data_criacao), DATENAME(month, data_criacao)"
+            }
+          ],
+          "correta": "C",
+          "feedback": "DATEPART é adequado para o ano numérico e DATENAME para o nome textual do mês."
+        },
+        {
+          "id": "sig-gti-fun-q29",
+          "enunciado": "Qual expressão calcula a idade aproximada em anos usando a data de nascimento?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "DATEPART(year, data_nascimento, GETDATE())"
+            },
+            {
+              "id": "B",
+              "texto": "DATEADD(year, data_nascimento, GETDATE())"
+            },
+            {
+              "id": "C",
+              "texto": "DATENAME(year, data_nascimento, GETDATE())"
+            },
+            {
+              "id": "D",
+              "texto": "DATEDIFF(year, data_nascimento, GETDATE())"
+            }
+          ],
+          "correta": "D",
+          "feedback": "DATEDIFF compara as duas datas na parte year; para idade exata, ainda é necessário verificar se o aniversário ocorreu no ano atual."
+        },
+        {
+          "id": "sig-gti-fun-q30",
+          "enunciado": "Qual comando retorna a data de 7 dias após GETDATE()?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "DATEADD(day, 7, GETDATE())"
+            },
+            {
+              "id": "B",
+              "texto": "DATEPART(day, 7, GETDATE())"
+            },
+            {
+              "id": "C",
+              "texto": "DATEDIFF(day, 7, GETDATE())"
+            },
+            {
+              "id": "D",
+              "texto": "DATENAME(day, 7, GETDATE())"
+            }
+          ],
+          "correta": "A",
+          "feedback": "DATEADD adiciona sete unidades day à data atual."
+        },
+        {
+          "id": "sig-gti-fun-q31",
+          "enunciado": "Qual é o resultado de ROUND(9.995, 2), considerando o tipo numérico exato apropriado?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "9.99"
+            },
+            {
+              "id": "B",
+              "texto": "10.00"
+            },
+            {
+              "id": "C",
+              "texto": "9.995"
+            },
+            {
+              "id": "D",
+              "texto": "10.99"
+            }
+          ],
+          "correta": "B",
+          "feedback": "ROUND arredonda a terceira casa decimal 5 para cima, resultando em 10.00."
+        },
+        {
+          "id": "sig-gti-fun-q32",
+          "enunciado": "Qual função deve ser usada para colocar o nome de um cliente em letras maiúsculas?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "REVERSE(nome)"
+            },
+            {
+              "id": "B",
+              "texto": "STR(nome)"
+            },
+            {
+              "id": "C",
+              "texto": "LOWER(nome)"
+            },
+            {
+              "id": "D",
+              "texto": "UPPER(nome)"
+            }
+          ],
+          "correta": "C",
+          "feedback": "UPPER transforma os caracteres alfabéticos em maiúsculas."
+        },
+        {
+          "id": "sig-gti-fun-q33",
+          "enunciado": "Qual expressão remove espaços laterais e retorna os 10 primeiros caracteres de descricao?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "TRIM(SUBSTRING(descricao, 10, 1))"
+            },
+            {
+              "id": "B",
+              "texto": "LEN(TRIM(descricao), 10)"
+            },
+            {
+              "id": "C",
+              "texto": "LTRIM(RTRIM(10))"
+            },
+            {
+              "id": "D",
+              "texto": "SUBSTRING(TRIM(descricao), 1, 10)"
+            }
+          ],
+          "correta": "D",
+          "feedback": "Primeiro TRIM limpa as extremidades; depois SUBSTRING seleciona os dez primeiros caracteres."
+        },
+        {
+          "id": "sig-gti-fun-q34",
+          "enunciado": "Qual consulta procura a posição de 'SP' ignorando o caso das letras em uf?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "CHARINDEX('SP', UPPER(uf))"
+            },
+            {
+              "id": "B",
+              "texto": "UPPER(CHARINDEX('SP', uf))"
+            },
+            {
+              "id": "C",
+              "texto": "CHARINDEX(UPPER(uf), 'SP')"
+            },
+            {
+              "id": "D",
+              "texto": "LOWER(CHARINDEX('SP', uf))"
+            }
+          ],
+          "correta": "A",
+          "feedback": "UPPER normaliza a coluna para maiúsculas antes de CHARINDEX procurar SP."
+        },
+        {
+          "id": "sig-gti-fun-q35",
+          "enunciado": "Qual é o resultado de SUBSTRING('123456789', 4, 3)?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "123"
+            },
+            {
+              "id": "B",
+              "texto": "456"
+            },
+            {
+              "id": "C",
+              "texto": "345"
+            },
+            {
+              "id": "D",
+              "texto": "789"
+            }
+          ],
+          "correta": "B",
+          "feedback": "A posição 4 é o caractere 4; os três caracteres seguintes formam 456."
+        },
+        {
+          "id": "sig-gti-fun-q36",
+          "enunciado": "Qual expressão calcula o número de dias de duração de um contrato?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "DATEPART(day, inicio, fim)"
+            },
+            {
+              "id": "B",
+              "texto": "DATENAME(day, inicio, fim)"
+            },
+            {
+              "id": "C",
+              "texto": "DATEADD(day, inicio, fim)"
+            },
+            {
+              "id": "D",
+              "texto": "DATEDIFF(day, inicio, fim)"
+            }
+          ],
+          "correta": "C",
+          "feedback": "DATEDIFF calcula a diferença entre início e fim na unidade day."
+        },
+        {
+          "id": "sig-gti-fun-q37",
+          "enunciado": "Qual expressão retorna o trimestre de uma data no SQL Server?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "DATENAME(quarter, data_evento)"
+            },
+            {
+              "id": "B",
+              "texto": "DATEADD(quarter, data_evento)"
+            },
+            {
+              "id": "C",
+              "texto": "DATEDIFF(quarter, data_evento)"
+            },
+            {
+              "id": "D",
+              "texto": "DATEPART(quarter, data_evento)"
+            }
+          ],
+          "correta": "D",
+          "feedback": "DATEPART(quarter, data) retorna o número do trimestre, de 1 a 4."
+        },
+        {
+          "id": "sig-gti-fun-q38",
+          "enunciado": "Qual expressão obtém os caracteres após o primeiro espaço de nome_completo?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "SUBSTRING(nome_completo, CHARINDEX(' ', nome_completo)+1, LEN(nome_completo))"
+            },
+            {
+              "id": "B",
+              "texto": "SUBSTRING(nome_completo, 0, CHARINDEX(' ', nome_completo))"
+            },
+            {
+              "id": "C",
+              "texto": "CHARINDEX(nome_completo, ' ')"
+            },
+            {
+              "id": "D",
+              "texto": "REVERSE(CHARINDEX(' ', nome_completo))"
+            }
+          ],
+          "correta": "A",
+          "feedback": "A posição inicial é uma casa após o primeiro espaço; o comprimento pode ser maior que o restante sem causar erro."
+        },
+        {
+          "id": "sig-gti-fun-q39",
+          "enunciado": "Qual expressão retorna a sigla 'SIG' para o texto 'Sistemas Integrados de Gestão'?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "LEFT('Sistemas Integrados de Gestão', 3)"
+            },
+            {
+              "id": "B",
+              "texto": "SUBSTRING(UPPER('Sistemas Integrados de Gestão'), 1, 3)"
+            },
+            {
+              "id": "C",
+              "texto": "STR('Sistemas Integrados de Gestão', 3, 0)"
+            },
+            {
+              "id": "D",
+              "texto": "REVERSE('Sistemas Integrados de Gestão')"
+            }
+          ],
+          "correta": "B",
+          "feedback": "A expressão normaliza o texto e extrai os três primeiros caracteres, formando SIG."
+        },
+        {
+          "id": "sig-gti-fun-q40",
+          "enunciado": "Qual alternativa combina corretamente funções para exibir uma descrição sem espaços laterais e em minúsculas?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "TRIM(UPPER(descricao))"
+            },
+            {
+              "id": "B",
+              "texto": "LTRIM(RTRIM(UPPER(descricao)))"
+            },
+            {
+              "id": "C",
+              "texto": "LOWER(TRIM(descricao))"
+            },
+            {
+              "id": "D",
+              "texto": "REVERSE(LOWER(descricao))"
+            }
+          ],
+          "correta": "C",
+          "feedback": "TRIM remove os espaços nas extremidades e LOWER converte as letras para minúsculas."
+        },
+        {
+          "id": "sig-gti-con-q1",
+          "enunciado": "Qual constraint identifica de forma única cada registro e não permite NULL na chave?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "UNIQUE"
+            },
+            {
+              "id": "B",
+              "texto": "CHECK"
+            },
+            {
+              "id": "C",
+              "texto": "DEFAULT"
+            },
+            {
+              "id": "D",
+              "texto": "PRIMARY KEY"
+            }
+          ],
+          "correta": "D",
+          "feedback": "PRIMARY KEY garante unicidade e obrigatoriedade da chave primária."
+        },
+        {
+          "id": "sig-gti-con-q2",
+          "enunciado": "Quantas constraints PRIMARY KEY uma tabela pode possuir no SQL Server?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "Exatamente uma"
+            },
+            {
+              "id": "B",
+              "texto": "Nenhuma"
+            },
+            {
+              "id": "C",
+              "texto": "Uma por coluna"
+            },
+            {
+              "id": "D",
+              "texto": "Quantas forem necessárias"
+            }
+          ],
+          "correta": "A",
+          "feedback": "Uma tabela possui uma única PRIMARY KEY, que pode ser simples ou composta por várias colunas."
+        },
+        {
+          "id": "sig-gti-con-q3",
+          "enunciado": "Uma PRIMARY KEY composta por (id_aluno, id_disciplina) é adequada quando...",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "cada coluna pode aceitar qualquer valor duplicado sem regra"
+            },
+            {
+              "id": "B",
+              "texto": "a combinação identifica unicamente cada matrícula"
+            },
+            {
+              "id": "C",
+              "texto": "a chave deve sempre ter três colunas"
+            },
+            {
+              "id": "D",
+              "texto": "a tabela não possui relacionamentos"
+            }
+          ],
+          "correta": "B",
+          "feedback": "A combinação das colunas forma o identificador único da linha, mesmo que cada coluna isoladamente se repita."
+        },
+        {
+          "id": "sig-gti-con-q4",
+          "enunciado": "Qual constraint impede que dois usuários tenham o mesmo e-mail?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "DEFAULT"
+            },
+            {
+              "id": "B",
+              "texto": "CHECK"
+            },
+            {
+              "id": "C",
+              "texto": "UNIQUE"
+            },
+            {
+              "id": "D",
+              "texto": "FOREIGN KEY"
+            }
+          ],
+          "correta": "C",
+          "feedback": "UNIQUE garante que os valores não se repitam na coluna ou combinação de colunas."
+        },
+        {
+          "id": "sig-gti-con-q5",
+          "enunciado": "Qual afirmação sobre UNIQUE é correta no SQL Server?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "UNIQUE permite duplicidade em qualquer situação."
+            },
+            {
+              "id": "B",
+              "texto": "UNIQUE só pode ser criada em colunas numéricas."
+            },
+            {
+              "id": "C",
+              "texto": "Uma tabela pode ter várias constraints UNIQUE."
+            },
+            {
+              "id": "D",
+              "texto": "UNIQUE sempre substitui a PRIMARY KEY."
+            }
+          ],
+          "correta": "D",
+          "feedback": "É possível criar várias constraints UNIQUE para garantir unicidade em diferentes atributos candidatos."
+        },
+        {
+          "id": "sig-gti-con-q6",
+          "enunciado": "Qual constraint pode garantir que nota esteja entre 0 e 10?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "CHECK (nota BETWEEN 0 AND 10)"
+            },
+            {
+              "id": "B",
+              "texto": "UNIQUE (nota BETWEEN 0 AND 10)"
+            },
+            {
+              "id": "C",
+              "texto": "DEFAULT (nota BETWEEN 0 AND 10)"
+            },
+            {
+              "id": "D",
+              "texto": "PRIMARY KEY (nota BETWEEN 0 AND 10)"
+            }
+          ],
+          "correta": "A",
+          "feedback": "CHECK avalia uma condição e rejeita a linha quando a condição não é satisfeita."
+        },
+        {
+          "id": "sig-gti-con-q7",
+          "enunciado": "Qual definição cria uma CHECK para permitir somente os status 'A' e 'I'?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "CONSTRAINT DF_Usuario_Status DEFAULT ('A','I')"
+            },
+            {
+              "id": "B",
+              "texto": "CONSTRAINT CK_Usuario_Status CHECK (status IN ('A','I'))"
+            },
+            {
+              "id": "C",
+              "texto": "CONSTRAINT PK_Usuario_Status PRIMARY KEY ('A','I')"
+            },
+            {
+              "id": "D",
+              "texto": "CONSTRAINT UK_Usuario_Status UNIQUE ('A','I')"
+            }
+          ],
+          "correta": "B",
+          "feedback": "A expressão IN dentro de CHECK restringe o domínio aos valores listados."
+        },
+        {
+          "id": "sig-gti-con-q8",
+          "enunciado": "Para que serve DEFAULT em uma coluna?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "Impedir valores duplicados."
+            },
+            {
+              "id": "B",
+              "texto": "Criar automaticamente uma chave estrangeira."
+            },
+            {
+              "id": "C",
+              "texto": "Fornecer um valor quando o INSERT não informa a coluna."
+            },
+            {
+              "id": "D",
+              "texto": "Validar um intervalo de valores."
+            }
+          ],
+          "correta": "C",
+          "feedback": "DEFAULT preenche um valor padrão quando a coluna é omitida no INSERT; ele não substitui CHECK ou UNIQUE."
+        },
+        {
+          "id": "sig-gti-con-q9",
+          "enunciado": "Qual definição atribui a data e hora atuais por padrão a data_cadastro?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "CONSTRAINT UK_Cliente_Data UNIQUE GETDATE() FOR data_cadastro"
+            },
+            {
+              "id": "B",
+              "texto": "CONSTRAINT PK_Cliente_Data PRIMARY KEY GETDATE() FOR data_cadastro"
+            },
+            {
+              "id": "C",
+              "texto": "CONSTRAINT DF_Cliente_Data DEFAULT GETDATE() FOR data_cadastro"
+            },
+            {
+              "id": "D",
+              "texto": "CONSTRAINT CK_Cliente_Data CHECK GETDATE() FOR data_cadastro"
+            }
+          ],
+          "correta": "D",
+          "feedback": "DEFAULT GETDATE() fornece o instante atual quando data_cadastro não é informado."
+        },
+        {
+          "id": "sig-gti-con-q10",
+          "enunciado": "Qual comando adiciona uma constraint CHECK para impedir quantidade menor que 1?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "ALTER TABLE Item ADD CONSTRAINT CK_Item_Quantidade CHECK (quantidade >= 1);"
+            },
+            {
+              "id": "B",
+              "texto": "ALTER TABLE Item ADD CONSTRAINT DF_Item_Quantidade DEFAULT (quantidade >= 1);"
+            },
+            {
+              "id": "C",
+              "texto": "ALTER TABLE Item ADD CONSTRAINT UK_Item_Quantidade UNIQUE (quantidade >= 1);"
+            },
+            {
+              "id": "D",
+              "texto": "ALTER TABLE Item ADD CONSTRAINT PK_Item_Quantidade PRIMARY KEY (quantidade >= 1);"
+            }
+          ],
+          "correta": "A",
+          "feedback": "ALTER TABLE ... ADD CONSTRAINT ... CHECK aplica a regra à tabela existente."
+        },
+        {
+          "id": "sig-gti-con-q11",
+          "enunciado": "Qual é uma diferença importante entre PRIMARY KEY e UNIQUE?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "UNIQUE sempre aceita duplicidade e PRIMARY KEY não."
+            },
+            {
+              "id": "B",
+              "texto": "PRIMARY KEY identifica a linha e não aceita NULL; UNIQUE garante unicidade e pode aceitar NULL conforme a definição e os dados."
+            },
+            {
+              "id": "C",
+              "texto": "Não existe diferença."
+            },
+            {
+              "id": "D",
+              "texto": "PRIMARY KEY só pode ser textual."
+            }
+          ],
+          "correta": "B",
+          "feedback": "PRIMARY KEY é o identificador principal e é NOT NULL; UNIQUE representa outra regra de unicidade e não tem a mesma função semântica."
+        },
+        {
+          "id": "sig-gti-con-q12",
+          "enunciado": "Qual definição cria uma PRIMARY KEY nomeada para id_produto?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "CONSTRAINT UK_Produto PRIMARY KEY (id_produto)"
+            },
+            {
+              "id": "B",
+              "texto": "CONSTRAINT CK_Produto PRIMARY KEY (id_produto > 0)"
+            },
+            {
+              "id": "C",
+              "texto": "CONSTRAINT PK_Produto PRIMARY KEY (id_produto)"
+            },
+            {
+              "id": "D",
+              "texto": "CONSTRAINT DF_Produto PRIMARY KEY DEFAULT (id_produto)"
+            }
+          ],
+          "correta": "C",
+          "feedback": "A sintaxe PRIMARY KEY recebe a lista de colunas que compõem a chave."
+        },
+        {
+          "id": "sig-gti-con-q13",
+          "enunciado": "Qual regra CHECK é adequada para garantir que data_fim não seja anterior a data_inicio?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "UNIQUE (data_fim >= data_inicio)"
+            },
+            {
+              "id": "B",
+              "texto": "PRIMARY KEY (data_fim >= data_inicio)"
+            },
+            {
+              "id": "C",
+              "texto": "CHECK (data_fim >= data_inicio)"
+            },
+            {
+              "id": "D",
+              "texto": "DEFAULT (data_fim >= data_inicio)"
+            }
+          ],
+          "correta": "D",
+          "feedback": "CHECK pode comparar valores de duas colunas da mesma linha."
+        },
+        {
+          "id": "sig-gti-con-q14",
+          "enunciado": "O que ocorre quando um INSERT omite uma coluna que possui DEFAULT e não informa NULL explicitamente?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "O SQL Server usa o valor definido pela DEFAULT."
+            },
+            {
+              "id": "B",
+              "texto": "O SQL Server sempre rejeita o INSERT."
+            },
+            {
+              "id": "C",
+              "texto": "O SQL Server cria uma PRIMARY KEY automaticamente."
+            },
+            {
+              "id": "D",
+              "texto": "O SQL Server ignora a linha inteira."
+            }
+          ],
+          "correta": "A",
+          "feedback": "O valor padrão é aplicado quando a coluna é omitida no INSERT, desde que as demais restrições sejam atendidas."
+        },
+        {
+          "id": "sig-gti-con-q15",
+          "enunciado": "Qual conjunto associa corretamente as siglas às funções?",
+          "alternativas": [
+            {
+              "id": "A",
+              "texto": "PK valida XML; UK cria data; CK remove espaços; DF inverte texto."
+            },
+            {
+              "id": "B",
+              "texto": "PK identifica; UK torna único; CK valida condição; DF fornece valor padrão."
+            },
+            {
+              "id": "C",
+              "texto": "PK fornece padrão; UK valida condição; CK identifica; DF torna único."
+            },
+            {
+              "id": "D",
+              "texto": "Todas as quatro constraints têm exatamente a mesma função."
+            }
+          ],
+          "correta": "B",
+          "feedback": "PK = PRIMARY KEY, UK = UNIQUE KEY, CK = CHECK e DF = DEFAULT, cada uma com a função indicada."
+        }
+      ]
+    }
+  ]
+}

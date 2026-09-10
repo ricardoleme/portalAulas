@@ -36,7 +36,8 @@
               {
                 "nome": "Sistemas Integrados de Gestão e Aplicações",
                 "url": "https://drive.google.com/drive/folders/14b5n9x9ccN6KfqkEDDL2ABZLtrSYxyHA?usp=sharing",
-                "disponivel": true
+                "disponivel": true,
+                "questoes": "questoes/sistemas-integrados-gti-av1.json"
               }
             ]
           }
