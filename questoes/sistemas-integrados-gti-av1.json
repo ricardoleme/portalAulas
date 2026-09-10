@@ -2,11 +2,11 @@
   "disciplina": "Sistemas Integrados de Gestão e Aplicações",
   "versao": 1,
   "curso": "Gestão da Tecnologia da Informação",
-  "observacao": "As 65 questões estão reunidas em uma única avaliação: 10 transcritas e revisadas a partir do anexo, 40 questões autorais sobre funções SQL Server e 15 questões autorais sobre constraints PK, UK, CK e DF.",
+  "observacao": "Conteúdo para auxiliar os estudos da disciplina Sistemas Integrados de Gestão e Aplicações.",
   "avaliacoes": [
     {
       "id": "av1",
-      "titulo": "Avaliação única - 65 questões",
+      "titulo": "Primeira Avaliação",
       "questoes": [
         {
           "id": "sig-gti-anexo-q1",
