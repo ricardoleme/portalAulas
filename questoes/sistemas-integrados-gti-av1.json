@@ -249,7 +249,7 @@
               "texto": "2026 e 16."
             }
           ],
-          "correta": "B",
+          "correta": "D",
           "feedback": "DATEPART(YY, ...) retorna o ano numérico completo, 2026. DATENAME(dd, ...) retorna o dia do mês como texto numérico, '16'."
         },
         {

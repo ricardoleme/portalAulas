@@ -579,7 +579,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function normalizeAlternatives(alternatives) {
         if (!Array.isArray(alternatives)) return [];
 
-        return alternatives.slice(0, 4).map((alternative, index) => {
+        return alternatives.map((alternative, index) => {
             if (typeof alternative === 'string') {
                 return {
                     id: String.fromCharCode(65 + index),
