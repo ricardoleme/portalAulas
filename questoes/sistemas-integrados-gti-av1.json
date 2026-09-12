@@ -1353,7 +1353,7 @@
               "texto": "UNIQUE sempre substitui a PRIMARY KEY."
             }
           ],
-          "correta": "D",
+          "correta": "C",
           "feedback": "É possível criar várias constraints UNIQUE para garantir unicidade em diferentes atributos candidatos."
         },
         {
@@ -1449,7 +1449,7 @@
               "texto": "CONSTRAINT CK_Cliente_Data CHECK GETDATE() FOR data_cadastro"
             }
           ],
-          "correta": "D",
+          "correta": "C",
           "feedback": "DEFAULT GETDATE() fornece o instante atual quando data_cadastro não é informado."
         },
         {
