@@ -345,7 +345,7 @@
               "texto": "April ou abril, conforme o idioma da sessão"
             }
           ],
-          "correta": "B",
+          "correta": "D",
           "feedback": "DATENAME retorna o nome textual da parte solicitada e respeita o idioma configurado na sessão."
         },
         {
@@ -441,12 +441,12 @@
               "texto": "DATEADD(day, 30, data_cadastro)"
             }
           ],
-          "correta": "B",
+          "correta": "D",
           "feedback": "DATEADD recebe a parte da data, o número a adicionar e a data de referência."
         },
         {
           "id": "sig-gti-fun-q8",
-          "enunciado": "Como obter a data correspondente ao primeiro dia do mês de uma data @d, sem usar EOMONTH?",
+          "enunciado": "Como obter a data correspondente ao primeiro dia do mês de uma data representada por '@d'?",
           "alternativas": [
             {
               "id": "A",
@@ -466,7 +466,7 @@
             }
           ],
           "correta": "C",
-          "feedback": "A expressão calcula a quantidade de meses desde a data base 1900-01-01 e os adiciona novamente à mesma base."
+          "feedback": "Como funciona a lógica: DATEDIFF(month, 0, @d): Calcula a quantidade de meses passados entre a data base do SQL Server (0, que equivale a 1900-01-01) e a data armazenada na variável @d. O resultado é um número inteiro $N$. DATEADD(month, N, 0): Adiciona esse número $N$ de meses de volta à data base 0 (1900-01-01). Como a adição é feita em nível de mês a partir do dia 1º de janeiro de 1900, o resultado é exatamente o dia 1º do mês e ano de @d."
         },
         {
           "id": "sig-gti-fun-q9",
@@ -537,7 +537,7 @@
               "texto": "GESTÃO INTEGRADA"
             }
           ],
-          "correta": "B",
+          "correta": "D",
           "feedback": "UPPER converte as letras da expressão para maiúsculas."
         },
         {
@@ -626,7 +626,7 @@
             },
             {
               "id": "C",
-              "texto": "   ABCX"
+              "texto": "ABC+X"
             },
             {
               "id": "D",
@@ -686,7 +686,7 @@
         },
         {
           "id": "sig-gti-fun-q18",
-          "enunciado": "Qual expressão retorna os quatro últimos caracteres do campo codigo, considerando que LEN(codigo) desconsidera espaços finais?",
+          "enunciado": "Qual expressão retorna os quatro últimos caracteres do campo codigo, considerando que LEN(codigo) retorna o tamanho da string, desconsiderando espaços finais (à direita)?",
           "alternativas": [
             {
               "id": "A",
@@ -753,7 +753,7 @@
               "texto": "REVERSE('AB-123')"
             }
           ],
-          "correta": "C",
+          "correta": "D",
           "feedback": "REVERSE inverte todos os caracteres, incluindo o hífen."
         },
         {
@@ -849,7 +849,7 @@
               "texto": "'12.35'"
             }
           ],
-          "correta": "C",
+          "correta": "D",
           "feedback": "STR converte número em texto com largura e casas decimais especificadas; 12.345 é arredondado para 12.35."
         },
         {
@@ -945,7 +945,7 @@
               "texto": "SELECT DATEPART(year, data_criacao), DATENAME(month, data_criacao)"
             }
           ],
-          "correta": "C",
+          "correta": "D",
           "feedback": "DATEPART é adequado para o ano numérico e DATENAME para o nome textual do mês."
         },
         {
@@ -1041,7 +1041,7 @@
               "texto": "UPPER(nome)"
             }
           ],
-          "correta": "C",
+          "correta": "D",
           "feedback": "UPPER transforma os caracteres alfabéticos em maiúsculas."
         },
         {
@@ -1137,7 +1137,7 @@
               "texto": "DATEDIFF(day, inicio, fim)"
             }
           ],
-          "correta": "C",
+          "correta": "D",
           "feedback": "DATEDIFF calcula a diferença entre início e fim na unidade day."
         },
         {
@@ -1190,7 +1190,7 @@
         },
         {
           "id": "sig-gti-fun-q39",
-          "enunciado": "Qual expressão retorna a sigla 'SIG' para o texto 'Sistemas Integrados de Gestão'?",
+          "enunciado": "Qual expressão retorna a sigla 'SIS' para o texto 'Sistemas Integrados de Gestão'?",
           "alternativas": [
             {
               "id": "A",
@@ -1210,7 +1210,7 @@
             }
           ],
           "correta": "B",
-          "feedback": "A expressão normaliza o texto e extrai os três primeiros caracteres, formando SIG."
+          "feedback": "A expressão normaliza o texto e extrai os três primeiros caracteres, formando SIS."
         },
         {
           "id": "sig-gti-fun-q40",
