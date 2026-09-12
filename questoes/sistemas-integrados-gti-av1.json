@@ -1545,7 +1545,7 @@
               "texto": "DEFAULT (data_fim >= data_inicio)"
             }
           ],
-          "correta": "D",
+          "correta": "C",
           "feedback": "CHECK pode comparar valores de duas colunas da mesma linha."
         },
         {
